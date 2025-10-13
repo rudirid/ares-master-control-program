@@ -246,12 +246,12 @@ class AresSignalBridge:
 
         self.add_task(task)
 
-        # Send confirmation
+        # Send confirmation (Ares personality)
         self.send_message(
             source,
-            f"✅ Task #{task['id']} queued!\n\n"
-            f"Will be executed when terminal comes online.\n\n"
-            f"Reply 'status' or 'list' to check queue."
+            f"🎯 Ares here. Task #{task['id']} received and queued.\n\n"
+            f"I'll process this when your terminal comes online.\n\n"
+            f"Commands: 'status', 'list'"
         )
 
     def handle_status_request(self, from_number: str):
