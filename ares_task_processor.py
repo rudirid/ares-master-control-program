@@ -2,13 +2,13 @@
 Ares Task Processor - Executes tasks from mobile bridge queue
 
 This runs on your development machine and processes tasks
-queued from your phone via Telegram.
+queued from your phone via WhatsApp.
 
 Features:
 - Processes tasks from mobile_task_queue.json
 - Categorizes tasks (code, research, note, reminder)
 - Creates Claude Code CLI commands
-- Sends status updates back via Telegram
+- Sends status updates back via WhatsApp
 - Integrates with Ares validation protocols
 """
 
@@ -19,7 +19,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict
 import logging
-import asyncio
+import requests
 
 # Setup logging
 logging.basicConfig(
@@ -39,7 +39,7 @@ class AresTaskProcessor:
 
     def __init__(self):
         self.task_queue = self.load_task_queue()
-        self.bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+        self.whatsapp_bridge_url = "http://localhost:5000"
 
     def load_task_queue(self) -> List[Dict]:
         """Load task queue"""
@@ -76,27 +76,30 @@ class AresTaskProcessor:
 
     def create_ares_command(self, task: Dict) -> str:
         """Create Ares command from task"""
-        category = self.categorize_task(task['content'])
+        # Get task content from either 'task' or 'content' field
+        task_content = task.get('task', task.get('content', ''))
+        category = self.categorize_task(task_content)
 
         if category == 'code':
             # Use /ares command for coding tasks
-            return f"/ares {task['content']}"
+            return f"/ares {task_content}"
         elif category == 'research':
             # Use /ares with research focus
-            return f"/ares Research and summarize: {task['content']}"
+            return f"/ares Research and summarize: {task_content}"
         elif category == 'note':
             # Create note file
-            return f"echo '{task['content']}' >> .ares-mcp/mobile_notes.txt"
+            return f"echo '{task_content}' >> .ares-mcp/mobile_notes.txt"
         elif category == 'reminder':
             # Create reminder file
-            return f"echo '[{datetime.now().isoformat()}] {task['content']}' >> .ares-mcp/reminders.txt"
+            return f"echo '[{datetime.now().isoformat()}] {task_content}' >> .ares-mcp/reminders.txt"
         else:
             # General task
-            return f"/ares {task['content']}"
+            return f"/ares {task_content}"
 
     def process_task(self, task: Dict):
         """Process a single task"""
-        logger.info(f"[PROCESSING] Task #{task['id']}: {task['content'][:50]}...")
+        task_content = task.get('task', task.get('content', ''))
+        logger.info(f"[PROCESSING] Task #{task['id']}: {task_content[:50]}...")
 
         try:
             # Update status
@@ -105,7 +108,7 @@ class AresTaskProcessor:
             self.save_task_queue()
 
             # Categorize
-            category = self.categorize_task(task['content'])
+            category = self.categorize_task(task_content)
             logger.info(f"[CATEGORY] {category}")
 
             # Create command
@@ -134,7 +137,7 @@ class AresTaskProcessor:
                 exec_file = ARES_DIR / "pending_tasks.sh"
                 with open(exec_file, 'a') as f:
                     f.write(f"# Task #{task['id']} - {task['timestamp']}\n")
-                    f.write(f"# {task['content']}\n")
+                    f.write(f"# {task_content}\n")
                     f.write(f"{command}\n\n")
 
                 logger.info(f"[OK] Added to {exec_file}")
@@ -144,7 +147,7 @@ class AresTaskProcessor:
 
             # Log to processed file
             with open(PROCESSED_LOG, 'a') as f:
-                f.write(f"[{datetime.now().isoformat()}] Task #{task['id']}: {task['status']} - {task['content'][:50]}\n")
+                f.write(f"[{datetime.now().isoformat()}] Task #{task['id']}: {task['status']} - {task_content[:50]}\n")
 
         except Exception as e:
             task['status'] = 'failed'
@@ -152,25 +155,28 @@ class AresTaskProcessor:
             self.save_task_queue()
             logger.error(f"[ERROR] Task #{task['id']} failed: {str(e)}")
 
-    async def send_telegram_update(self, user_id: int, message: str):
-        """Send status update to Telegram"""
-        if not self.bot_token:
-            logger.warning("[WARNING] No bot token, skipping Telegram update")
-            return
-
+    def send_whatsapp_update(self, to_number: str, message: str):
+        """Send status update via WhatsApp"""
         try:
-            from telegram import Bot
-            bot = Bot(token=self.bot_token)
-            await bot.send_message(chat_id=user_id, text=message)
-            logger.info(f"[OK] Sent update to user {user_id}")
+            url = f"{self.whatsapp_bridge_url}/send"
+            payload = {
+                "message": message,
+                "to": to_number
+            }
+            response = requests.post(url, json=payload)
+            response.raise_for_status()
+            logger.info(f"[OK] Sent WhatsApp update to {to_number}")
+            return True
         except Exception as e:
-            logger.error(f"[ERROR] Failed to send Telegram update: {str(e)}")
+            logger.error(f"[ERROR] Failed to send WhatsApp update: {str(e)}")
+            return False
 
     def process_queue(self):
         """Process all queued tasks"""
         logger.info("[ARES TASK PROCESSOR] Starting...")
 
-        pending = [t for t in self.task_queue if t['status'] == 'queued']
+        # Tasks without a status are pending, or explicit 'queued' status
+        pending = [t for t in self.task_queue if t.get('status', 'queued') == 'queued' or 'status' not in t]
 
         if not pending:
             logger.info("[INFO] No pending tasks")
@@ -181,14 +187,15 @@ class AresTaskProcessor:
         for task in pending:
             self.process_task(task)
 
-            # Send update to user
+            # Send update to user via WhatsApp
             if task['status'] in ['completed', 'ready']:
                 msg = f"✅ Task #{task['id']} {task['status']}\n\n{task.get('result', '')}"
             else:
                 msg = f"❌ Task #{task['id']} failed\n\n{task.get('error', '')}"
 
-            # Note: This would need to run in async context
-            # asyncio.run(self.send_telegram_update(task['user_id'], msg))
+            # Send WhatsApp update to the original sender
+            if 'from' in task:
+                self.send_whatsapp_update(f"+{task['from']}", msg)
 
         logger.info("[OK] Queue processing complete")
 
@@ -207,16 +214,16 @@ class AresTaskProcessor:
         print("PROCESSING SUMMARY")
         print("=" * 70)
         print(f"Total tasks: {total}")
-        print(f"✅ Completed: {completed}")
-        print(f"🔄 Ready for execution: {ready}")
-        print(f"❌ Failed: {failed}")
-        print(f"⏳ Still queued: {queued}")
+        print(f"[OK] Completed: {completed}")
+        print(f"[READY] Ready for execution: {ready}")
+        print(f"[FAIL] Failed: {failed}")
+        print(f"[WAIT] Still queued: {queued}")
         print()
 
         if ready > 0:
             exec_file = ARES_DIR / "pending_tasks.sh"
-            print(f"📋 {ready} tasks ready for execution")
-            print(f"   Run commands from: {exec_file}")
+            print(f"[TASKS] {ready} tasks ready for execution")
+            print(f"        Run commands from: {exec_file}")
             print()
 
 
