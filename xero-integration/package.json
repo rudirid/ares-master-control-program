@@ -1,0 +1,17 @@
+{
+  "name": "xero-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@xeroapi/xero-mcp-server": "^0.0.12",
+    "dotenv": "^17.2.3",
+    "xero-node": "^13.1.0"
+  }
+}

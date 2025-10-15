@@ -12,5 +12,19 @@
     "message": "\ud83d\udd04 Task #3: Processing\n\nTask received and queued for Ares execution",
     "success": true,
     "error": null
+  },
+  {
+    "task_id": 4,
+    "timestamp": "2025-10-15T18:20:09.026236",
+    "message": "\ud83d\udd04 Task #4: Processing\n\nTask received and queued for Ares execution",
+    "success": false,
+    "error": "500 Server Error: INTERNAL SERVER ERROR for url: http://localhost:5000/send"
+  },
+  {
+    "task_id": 5,
+    "timestamp": "2025-10-15T18:20:11.085659",
+    "message": "\ud83d\udd04 Task #5: Processing\n\nTask received and queued for Ares execution",
+    "success": false,
+    "error": "500 Server Error: INTERNAL SERVER ERROR for url: http://localhost:5000/send"
   }
 ]

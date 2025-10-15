@@ -1,3 +1,303 @@
-.claude/
+# ARES Security Framework - Comprehensive .gitignore
+# Last Updated: 2025-10-15
+
+# ============================================================================
+# CRITICAL: SECRETS & CREDENTIALS
+# ============================================================================
+# NEVER commit these files - they contain sensitive credentials
+
+# Environment variables
+.env
+.env.*
+!.env.example
+.envrc
+
+# Secrets and credentials
+secrets/
+credentials/
+*.key
+*.pem
+*.p12
+*.pfx
+*.cert
+*.crt
+*.der
+
+# Service account files
+*-serviceaccount.json
+service-account*.json
+gcloud-service-key.json
+
+# AWS credentials
+.aws/
+aws-credentials
+
+# SSH keys
+id_rsa
+id_rsa.pub
+id_dsa
+id_dsa.pub
+id_ecdsa
+id_ecdsa.pub
+id_ed25519
+id_ed25519.pub
+
+# ============================================================================
+# ARES-SPECIFIC SENSITIVE DATA
+# ============================================================================
+
+# ARES configuration and data
+.ares-mcp/*.json
+!.ares-mcp/package.json
+.ares-mcp/mobile_task_queue.json
+.ares-mcp/pending_ares_tasks.txt
+.ares-mcp/processed_whatsapp_tasks.json
+.ares-mcp/response_log.json
+.ares-mcp/whatsapp_response_*.json
+.ares-mcp/last_message_timestamp.txt
+
+# Browser session data - contains cookies, tokens, passwords
+.ares-mcp/browser-session/
+.ares-mcp/whatsapp_session/
+**/browser-session/
+**/whatsapp_session/
+
+# Logs - may contain sensitive data
+.ares-mcp/logs/
 *.log
+*.log.*
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ============================================================================
+# PYTHON
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+.virtualenv
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================================================
+# NODE.JS
+# ============================================================================
+
+# Dependencies
+node_modules/
+jspm_packages/
+bower_components/
+
+# Production build
+/build
+/dist
+/.next
+/out
+
+# Testing
+coverage/
+.nyc_output
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================================================
+# DATABASES
+# ============================================================================
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# PostgreSQL
+*.sql
+*.dump
+
+# MongoDB
+*.bson
+
+# Redis
+dump.rdb
+
+# ============================================================================
+# BACKUPS & TEMPORARY FILES
+# ============================================================================
+
+# Backups
+*.bak
+*.backup
+*.old
+*.orig
+*.swp
+*.swo
+*~
+.claude-backup-*/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================================================================
+# IDE & EDITOR
+# ============================================================================
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+
+# ============================================================================
+# SECURITY & TESTING
+# ============================================================================
+
+# Security scans
+security-report.html
+security-scan-*.json
+vulnerability-report.*
+
+# Penetration testing
+pentest-results/
+exploit-poc/
+
+# ============================================================================
+# BUILD & DEPLOYMENT
+# ============================================================================
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Kubernetes
+*.kubeconfig
+
+# ============================================================================
+# MISC
+# ============================================================================
+
+# Claude
+.claude/
+
+# Compressed files (may contain sensitive exports)
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Large files that shouldn't be in Git
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.iso
+
+# Local development
+.local/
+.cache/
+.config/
+local.properties
