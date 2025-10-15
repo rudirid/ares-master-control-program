@@ -1,0 +1,16 @@
+[
+  {
+    "task_id": 999,
+    "timestamp": "2025-10-14T12:19:11.492383",
+    "message": "Test response from Ares. This is a proof-of-concept.",
+    "success": false,
+    "error": "500 Server Error: INTERNAL SERVER ERROR for url: http://localhost:5000/send"
+  },
+  {
+    "task_id": 3,
+    "timestamp": "2025-10-14T18:43:16.371258",
+    "message": "\ud83d\udd04 Task #3: Processing\n\nTask received and queued for Ares execution",
+    "success": true,
+    "error": null
+  }
+]
