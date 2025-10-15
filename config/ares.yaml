@@ -1,0 +1,72 @@
+# ARES Master Control Program v2.5 Configuration
+# Auto-generated configuration with defaults from proven patterns
+
+ares_version: "2.5.0"
+created_at: "2025-10-15"
+
+# Core Protocols from v2.1
+protocols:
+  validation_enabled: true
+  confidence_threshold: 0.80  # ≥80% = execute, <50% = escalate
+  show_work: true  # Always show reasoning
+  internal_skeptic: true  # Challenge approach before executing
+  truth_protocol: true  # Never hallucinate, always verify
+
+# Pattern Library Configuration
+patterns:
+  library_path: "./proven-patterns.md"
+  tier_1_only: false  # Allow Tier 2/3 with caveats
+  min_confidence: 0.50  # Minimum confidence to proceed
+  auto_promote_threshold: 3  # Uses before suggesting promotion
+
+# Tech Success Matrix
+tech_matrix:
+  matrix_path: "./tech-success-matrix.md"
+  track_usage: true
+  update_on_completion: true
+
+# Delegation & Meta-Agent (Phase 1)
+delegation:
+  enabled: false  # Start disabled, enable after MCP works
+  max_concurrent_agents: 3  # Limit parallel subagents
+  triage_model: "claude-3-haiku-20240307"  # Fast model for task decomposition
+  execution_model: "claude-3-5-sonnet-20241022"  # Your preferred model
+
+# Output Formatting
+output:
+  format: "markdown"  # markdown, json, or both
+  include_evidence: true
+  include_alternatives: true
+  include_warnings: true
+  timestamp_all: true
+
+# Security & Privacy
+security:
+  share_patterns: false  # Federated learning (Phase 4)
+  anonymize_data: true
+  local_only: true  # No external calls except approved APIs
+
+# Logging
+logging:
+  enabled: true
+  log_dir: "./logs"
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_validations: true
+  log_decisions: true
+
+# Paths
+paths:
+  base_dir: "."
+  patterns_file: "./proven-patterns.md"
+  tech_matrix_file: "./tech-success-matrix.md"
+  directives_file: "./ares-core-directives.md"
+  decision_file: "./decision-causality.md"
+
+# User Preferences (from Riord's patterns)
+preferences:
+  language: "python"  # Primary language
+  database: "sqlite"  # Default database (upgrade to PostgreSQL at scale)
+  api_framework: "fastapi"
+  testing: true  # Always test
+  documentation: "comprehensive"  # Dense documentation like proven patterns
+  windows_compatible: true  # Windows-first development
