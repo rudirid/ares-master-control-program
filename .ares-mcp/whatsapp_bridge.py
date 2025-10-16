@@ -12,6 +12,10 @@ from datetime import datetime
 from pathlib import Path
 import requests
 from flask import Flask, request, jsonify
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Fix Windows console encoding for emoji support
 if sys.platform == 'win32':
@@ -26,12 +30,20 @@ CONFIG_DIR = Path.home() / ".ares-mcp"
 CONFIG_FILE = CONFIG_DIR / "whatsapp_config.json"
 TASK_QUEUE_FILE = CONFIG_DIR / "mobile_task_queue.json"
 
-# WhatsApp API Configuration
+# WhatsApp API Configuration (loaded from environment variables)
 WHATSAPP_API_URL = "https://graph.facebook.com/v22.0"
-ACCESS_TOKEN = "EAAIZCTzaF1osBPlFn8V13lWJgsFjTh4twQZC7MMT0WcOhwL1q3FcD5NcRvZBGu6AWx0ve5t8ZB6ZB4UTc7ZBYbngqSwkZB63ouRuxk8TUE451SqMCZB3IneBuNtfNhAtUPy0WrT2YrGq54Rm0eFaWMQBPXUmgzEKfUvdCZA0MtEtY2i4ubzdAetsFbtsa1NM1MZBkhPwZDZD"
-PHONE_NUMBER_ID = "810808242121215"
-VERIFY_TOKEN = "ares_webhook_verify_2024"
-AUTHORIZED_NUMBER = "+61432154351"  # Your phone number
+ACCESS_TOKEN = os.getenv('WHATSAPP_ACCESS_TOKEN')
+PHONE_NUMBER_ID = os.getenv('WHATSAPP_PHONE_NUMBER_ID')
+VERIFY_TOKEN = os.getenv('WHATSAPP_VERIFY_TOKEN')
+AUTHORIZED_NUMBER = os.getenv('AUTHORIZED_NUMBER', '+61432154351')
+
+# Validate required environment variables
+if not ACCESS_TOKEN:
+    raise ValueError("WHATSAPP_ACCESS_TOKEN not set in .env file")
+if not PHONE_NUMBER_ID:
+    raise ValueError("WHATSAPP_PHONE_NUMBER_ID not set in .env file")
+if not VERIFY_TOKEN:
+    raise ValueError("WHATSAPP_VERIFY_TOKEN not set in .env file")
 
 # Setup logging
 import sys
@@ -51,19 +63,58 @@ app = Flask(__name__)
 # Ensure directories exist
 CONFIG_DIR.mkdir(parents=True, exist_ok=True)
 
+# Initialize encryption for task queue
+try:
+    from cryptography.fernet import Fernet
+    ENCRYPTION_KEY = os.getenv('ENCRYPTION_KEY')
+    if ENCRYPTION_KEY:
+        cipher = Fernet(ENCRYPTION_KEY.encode())
+        ENCRYPTION_ENABLED = True
+        logger.info("[SECURITY] Task queue encryption enabled")
+    else:
+        ENCRYPTION_ENABLED = False
+        logger.warning("[SECURITY] ENCRYPTION_KEY not set - task queue will not be encrypted")
+except ImportError:
+    ENCRYPTION_ENABLED = False
+    logger.warning("[SECURITY] cryptography not installed - task queue will not be encrypted")
+
 
 def load_task_queue():
-    """Load task queue from file"""
-    if TASK_QUEUE_FILE.exists():
-        with open(TASK_QUEUE_FILE, 'r') as f:
-            return json.load(f)
-    return []
+    """Load task queue from file (with optional encryption)"""
+    if not TASK_QUEUE_FILE.exists():
+        return []
+
+    try:
+        content = TASK_QUEUE_FILE.read_text()
+
+        if ENCRYPTION_ENABLED and content.startswith('gAAAAA'):  # Fernet token signature
+            # Decrypt
+            decrypted = cipher.decrypt(content.encode()).decode()
+            return json.loads(decrypted)
+        else:
+            # Plain JSON (for backwards compatibility)
+            return json.loads(content)
+    except Exception as e:
+        logger.error(f"[ERROR] Failed to load task queue: {e}")
+        return []
 
 
 def save_task_queue(queue):
-    """Save task queue to file"""
-    with open(TASK_QUEUE_FILE, 'w') as f:
-        json.dump(queue, f, indent=2)
+    """Save task queue to file (with optional encryption)"""
+    try:
+        json_data = json.dumps(queue, indent=2)
+
+        if ENCRYPTION_ENABLED:
+            # Encrypt before saving
+            encrypted = cipher.encrypt(json_data.encode()).decode()
+            TASK_QUEUE_FILE.write_text(encrypted)
+            logger.debug(f"[SECURITY] Task queue encrypted and saved ({len(queue)} tasks)")
+        else:
+            # Plain JSON
+            TASK_QUEUE_FILE.write_text(json_data)
+            logger.debug(f"[SECURITY] Task queue saved (unencrypted, {len(queue)} tasks)")
+    except Exception as e:
+        logger.error(f"[ERROR] Failed to save task queue: {e}")
 
 
 def send_whatsapp_message(to_number, message):
@@ -180,9 +231,38 @@ def webhook():
             return jsonify({"status": "error", "message": str(e)}), 500
 
 
+def require_api_key(f):
+    """Decorator to require API key authentication"""
+    from functools import wraps
+    import hmac
+
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        api_key = request.headers.get('X-API-Key')
+
+        if not api_key:
+            logger.warning("[AUTH] Missing API key")
+            return jsonify({'error': 'API key required', 'code': 'AUTH_001'}), 401
+
+        valid_key = os.getenv('ARES_API_KEY')
+        if not valid_key:
+            logger.error("[AUTH] ARES_API_KEY not set in environment")
+            return jsonify({'error': 'Server configuration error', 'code': 'AUTH_002'}), 500
+
+        # Use constant-time comparison to prevent timing attacks
+        if not hmac.compare_digest(api_key, valid_key):
+            logger.warning(f"[AUTH] Invalid API key from {request.remote_addr}")
+            return jsonify({'error': 'Invalid API key', 'code': 'AUTH_003'}), 401
+
+        logger.info(f"[AUTH] Valid API key from {request.remote_addr}")
+        return f(*args, **kwargs)
+    return decorated_function
+
+
 @app.route('/send', methods=['POST'])
+@require_api_key
 def send_message():
-    """Endpoint to send messages from Ares"""
+    """Endpoint to send messages from Ares (requires API key)"""
     try:
         logger.info("[SEND ENDPOINT] Request received")
         data = request.get_json(force=True)

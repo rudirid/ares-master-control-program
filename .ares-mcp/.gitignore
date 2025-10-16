@@ -1,35 +1,40 @@
-# ARES MCP Project - .gitignore
-# Prevents sensitive data from being committed
+# ARES Security - Never commit these files
 
 # Environment variables and secrets
 .env
 .env.*
 !.env.example
+*.key
+*.pem
+*.p12
+*.pfx
 
-# Task queues and logs (may contain sensitive data)
-mobile_task_queue.json
-pending_ares_tasks.txt
-processed_whatsapp_tasks.json
-response_log.json
-whatsapp_response_*.json
-last_message_timestamp.txt
-
-# Browser session data (contains cookies, tokens, passwords)
-browser-session/
-whatsapp_session/
-
-# Logs
-logs/
+# Logs (may contain sensitive data)
 *.log
-*.log.*
+logs/
+
+# Task queues (now encrypted, but still sensitive)
+mobile_task_queue.json
+processed_whatsapp_tasks.json
+whatsapp_response_*.json
+response_log.json
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
 
 # Python
 __pycache__/
-*.py[cod]
 *.pyc
-.pytest_cache/
+*.pyo
+*.egg-info/
 
-# Backups
-*.bak
-*.backup
-*.old
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
