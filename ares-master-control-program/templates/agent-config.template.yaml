@@ -1,0 +1,125 @@
+# Agent Configuration Template
+# This template is used by Agent Creator to generate new agents
+
+agent_id: "{agent_id}"
+version: "1.0.0"
+status: "active"  # Options: active, deprecated, archived
+created_date: "{created_date}"
+last_updated: "{last_updated}"
+
+# ============================================================================
+# AGENT METADATA
+# ============================================================================
+metadata:
+  name: "{agent_name}"
+  description: "{agent_description}"
+  category: "ares-custom"  # vs. claude-code-builtin
+  created_by: "ARES Agent Lifecycle System v3.5"
+
+# ============================================================================
+# DOMAIN & COMPLEXITY
+# ============================================================================
+domains: {domains}  # List of domain strings
+complexity: {complexity}  # List: simple, moderate, complex
+priority: {priority}  # 1-10 (1 = highest priority)
+
+# ============================================================================
+# EXECUTION CONFIGURATION
+# ============================================================================
+execution:
+  method: "Task"  # Options: Task, Direct, MCP
+  timeout_seconds: 600
+  subagent_type: "general-purpose"  # For Task tool
+
+# ============================================================================
+# SUCCESS CRITERIA
+# ============================================================================
+success_criteria:
+  - "Complete task in < {target_time} seconds"
+  - "Success rate ≥ {target_success_rate}%"
+  - "User satisfaction ≥ 4.0/5.0"
+  # Add task-specific criteria below
+  {additional_criteria}
+
+# ============================================================================
+# PATTERNS USED
+# ============================================================================
+patterns_used: {patterns_list}
+  # Example:
+  # - 5-stage-business-model
+  # - human-psychology-influence
+  # - adaptive-messaging-framework
+
+# Pattern conditions (when to apply)
+pattern_conditions:
+  {pattern_conditions}
+  # Example:
+  # human-psychology-influence:
+  #   scope: "sales_only"
+  #   application: "subtle"
+  #   ethics: "high"
+  #   detection_keywords: [discovery, sales, client]
+
+# ============================================================================
+# PERFORMANCE TARGETS
+# ============================================================================
+performance_targets:
+  success_rate_min: {target_success_rate}  # %
+  avg_time_max: {target_time}  # seconds
+  correction_rate_max: 10  # % (lower is better)
+  user_rating_min: 4.0  # /5.0
+
+  # Usage thresholds
+  usage_threshold: 5  # Min invocations before first review
+  evolution_trigger: 10  # Evolve after N invocations
+
+# ============================================================================
+# EVOLUTION POLICY
+# ============================================================================
+evolution_policy:
+  auto_update_patterns: true  # Update when patterns.md changes
+  version_bump_threshold: 10  # Major version after N improvements
+  deprecation_threshold_days: 90  # No usage = consider deprecation
+
+  # Learning extraction
+  extract_learnings: true
+  min_reflections: 5  # Need N reflections to extract patterns
+
+# ============================================================================
+# MEMORY CONFIGURATION
+# ============================================================================
+memory:
+  episodic:
+    enabled: true
+    retention_days: 365
+  semantic:
+    enabled: true
+    max_embeddings: 1000
+  procedural:
+    enabled: true
+    skill_threshold: 3
+
+  # Context loading
+  load_similar_tasks: true
+  similar_tasks_limit: 5
+
+# ============================================================================
+# PERFORMANCE METRICS (Initialized Empty)
+# ============================================================================
+metrics:
+  total_invocations: 0
+  successful: 0
+  failed: 0
+  success_rate: 0.0
+  avg_time_seconds: 0.0
+  correction_rate: 0.0
+  user_rating_avg: 0.0
+
+# ============================================================================
+# CHANGELOG
+# ============================================================================
+changelog:
+  - version: "1.0.0"
+    date: "{created_date}"
+    changes: "Initial agent creation"
+    author: "ARES Agent Lifecycle System"

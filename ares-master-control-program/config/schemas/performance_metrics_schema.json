@@ -1,0 +1,377 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ARES Agent Performance Metrics Schema",
+  "description": "Schema for tracking agent performance metrics and evolution",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "description": "Unique agent identifier"
+    },
+    "version": {
+      "type": "string",
+      "description": "Agent version"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "core_performance": {
+          "type": "object",
+          "properties": {
+            "total_invocations": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "successful": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "failed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "success_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Success rate percentage"
+            }
+          },
+          "required": ["total_invocations", "successful", "failed", "success_rate"]
+        },
+        "time_performance": {
+          "type": "object",
+          "properties": {
+            "avg_time_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "min_time_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "max_time_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "target_time_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "time_performance_ratio": {
+              "type": "number",
+              "description": "target/actual - >1.0 is faster than target"
+            }
+          }
+        },
+        "reflection_quality": {
+          "type": "object",
+          "description": "2025 reflection metrics",
+          "properties": {
+            "correction_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "% of self-identified and fixed errors"
+            },
+            "reflection_depth": {
+              "type": "object",
+              "properties": {
+                "shallow": {
+                  "type": "integer",
+                  "description": "Count of shallow reflections"
+                },
+                "deep": {
+                  "type": "integer",
+                  "description": "Count of deep reflections"
+                }
+              }
+            },
+            "self_corrections": {
+              "type": "integer",
+              "description": "Number of times agent corrected itself"
+            }
+          }
+        },
+        "tool_usage": {
+          "type": "object",
+          "description": "2025 tool usage metrics",
+          "properties": {
+            "tool_selection_quality": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "% of correct tool selections"
+            },
+            "tool_errors": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "action_completion_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        },
+        "pattern_effectiveness": {
+          "type": "object",
+          "description": "Per-pattern success rates",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "usage": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "success": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "effectiveness": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        "user_satisfaction": {
+          "type": "object",
+          "properties": {
+            "positive_feedback": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "neutral_feedback": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "negative_feedback": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "average_rating": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "feedback_comments": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "rating": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 5
+                  },
+                  "comment": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "learning_rate": {
+          "type": "object",
+          "properties": {
+            "first_n_success_rate": {
+              "type": "number",
+              "description": "Success rate in first N invocations"
+            },
+            "last_n_success_rate": {
+              "type": "number",
+              "description": "Success rate in last N invocations"
+            },
+            "learning_velocity": {
+              "type": "number",
+              "description": "Rate of improvement (% change)"
+            },
+            "plateau_detected": {
+              "type": "boolean",
+              "description": "Whether learning has plateaued"
+            }
+          }
+        },
+        "resource_efficiency": {
+          "type": "object",
+          "properties": {
+            "tokens_per_task_avg": {
+              "type": "number",
+              "minimum": 0
+            },
+            "cost_per_task_usd": {
+              "type": "number",
+              "minimum": 0
+            },
+            "roi": {
+              "type": "number",
+              "description": "Return on investment (value/cost)"
+            }
+          }
+        }
+      },
+      "required": ["core_performance"]
+    },
+    "evolution_history": {
+      "type": "array",
+      "description": "History of agent improvements",
+      "items": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "trigger": {
+            "type": "string",
+            "enum": ["scheduled", "performance", "manual", "pattern_update"]
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hypothesis": {
+            "type": "string"
+          },
+          "expected_impact": {
+            "type": "string"
+          },
+          "actual_impact": {
+            "type": "object",
+            "properties": {
+              "success_rate_change": {
+                "type": "number"
+              },
+              "time_change": {
+                "type": "number"
+              },
+              "confirmed": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "learnings": {
+      "type": "array",
+      "description": "Extracted learnings from reflections",
+      "items": {
+        "type": "object",
+        "properties": {
+          "learning_id": {
+            "type": "string"
+          },
+          "date_extracted": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "insight": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "applied": {
+            "type": "boolean"
+          },
+          "application_date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "improvement_recommendations": {
+      "type": "array",
+      "description": "System-generated improvement recommendations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "recommendation_id": {
+            "type": "string"
+          },
+          "date_generated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "description": {
+            "type": "string"
+          },
+          "expected_benefit": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["pending", "approved", "implemented", "rejected"]
+          }
+        }
+      }
+    },
+    "comparison_to_targets": {
+      "type": "object",
+      "properties": {
+        "success_rate_target": {
+          "type": "number"
+        },
+        "success_rate_actual": {
+          "type": "number"
+        },
+        "success_rate_delta": {
+          "type": "number"
+        },
+        "time_target_seconds": {
+          "type": "number"
+        },
+        "time_actual_seconds": {
+          "type": "number"
+        },
+        "time_delta_seconds": {
+          "type": "number"
+        },
+        "user_rating_target": {
+          "type": "number"
+        },
+        "user_rating_actual": {
+          "type": "number"
+        },
+        "user_rating_delta": {
+          "type": "number"
+        },
+        "meeting_targets": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "required": ["agent_id", "version", "metrics"]
+}

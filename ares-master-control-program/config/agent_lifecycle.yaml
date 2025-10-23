@@ -1,0 +1,242 @@
+# ARES Agent Lifecycle Management System - Configuration
+# Version: 3.5.0
+# Last Updated: 2025-10-24
+
+# ============================================================================
+# AGENT CREATION POLICIES
+# ============================================================================
+agent_creation:
+  # Evidence-based creation threshold
+  evidence_threshold: 3  # Min similar tasks before creating agent
+
+  # Frequency requirements
+  min_frequency_per_month: 5  # Must occur 5+ times/month
+
+  # ROI requirements
+  min_roi: 2.0  # 2x return on investment required
+
+  # ARES decision confidence
+  confidence_threshold: 80  # % confidence required for autonomous creation
+
+  # Human approval
+  require_approval: false  # true = ask user, false = autonomous at ≥80%
+
+  # Pattern extraction
+  auto_extract_patterns: true  # Auto-extract from proven-patterns.md
+
+  # Domain scoping
+  scope_detection: true  # Auto-detect if patterns should apply
+
+# ============================================================================
+# AGENT EVOLUTION POLICIES
+# ============================================================================
+agent_evolution:
+  # When to trigger evolution
+  reflection_trigger: 10  # Evolve after N invocations
+
+  # Hypothesis testing
+  hypothesis_test_size: 5  # N tasks to test hypothesis
+  min_improvement: 5  # % improvement to keep change
+
+  # Auto-rollback on regression
+  auto_rollback: true  # Rollback if performance decreases
+  rollback_threshold: -5  # % decrease triggers rollback
+
+  # Version control
+  semantic_versioning: true  # Use semantic versioning (major.minor.patch)
+  git_integration: true  # Git commit on version changes
+
+  # Pattern updates
+  check_pattern_updates: true  # Check proven-patterns.md for updates
+  pattern_check_frequency_days: 7  # How often to check
+
+  # Learning extraction
+  extract_learnings: true  # Extract insights from reflections
+  min_reflections_for_learning: 5  # Need N reflections to extract learning
+
+# ============================================================================
+# AGENT CURATION POLICIES
+# ============================================================================
+agent_curation:
+  # Audit frequency
+  audit_frequency_days: 30  # Monthly audits
+
+  # Deprecation rules
+  deprecation_threshold_days: 90  # No usage → flag for deprecation
+
+  # Performance thresholds
+  min_success_rate: 80  # Below this → flag for improvement
+  max_avg_time_multiplier: 1.5  # If 1.5x target time → flag
+
+  # Redundancy detection
+  redundancy_overlap_threshold: 70  # % domain overlap → consider merge
+
+  # State-of-the-art updates
+  research_frequency_days: 30  # Research new techniques monthly
+  best_practice_integration: true  # Auto-update with new best practices
+
+  # Human-in-the-loop
+  require_approval_for_merge: true  # User approves merges
+  require_approval_for_deprecation: true  # User approves deprecations
+
+# ============================================================================
+# MEMORY SYSTEM CONFIGURATION
+# ============================================================================
+memory:
+  # Episodic memory (SQLite)
+  episodic:
+    enabled: true
+    retention_days: 365  # Keep for 1 year
+    max_entries: 10000  # Cleanup if exceeds
+    backup_frequency_days: 7  # Weekly backups
+
+  # Semantic memory (Vector DB)
+  semantic:
+    enabled: true
+    backend: "chromadb"  # Options: chromadb, pinecone, local
+    max_embeddings: 1000  # Per agent
+    embedding_model: "text-embedding-3-small"  # OpenAI model
+    similarity_threshold: 0.7  # Min similarity for retrieval
+
+  # Procedural memory (YAML)
+  procedural:
+    enabled: true
+    skill_threshold: 3  # Min successes to save skill
+    auto_update_skills: true  # Update based on performance
+
+  # Short-term memory
+  short_term:
+    enabled: true
+    backend: "memory"  # Options: memory, redis
+    ttl_seconds: 3600  # 1 hour TTL
+
+# ============================================================================
+# PERFORMANCE TRACKING
+# ============================================================================
+performance:
+  # What to track
+  track_intermediate_steps: true  # Store all intermediate outputs
+  store_full_context: true  # Store complete task context
+  capture_user_feedback: true  # Prompt for feedback after task
+  log_reflections: true  # Store self-reflection logs
+
+  # Metrics
+  calculate_correction_rate: true  # Track self-fixing capability
+  measure_reflection_depth: true  # Shallow vs deep reflection
+  track_pattern_effectiveness: true  # Per-pattern success rates
+  monitor_resource_usage: true  # Tokens, time, cost
+
+  # Reporting
+  generate_performance_reports: true
+  report_frequency_days: 7  # Weekly reports
+
+  # Targets (defaults - can override per agent)
+  default_success_rate_target: 85  # %
+  default_time_target_seconds: 300  # 5 minutes
+  default_correction_rate_target: 10  # % (lower is better = fewer mistakes)
+
+# ============================================================================
+# EXECUTION SETTINGS
+# ============================================================================
+execution:
+  # Agent invocation
+  execution_method: "Task"  # Options: Task, Direct, MCP
+  timeout_seconds: 600  # 10 minute timeout
+
+  # Memory loading
+  load_episodic_memories: true
+  episodic_memory_limit: 5  # Load N most similar past tasks
+
+  load_semantic_knowledge: true
+  semantic_retrieval_limit: 10  # Load N most relevant knowledge items
+
+  load_procedural_skills: true
+
+  # Reflection
+  immediate_reflection: true  # Reflect after every task
+  reflection_prompt_template: "templates/reflection-prompt.md"
+
+  # Context injection
+  inject_memory_into_prompt: true  # Add memory to agent prompt
+  memory_context_max_tokens: 2000  # Max tokens for memory context
+
+# ============================================================================
+# STATE-OF-THE-ART UPDATES
+# ============================================================================
+state_of_the_art:
+  # Research integration
+  research_frequency_days: 30  # Monthly research
+  auto_update_prompts: false  # Manual approval for prompt changes
+
+  # Pattern integration
+  pattern_update_check: true  # Check proven-patterns.md
+  auto_integrate_tier1_patterns: true  # Auto-add Tier 1 patterns
+
+  # Best practices
+  best_practice_sources:
+    - "ares-master-control-program/knowledge/"
+    - "projects/ai-consulting-business/frameworks/"
+
+  # Version bumping
+  research_triggers_minor_bump: true  # New research → minor version
+
+# ============================================================================
+# INTEGRATION SETTINGS
+# ============================================================================
+integration:
+  # ARES v3.0 integration
+  ares_validation: true  # Use ARES 5-step validation
+  ares_confidence_threshold: 80  # Min confidence for autonomous action
+
+  # Registry integration
+  registry_path: "~/.claude/subagents/registry.json"
+  auto_register_agents: true  # Register new agents to registry
+
+  # Proven patterns integration
+  patterns_path: "ares-master-control-program/proven-patterns.md"
+  auto_load_patterns: true  # Load patterns on agent creation
+
+  # Git integration
+  git_commits: true  # Commit agent changes
+  git_tags: true  # Tag versions
+  commit_message_template: "v{version}: {description}"
+
+# ============================================================================
+# LOGGING & DEBUGGING
+# ============================================================================
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR
+  log_file: "logs/agent_lifecycle.log"
+  rotate_logs: true
+  max_log_size_mb: 100
+
+  # Debug mode
+  debug_mode: false  # Verbose output
+  trace_execution: false  # Trace every step
+
+# ============================================================================
+# PATHS (Absolute)
+# ============================================================================
+paths:
+  agents_dir: "ares-master-control-program/agents"
+  templates_dir: "ares-master-control-program/templates"
+  config_dir: "ares-master-control-program/config"
+  core_dir: "ares-master-control-program/core"
+  knowledge_dir: "ares-master-control-program/knowledge"
+  logs_dir: "logs"
+
+# ============================================================================
+# EXPERIMENTAL FEATURES
+# ============================================================================
+experimental:
+  # Multi-agent collaboration
+  enable_agent_collaboration: false  # Multiple agents on same task
+
+  # A/B testing
+  enable_ab_testing: false  # Test two versions simultaneously
+
+  # Predictive creation
+  predictive_agent_creation: false  # Create agents before needed
+
+  # Auto-documentation
+  auto_generate_docs: true  # Generate documentation from usage

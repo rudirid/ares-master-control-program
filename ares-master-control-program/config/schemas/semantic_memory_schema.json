@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ARES Agent Semantic Memory Schema",
+  "description": "Schema for agent semantic memory - domain knowledge, facts, concepts",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "description": "Unique agent identifier"
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic memory version"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp"
+    },
+    "knowledge_items": {
+      "type": "array",
+      "description": "Array of knowledge items",
+      "items": {
+        "type": "object",
+        "properties": {
+          "knowledge_id": {
+            "type": "string",
+            "description": "Unique identifier for this knowledge item"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["fact", "concept", "principle", "pattern", "example", "insight"],
+            "description": "Type of knowledge"
+          },
+          "domain": {
+            "type": "string",
+            "description": "Domain this knowledge belongs to"
+          },
+          "content": {
+            "type": "string",
+            "description": "The actual knowledge content"
+          },
+          "source": {
+            "type": "string",
+            "description": "Where this knowledge came from"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Confidence in this knowledge (0-100%)"
+          },
+          "usage_count": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "How many times this knowledge has been used"
+          },
+          "success_rate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Success rate when this knowledge is applied"
+          },
+          "related_patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Related pattern IDs"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags for categorization"
+          },
+          "embedding_vector": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "Vector embedding for similarity search (optional)"
+          },
+          "created_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "last_used_date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": ["knowledge_id", "type", "content", "source"]
+      }
+    },
+    "concepts": {
+      "type": "object",
+      "description": "Organized concept map",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "definition": {
+            "type": "string"
+          },
+          "related_concepts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "principles": {
+      "type": "array",
+      "description": "Core principles learned",
+      "items": {
+        "type": "object",
+        "properties": {
+          "principle_id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "supporting_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exceptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    "domain_expertise": {
+      "type": "object",
+      "description": "Domain-specific expertise levels",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "expertise_level": {
+            "type": "string",
+            "enum": ["novice", "intermediate", "advanced", "expert"]
+          },
+          "knowledge_items_count": {
+            "type": "integer"
+          },
+          "successful_applications": {
+            "type": "integer"
+          },
+          "last_used": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  "required": ["agent_id", "version", "knowledge_items"]
+}

@@ -1,0 +1,224 @@
+# ARES Agent Lifecycle System - Procedural Memory Schema
+# Schema for storing skills, procedures, and how-to knowledge
+# Version: 1.0.0
+
+# ============================================================================
+# PROCEDURAL MEMORY STRUCTURE
+# ============================================================================
+
+agent_id: "string"  # Unique agent identifier
+version: "string"   # Procedural memory version
+last_updated: "datetime"  # Last update timestamp
+
+# ============================================================================
+# SKILLS REGISTRY
+# ============================================================================
+skills:
+  # Each skill is a reusable procedure
+  skill_id_example:
+    skill_id: "string"  # Unique skill identifier
+    name: "string"      # Human-readable name
+    description: "string"  # What this skill does
+    category: "string"  # Category (e.g., "discovery-call", "proposal")
+
+    # Procedure definition
+    procedure:
+      steps:
+        - step_number: 1
+          action: "string"  # What to do
+          inputs: ["string"]  # Required inputs
+          outputs: ["string"]  # Expected outputs
+          validation: "string"  # How to validate this step
+
+        - step_number: 2
+          action: "string"
+          inputs: ["string"]
+          outputs: ["string"]
+          validation: "string"
+
+      # Conditional logic
+      conditionals:
+        - condition: "string"  # If condition
+          then_step: 3
+          else_step: 5
+
+      # Error handling
+      error_handling:
+        - error_type: "string"
+          recovery_action: "string"
+
+    # Performance metrics
+    metrics:
+      times_used: 0
+      successful_uses: 0
+      failed_uses: 0
+      success_rate: 0.0  # Percentage
+      avg_execution_time_seconds: 0.0
+      last_used_date: "datetime"
+
+    # Learning data
+    learning:
+      discovered_from_task: "string"  # Task ID where learned
+      confirmed_after_uses: 3  # Number of successes before confirmed
+      improvements:
+        - date: "datetime"
+          change: "string"
+          reason: "string"
+
+    # Metadata
+    created_date: "datetime"
+    status: "active"  # active, deprecated, archived
+
+# ============================================================================
+# TEMPLATES LIBRARY
+# ============================================================================
+templates:
+  # Reusable output templates
+  template_id_example:
+    template_id: "string"
+    name: "string"
+    description: "string"
+    content: "string"  # Template content with {placeholders}
+    placeholders:
+      - name: "string"
+        type: "string"  # string, number, list
+        required: true
+        default: "string"
+
+    # Usage tracking
+    times_used: 0
+    success_rate: 0.0
+    user_rating_avg: 0.0
+
+    created_date: "datetime"
+
+# ============================================================================
+# DECISION RULES
+# ============================================================================
+decision_rules:
+  # If-then rules learned from experience
+  rule_id_example:
+    rule_id: "string"
+    condition: "string"  # When to apply this rule
+    action: "string"     # What to do
+    confidence: 0.0      # Confidence in this rule (0-100%)
+    evidence:
+      - task_id: "string"
+        outcome: "success"
+    counter_evidence:
+      - task_id: "string"
+        outcome: "failure"
+    times_applied: 0
+    success_when_applied: 0
+    created_date: "datetime"
+
+# ============================================================================
+# HEURISTICS
+# ============================================================================
+heuristics:
+  # Rules of thumb learned from experience
+  heuristic_id_example:
+    heuristic_id: "string"
+    statement: "string"  # The rule of thumb
+    domain: "string"
+    reliability: 0.0     # How reliable (0-100%)
+    exceptions:
+      - "string"
+    supporting_tasks:
+      - "string"
+    created_date: "datetime"
+
+# ============================================================================
+# WORKFLOWS
+# ============================================================================
+workflows:
+  # Complex multi-step workflows
+  workflow_id_example:
+    workflow_id: "string"
+    name: "string"
+    description: "string"
+    trigger: "string"  # What triggers this workflow
+
+    stages:
+      - stage_number: 1
+        stage_name: "string"
+        skills_used:
+          - "skill_id"
+        expected_duration_seconds: 0
+        success_criteria: "string"
+
+      - stage_number: 2
+        stage_name: "string"
+        skills_used:
+          - "skill_id"
+        expected_duration_seconds: 0
+        success_criteria: "string"
+
+    # Workflow metrics
+    times_completed: 0
+    avg_total_time_seconds: 0.0
+    success_rate: 0.0
+
+    created_date: "datetime"
+
+# ============================================================================
+# EXAMPLE DATA
+# ============================================================================
+
+# Example skill: Discovery Call Question Generation
+example_skill:
+  skill_id: "discovery-call-question-generation"
+  name: "Discovery Call Question Generation"
+  description: "Generate 10 primary questions with 2 follow-ups each for discovery calls"
+  category: "discovery-call"
+
+  procedure:
+    steps:
+      - step_number: 1
+        action: "Analyze client context (industry, stage, challenges)"
+        inputs: ["client_name", "industry", "business_stage"]
+        outputs: ["context_analysis"]
+        validation: "Context includes industry and stage"
+
+      - step_number: 2
+        action: "Apply 5-stage business model for qualification"
+        inputs: ["context_analysis"]
+        outputs: ["stage_questions"]
+        validation: "Questions map to business stage"
+
+      - step_number: 3
+        action: "Apply human psychology influence patterns (if sales context)"
+        inputs: ["stage_questions"]
+        outputs: ["refined_questions"]
+        validation: "Questions use elicitation and tactical empathy"
+
+      - step_number: 4
+        action: "Generate 2 follow-ups per primary question"
+        inputs: ["refined_questions"]
+        outputs: ["questions_with_followups"]
+        validation: "Each primary has exactly 2 follow-ups"
+
+      - step_number: 5
+        action: "Add ROI calculator section"
+        inputs: ["questions_with_followups"]
+        outputs: ["complete_prep"]
+        validation: "ROI calculator included"
+
+  metrics:
+    times_used: 15
+    successful_uses: 14
+    failed_uses: 1
+    success_rate: 93.3
+    avg_execution_time_seconds: 245
+    last_used_date: "2025-10-24T10:30:00Z"
+
+  learning:
+    discovered_from_task: "task_001_daren_discovery"
+    confirmed_after_uses: 3
+    improvements:
+      - date: "2025-10-24T15:00:00Z"
+        change: "Added ROI calculator as standard step"
+        reason: "14/14 positive feedback when included"
+
+  created_date: "2025-10-24T08:00:00Z"
+  status: "active"

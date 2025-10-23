@@ -1,0 +1,414 @@
+#!/usr/bin/env python3
+"""
+ARES Agent Lifecycle Management System - CLI
+Version: 3.5.0
+Created: 2025-10-24
+
+CLI for managing the complete agent lifecycle:
+- Evaluate: Should we create an agent?
+- Create: Generate new agent from template
+- Execute: Run agent with memory context
+- Evolve: Improve agent based on performance
+- Curate: Audit and optimize agent portfolio
+"""
+
+import sys
+import json
+import argparse
+from pathlib import Path
+from typing import Optional, Dict, List
+from datetime import datetime
+
+# Fix UTF-8 encoding for Windows console
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
+# Version
+VERSION = "3.5.0"
+
+
+class AresAgentLifecycle:
+    """
+    Main class for ARES Agent Lifecycle Management System
+    """
+
+    def __init__(self, config_path: Optional[Path] = None):
+        """
+        Initialize the lifecycle management system
+
+        Args:
+            config_path: Path to agent_lifecycle.yaml
+        """
+        self.config_path = config_path or PROJECT_ROOT / "config" / "agent_lifecycle.yaml"
+        self.agents_dir = PROJECT_ROOT / "agents"
+        self.templates_dir = PROJECT_ROOT / "templates"
+        self.config = self._load_config()
+
+    def _load_config(self) -> Dict:
+        """Load configuration from YAML file"""
+        # TODO: Implement YAML loading
+        # For now, return empty dict
+        return {}
+
+    # ========================================================================
+    # PHASE 0: Foundation (Complete)
+    # ========================================================================
+
+    def version_info(self):
+        """Display version information"""
+        print("=" * 70)
+        print("ARES AGENT LIFECYCLE MANAGEMENT SYSTEM")
+        print("=" * 70)
+        print()
+        print(f"Version:     {VERSION}")
+        print(f"Component:   Agent Lifecycle Layer")
+        print(f"Status:      Phase 0 Complete - Foundation Ready")
+        print()
+        print("Capabilities:")
+        print("  ✓ Configuration system")
+        print("  ✓ Agent templates")
+        print("  ✓ Memory schemas (episodic, semantic, procedural)")
+        print("  ✓ Performance tracking schemas")
+        print()
+        print("Next Phase: Agent Evaluator + Creator")
+        print("=" * 70)
+
+    def list_agents(self, status: Optional[str] = None):
+        """
+        List all agents
+
+        Args:
+            status: Filter by status (active, deprecated, archived)
+        """
+        print("=" * 70)
+        print("ARES AGENTS")
+        print("=" * 70)
+        print()
+
+        if not self.agents_dir.exists():
+            print("No agents directory found.")
+            print(f"Expected: {self.agents_dir}")
+            return
+
+        agent_dirs = [d for d in self.agents_dir.iterdir() if d.is_dir()]
+
+        if not agent_dirs:
+            print("No agents created yet.")
+            print()
+            print("To create your first agent:")
+            print(f"  python {Path(__file__).name} evaluate \"Your task description\"")
+            return
+
+        # TODO: Implement agent listing from config files
+        print(f"Found {len(agent_dirs)} agent(s)")
+        for agent_dir in agent_dirs:
+            print(f"  - {agent_dir.name}")
+
+        print("=" * 70)
+
+    # ========================================================================
+    # PHASE 1: Agent Evaluator + Creator (TODO)
+    # ========================================================================
+
+    def evaluate(self, task_description: str):
+        """
+        Evaluate if a new agent should be created for this task
+
+        Args:
+            task_description: Description of the task
+        """
+        print("=" * 70)
+        print("AGENT EVALUATION")
+        print("=" * 70)
+        print()
+        print(f"Task: {task_description}")
+        print()
+        print("Status: NOT IMPLEMENTED YET")
+        print()
+        print("Phase 1 will implement:")
+        print("  - Task analysis (domain, complexity, frequency)")
+        print("  - Capability gap detection")
+        print("  - ROI calculation")
+        print("  - ARES decision engine (≥80% confidence)")
+        print("=" * 70)
+
+    def create(
+        self,
+        agent_id: str,
+        domains: List[str],
+        complexity: List[str],
+        description: str
+    ):
+        """
+        Create a new agent
+
+        Args:
+            agent_id: Unique agent identifier
+            domains: List of domains
+            complexity: List of complexity levels
+            description: Agent description
+        """
+        print("=" * 70)
+        print("AGENT CREATION")
+        print("=" * 70)
+        print()
+        print(f"Agent ID: {agent_id}")
+        print(f"Domains: {', '.join(domains)}")
+        print(f"Complexity: {', '.join(complexity)}")
+        print()
+        print("Status: NOT IMPLEMENTED YET")
+        print()
+        print("Phase 1 will implement:")
+        print("  - Pattern extraction from proven-patterns.md")
+        print("  - Prompt generation (ARES-compliant)")
+        print("  - Directory structure creation")
+        print("  - Memory initialization")
+        print("  - Registry registration")
+        print("=" * 70)
+
+    # ========================================================================
+    # PHASE 2: Agent Executor + Memory (TODO)
+    # ========================================================================
+
+    def execute(self, agent_id: str, task: str):
+        """
+        Execute an agent
+
+        Args:
+            agent_id: Agent to execute
+            task: Task description
+        """
+        print("=" * 70)
+        print("AGENT EXECUTION")
+        print("=" * 70)
+        print()
+        print(f"Agent: {agent_id}")
+        print(f"Task: {task}")
+        print()
+        print("Status: NOT IMPLEMENTED YET")
+        print()
+        print("Phase 2 will implement:")
+        print("  - Memory loading (episodic, semantic, procedural)")
+        print("  - Agent prompt loading")
+        print("  - Execution via Task tool")
+        print("  - Memory persistence")
+        print("=" * 70)
+
+    # ========================================================================
+    # PHASE 3: Reflection + Performance Tracking (TODO)
+    # ========================================================================
+
+    def stats(self, agent_id: str):
+        """
+        Show agent performance statistics
+
+        Args:
+            agent_id: Agent to show stats for
+        """
+        print("=" * 70)
+        print(f"AGENT STATS: {agent_id}")
+        print("=" * 70)
+        print()
+        print("Status: NOT IMPLEMENTED YET")
+        print()
+        print("Phase 3 will implement:")
+        print("  - Performance metrics display")
+        print("  - Pattern effectiveness analysis")
+        print("  - Reflection quality metrics")
+        print("  - Learning rate visualization")
+        print("=" * 70)
+
+    # ========================================================================
+    # PHASE 4: Agent Evolver (TODO)
+    # ========================================================================
+
+    def evolve(self, agent_id: str):
+        """
+        Evolve an agent based on performance data
+
+        Args:
+            agent_id: Agent to evolve
+        """
+        print("=" * 70)
+        print(f"AGENT EVOLUTION: {agent_id}")
+        print("=" * 70)
+        print()
+        print("Status: NOT IMPLEMENTED YET")
+        print()
+        print("Phase 4 will implement:")
+        print("  - Performance analysis")
+        print("  - Learning extraction")
+        print("  - Hypothesis generation")
+        print("  - Prompt updating")
+        print("  - Version control (semantic versioning)")
+        print("=" * 70)
+
+    # ========================================================================
+    # PHASE 5: Agent Curator (TODO)
+    # ========================================================================
+
+    def curate(self, report: bool = False):
+        """
+        Curate agent portfolio
+
+        Args:
+            report: Generate report only (no changes)
+        """
+        print("=" * 70)
+        print("AGENT PORTFOLIO CURATION")
+        print("=" * 70)
+        print()
+        print("Status: NOT IMPLEMENTED YET")
+        print()
+        print("Phase 5 will implement:")
+        print("  - Portfolio analysis")
+        print("  - Redundancy detection")
+        print("  - Performance auditing")
+        print("  - State-of-the-art updates")
+        print("  - Human-in-the-loop recommendations")
+        print("=" * 70)
+
+
+def main():
+    """Main CLI entry point"""
+    parser = argparse.ArgumentParser(
+        description="ARES Agent Lifecycle Management System v3.5",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Show version info
+  python ares_agent_lifecycle.py version
+
+  # List all agents
+  python ares_agent_lifecycle.py list
+
+  # Evaluate if agent needed
+  python ares_agent_lifecycle.py evaluate "Prepare discovery call for client"
+
+  # Create new agent
+  python ares_agent_lifecycle.py create discovery-call-specialist \\
+      --domains "sales,consulting" \\
+      --complexity "moderate" \\
+      --description "Specialized agent for discovery call preparation"
+
+  # Execute agent
+  python ares_agent_lifecycle.py execute discovery-call-specialist \\
+      --task "Prepare discovery call for Daren (HVAC)"
+
+  # Show agent stats
+  python ares_agent_lifecycle.py stats discovery-call-specialist
+
+  # Evolve agent
+  python ares_agent_lifecycle.py evolve discovery-call-specialist
+
+  # Curate portfolio
+  python ares_agent_lifecycle.py curate --report
+
+Current Status:
+  Phase 0: ✓ Complete (Foundation)
+  Phase 1: ⏳ Next (Evaluator + Creator)
+  Phase 2: ⏳ Pending (Executor + Memory)
+  Phase 3: ⏳ Pending (Reflection + Tracking)
+  Phase 4: ⏳ Pending (Evolution)
+  Phase 5: ⏳ Pending (Curation)
+        """
+    )
+
+    subparsers = parser.add_subparsers(dest='command', help='Command to execute')
+
+    # Version command
+    subparsers.add_parser('version', help='Show version information')
+
+    # List command
+    list_parser = subparsers.add_parser('list', help='List all agents')
+    list_parser.add_argument(
+        '--status',
+        choices=['active', 'deprecated', 'archived'],
+        help='Filter by status'
+    )
+
+    # Evaluate command (Phase 1)
+    evaluate_parser = subparsers.add_parser(
+        'evaluate',
+        help='Evaluate if new agent needed for task'
+    )
+    evaluate_parser.add_argument('task', help='Task description')
+
+    # Create command (Phase 1)
+    create_parser = subparsers.add_parser('create', help='Create new agent')
+    create_parser.add_argument('agent_id', help='Unique agent identifier')
+    create_parser.add_argument(
+        '--domains',
+        required=True,
+        help='Comma-separated domains'
+    )
+    create_parser.add_argument(
+        '--complexity',
+        required=True,
+        help='Comma-separated complexity levels'
+    )
+    create_parser.add_argument(
+        '--description',
+        required=True,
+        help='Agent description'
+    )
+
+    # Execute command (Phase 2)
+    execute_parser = subparsers.add_parser('execute', help='Execute agent')
+    execute_parser.add_argument('agent_id', help='Agent to execute')
+    execute_parser.add_argument('--task', required=True, help='Task description')
+
+    # Stats command (Phase 3)
+    stats_parser = subparsers.add_parser('stats', help='Show agent statistics')
+    stats_parser.add_argument('agent_id', help='Agent ID')
+
+    # Evolve command (Phase 4)
+    evolve_parser = subparsers.add_parser('evolve', help='Evolve agent')
+    evolve_parser.add_argument('agent_id', help='Agent to evolve')
+
+    # Curate command (Phase 5)
+    curate_parser = subparsers.add_parser('curate', help='Curate agent portfolio')
+    curate_parser.add_argument(
+        '--report',
+        action='store_true',
+        help='Generate report only (no changes)'
+    )
+
+    args = parser.parse_args()
+
+    if not args.command:
+        parser.print_help()
+        sys.exit(1)
+
+    # Initialize system
+    system = AresAgentLifecycle()
+
+    # Execute command
+    if args.command == 'version':
+        system.version_info()
+    elif args.command == 'list':
+        system.list_agents(args.status if hasattr(args, 'status') else None)
+    elif args.command == 'evaluate':
+        system.evaluate(args.task)
+    elif args.command == 'create':
+        domains = [d.strip() for d in args.domains.split(',')]
+        complexity = [c.strip() for c in args.complexity.split(',')]
+        system.create(args.agent_id, domains, complexity, args.description)
+    elif args.command == 'execute':
+        system.execute(args.agent_id, args.task)
+    elif args.command == 'stats':
+        system.stats(args.agent_id)
+    elif args.command == 'evolve':
+        system.evolve(args.agent_id)
+    elif args.command == 'curate':
+        system.curate(args.report if hasattr(args, 'report') else False)
+
+
+if __name__ == "__main__":
+    main()
