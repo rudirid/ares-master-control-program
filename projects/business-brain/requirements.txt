@@ -1,0 +1,40 @@
+# Business Brain - AI Workflow Discovery System
+# Core dependencies
+
+# Web Framework
+fastapi==0.109.0
+uvicorn==0.27.0
+pydantic==2.5.3
+
+# AI & LLM
+anthropic==0.18.1
+langchain==0.1.6
+langchain-anthropic==0.1.4
+
+# Email & Calendar Integration
+google-auth==2.27.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+google-api-python-client==2.116.0
+exchangelib==5.2.0
+
+# Data Processing
+pandas==2.2.0
+numpy==1.26.3
+python-dateutil==2.8.2
+
+# Database
+aiosqlite==0.19.0
+
+# Utilities
+python-dotenv==1.0.1
+pyyaml==6.0.1
+requests==2.31.0
+beautifulsoup4==4.12.3
+
+# PDF & Document Processing
+pypdf2==3.0.1
+python-docx==1.1.0
+
+# Logging
+loguru==0.7.2

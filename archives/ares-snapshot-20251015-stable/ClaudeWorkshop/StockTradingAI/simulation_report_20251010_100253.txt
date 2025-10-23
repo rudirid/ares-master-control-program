@@ -1,0 +1,21 @@
+================================================================================
+ASX STOCK TRADING AI - 300 SAMPLE PROOF OF CONCEPT
+================================================================================
+
+Generated: 2025-10-10 10:02:53
+Initial Capital: $10,000.00
+Final Capital: $10,000.00
+Total Return: 0.00%
+
+FULL EVENT LOG:
+--------------------------------------------------------------------------------
+1. [2025-10-09] NEWS - BHP: CFMEU ‘turf war’ shuts down Melbourne’s West Gate Tunnel
+2. [2025-10-09] NEWS - BHP: Crown in talks with billionaire family for prestigious golf course sale
+3. [2025-10-09] NEWS - BHP: Ray Dalio says there’s a big change you should make to your portfolio
+4. [2025-10-09] NEWS - BHP: ANZ’s Matos hires McKinsey consultant to lead retail bank
+5. [2025-10-09] NEWS - BHP: NDIS rejects $86m in claims amid fraud crackdown
+6. [2025-10-09] NEWS - BHP: PM steps in as Treasury models changes to $3m superannuation tax
+
+
+COMPLETED TRADES:
+--------------------------------------------------------------------------------

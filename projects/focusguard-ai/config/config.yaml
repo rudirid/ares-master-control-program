@@ -1,0 +1,73 @@
+# FocusGuard AI Configuration
+
+app:
+  name: "FocusGuard AI"
+  version: "0.1.0"
+  environment: "development"  # development, staging, production
+
+server:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true  # Auto-reload in development
+
+database:
+  type: "sqlite"
+  path: "database/focusguard.db"
+  # For production, consider PostgreSQL:
+  # url: "postgresql://user:password@localhost/focusguard"
+
+twilio:
+  # Set these in secrets.env
+  account_sid: "${TWILIO_ACCOUNT_SID}"
+  auth_token: "${TWILIO_AUTH_TOKEN}"
+  phone_number: "${TWILIO_PHONE_NUMBER}"
+
+voice_ai:
+  # Choose one: bland, ison24, synthflow, retell
+  provider: "bland"  # Start with Bland.ai ($0.04/min)
+
+  bland:
+    api_key: "${BLAND_API_KEY}"
+    base_url: "https://api.bland.ai/v1"
+
+  ison24:
+    api_key: "${ISON24_API_KEY}"
+    base_url: "https://api.ison24.com/v1"
+
+notifications:
+  sms:
+    enabled: true
+    provider: "twilio"  # Uses Twilio for SMS
+
+  whatsapp:
+    enabled: false  # Future: Use existing WhatsApp bridge
+    # bridge_url: "http://localhost:5000"
+
+pricing:
+  basic:
+    monthly_fee: 99
+    included_calls: 100
+    included_minutes: 300
+
+  pro:
+    monthly_fee: 199
+    included_calls: 300
+    included_minutes: 900
+
+  premium:
+    monthly_fee: 399
+    included_calls: -1  # Unlimited
+    included_minutes: -1  # Unlimited
+
+  founding_customer:
+    monthly_fee: 79
+    tier: "pro"  # Founding customers get Pro features at Basic price
+
+features:
+  call_recording: true
+  transcription: true
+  sms_notifications: true
+  calendar_booking: false  # Week 3+
+  crm_integration: false  # Week 4+
+  custom_greetings: true
+  business_hours_routing: false  # Week 3+

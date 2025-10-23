@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASX Trading Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            color: #667eea;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .chart-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .chart-title {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .ticker-selector {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px 15px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            background: white;
+            color: #333;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
+
+        .table-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f8f9ff;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .error {
+            background: #ff6b6b;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .positive {
+            color: #51cf66;
+            font-weight: bold;
+        }
+
+        .negative {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .last-updated {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ASX Trading Dashboard</h1>
+            <p class="subtitle">Real-time insights from your stock data collection system</p>
+            <p class="last-updated" id="lastUpdated">Loading...</p>
+        </header>
+
+        <div id="loadingMessage" class="loading">Loading data...</div>
+        <div id="errorMessage" style="display: none;"></div>
+
+        <div id="dashboard" style="display: none;">
+            <!-- Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Stocks</div>
+                    <div class="stat-value" id="totalStocks">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Price Records</div>
+                    <div class="stat-value" id="priceRecords">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">News Articles</div>
+                    <div class="stat-value" id="newsArticles">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Announcements</div>
+                    <div class="stat-value" id="announcements">-</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="chart-grid">
+                <div class="chart-card" style="grid-column: 1 / -1;">
+                    <h3 class="chart-title">Stock Price History</h3>
+                    <div class="ticker-selector">
+                        <select id="tickerSelect" onchange="updateChart()">
+                            <option value="">Select a stock...</option>
+                        </select>
+                    </div>
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent News -->
+            <div class="table-card">
+                <h3 class="chart-title">Recent News Articles</h3>
+                <table id="newsTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Ticker</th>
+                            <th>Source</th>
+                            <th>Title</th>
+                        </tr>
+                    </thead>
+                    <tbody id="newsTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Top Movers -->
+            <div class="table-card">
+                <h3 class="chart-title">Recent Stock Performance</h3>
+                <table id="performanceTable">
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>Latest Price</th>
+                            <th>High (7d)</th>
+                            <th>Low (7d)</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="performanceTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let priceChart = null;
+        let allData = {};
+
+        async function loadData() {
+            try {
+                const response = await fetch('http://localhost:8000/api/data');
+                if (!response.ok) throw new Error('Failed to fetch data');
+
+                allData = await response.json();
+
+                document.getElementById('loadingMessage').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+
+                updateStats();
+                populateTickerSelect();
+                updateNewsTable();
+                updatePerformanceTable();
+                updateLastUpdated();
+            } catch (error) {
+                document.getElementById('loadingMessage').style.display = 'none';
+                const errorDiv = document.getElementById('errorMessage');
+                errorDiv.className = 'error';
+                errorDiv.textContent = 'Error: ' + error.message + '. Make sure to run: python dashboard_server.py';
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        function updateStats() {
+            document.getElementById('totalStocks').textContent = allData.stats.total_stocks;
+            document.getElementById('priceRecords').textContent = allData.stats.price_records.toLocaleString();
+            document.getElementById('newsArticles').textContent = allData.stats.news_articles;
+            document.getElementById('announcements').textContent = allData.stats.announcements;
+        }
+
+        function populateTickerSelect() {
+            const select = document.getElementById('tickerSelect');
+            allData.tickers.forEach(ticker => {
+                const option = document.createElement('option');
+                option.value = ticker;
+                option.textContent = ticker;
+                select.appendChild(option);
+            });
+
+            if (allData.tickers.length > 0) {
+                select.value = allData.tickers[0];
+                updateChart();
+            }
+        }
+
+        function formatDate(dateStr) {
+            // Handle YYYY-MM-DD format from database
+            const [year, month, day] = dateStr.split('-');
+            return `${day}/${month}/${year}`;
+        }
+
+        function updateChart() {
+            const ticker = document.getElementById('tickerSelect').value;
+            if (!ticker) return;
+
+            const prices = allData.stock_prices.filter(p => p.ticker === ticker);
+
+            if (priceChart) {
+                priceChart.destroy();
+            }
+
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            priceChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: prices.map(p => formatDate(p.date)),
+                    datasets: [{
+                        label: 'Close Price',
+                        data: prices.map(p => p.close),
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            },
+                            ticks: {
+                                maxTicksLimit: 10
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Price (AUD)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function formatDateTime(dateTimeStr) {
+            // Parse datetime string from database
+            if (!dateTimeStr) return 'N/A';
+
+            // Handle both "YYYY-MM-DD HH:MM:SS" and ISO format
+            const date = new Date(dateTimeStr);
+
+            // Format as DD/MM/YYYY HH:MM
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+
+            return `${day}/${month}/${year} ${hours}:${minutes}`;
+        }
+
+        function updateNewsTable() {
+            const tbody = document.getElementById('newsTableBody');
+            tbody.innerHTML = '';
+
+            allData.news.slice(0, 10).forEach(article => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${formatDateTime(article.datetime)}</td>
+                    <td><strong>${article.ticker}</strong></td>
+                    <td>${article.source}</td>
+                    <td>${article.title}</td>
+                `;
+            });
+
+            if (allData.news.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #999;">No news articles available</td></tr>';
+            }
+        }
+
+        function updatePerformanceTable() {
+            const tbody = document.getElementById('performanceTableBody');
+            tbody.innerHTML = '';
+
+            allData.performance.forEach(perf => {
+                const change = ((perf.latest - perf.week_ago) / perf.week_ago * 100).toFixed(2);
+                const changeClass = change >= 0 ? 'positive' : 'negative';
+                const changeSymbol = change >= 0 ? '+' : '';
+
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td><strong>${perf.ticker}</strong></td>
+                    <td>$${perf.latest.toFixed(2)}</td>
+                    <td>$${perf.high.toFixed(2)}</td>
+                    <td>$${perf.low.toFixed(2)}</td>
+                    <td class="${changeClass}">${changeSymbol}${change}%</td>
+                `;
+            });
+
+            if (allData.performance.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #999;">No performance data available</td></tr>';
+            }
+        }
+
+        function updateLastUpdated() {
+            const now = new Date();
+            document.getElementById('lastUpdated').textContent =
+                `Last updated: ${now.toLocaleString()}`;
+        }
+
+        // Load data on page load
+        loadData();
+
+        // Refresh data every 60 seconds
+        setInterval(loadData, 60000);
+    </script>
+</body>
+</html>

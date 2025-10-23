@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARES Master Control Program - Interactive Mind Map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #e0e0e0;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.95);
+            padding: 15px 20px;
+            border-bottom: 2px solid #00d4ff;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        #header h1 {
+            color: #00d4ff;
+            font-size: 24px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        #header .version {
+            color: #00ff88;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        #controls {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: rgba(26, 31, 58, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #00d4ff;
+            z-index: 999;
+        }
+
+        #controls button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px 12px;
+            background: #00d4ff;
+            color: #0a0e27;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        #controls button:hover {
+            background: #00ff88;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 212, 255, 0.4);
+        }
+
+        #legend {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(26, 31, 58, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #00d4ff;
+            z-index: 999;
+            max-width: 300px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        #mindmap {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .node {
+            position: absolute;
+            border-radius: 8px;
+            padding: 15px 20px;
+            cursor: move;
+            transition: all 0.3s;
+            border: 2px solid;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            min-width: 150px;
+            text-align: center;
+            user-select: none;
+        }
+
+        .node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.6);
+            z-index: 100;
+        }
+
+        .node.active {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px currentColor; }
+            50% { box-shadow: 0 0 40px currentColor; }
+        }
+
+        .node-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .node-subtitle {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .node-badge {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.3);
+            border: 1px solid #00ff88;
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-size: 9px;
+            margin-top: 5px;
+        }
+
+        /* Node types */
+        .core {
+            background: linear-gradient(135deg, #00d4ff 0%, #0080ff 100%);
+            border-color: #00d4ff;
+            color: #0a0e27;
+        }
+
+        .version {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+            border-color: #00ff88;
+            color: #0a0e27;
+        }
+
+        .component {
+            background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+            border-color: #9333ea;
+            color: #ffffff;
+        }
+
+        .integration {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-color: #f59e0b;
+            color: #0a0e27;
+        }
+
+        .protocol {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            border-color: #ec4899;
+            color: #ffffff;
+        }
+
+        .file {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            border-color: #6366f1;
+            color: #ffffff;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        line {
+            stroke-width: 2;
+            stroke-dasharray: 5, 5;
+            animation: dash 20s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+
+        .connection-strong { stroke: #00d4ff; stroke-width: 3; }
+        .connection-medium { stroke: #00ff88; }
+        .connection-weak { stroke: #9333ea; opacity: 0.6; }
+
+        #info-panel {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: rgba(26, 31, 58, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #00d4ff;
+            max-width: 350px;
+            max-height: 60vh;
+            overflow-y: auto;
+            display: none;
+            z-index: 999;
+        }
+
+        #info-panel h3 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+
+        #info-panel p {
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        #info-panel .close-btn {
+            float: right;
+            cursor: pointer;
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .stat-label {
+            color: #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>⚡ ARES Master Control Program ⚡</h1>
+        <div class="version">Interactive System Architecture Map - v2.5.0</div>
+    </div>
+
+    <div id="controls">
+        <button onclick="resetView()">🔄 Reset View</button>
+        <button onclick="toggleConnections()">🔗 Toggle Connections</button>
+        <button onclick="expandAll()">📤 Expand All</button>
+        <button onclick="collapseAll()">📥 Collapse All</button>
+    </div>
+
+    <div id="legend">
+        <h4 style="color: #00d4ff; margin-bottom: 10px;">Legend</h4>
+        <div class="legend-item">
+            <div class="legend-color" style="background: linear-gradient(135deg, #00d4ff 0%, #0080ff 100%);"></div>
+            <span>Core System</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);"></div>
+            <span>Version/Milestone</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);"></div>
+            <span>Component</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);"></div>
+            <span>Integration</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);"></div>
+            <span>Protocol</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);"></div>
+            <span>File/Document</span>
+        </div>
+    </div>
+
+    <div id="info-panel">
+        <span class="close-btn" onclick="closeInfo()">✕</span>
+        <div id="info-content"></div>
+    </div>
+
+    <div id="mindmap">
+        <svg id="connections"></svg>
+    </div>
+
+    <script>
+        // Ares Mind Map Data
+        const aresData = {
+            // Central node
+            core: {
+                id: 'ares-core',
+                title: 'ARES',
+                subtitle: 'Master Control Program',
+                type: 'core',
+                x: window.innerWidth / 2 - 100,
+                y: window.innerHeight / 2 - 50,
+                active: true,
+                info: {
+                    description: 'Autonomous AI with Internal Validation - Your coding DNA extracted and automated',
+                    stats: {
+                        'Version': 'v2.5.0',
+                        'Created': '2025-10-13',
+                        'Updated': '2025-10-15',
+                        'Status': 'Production Ready'
+                    }
+                }
+            },
+
+            // Versions
+            versions: [
+                {
+                    id: 'v21',
+                    title: 'v2.1',
+                    subtitle: 'The Internal Skeptic',
+                    type: 'version',
+                    x: 300,
+                    y: 150,
+                    info: {
+                        description: 'Core directives - Internal validation loop + "Show Your Work" protocol',
+                        stats: {
+                            'Type': 'Documentation',
+                            'Size': '21 KB',
+                            'Protocols': '8 core protocols',
+                            'Confidence': '80%+ threshold'
+                        }
+                    }
+                },
+                {
+                    id: 'v23',
+                    title: 'v2.3',
+                    subtitle: 'Stable Milestone',
+                    type: 'version',
+                    x: 300,
+                    y: 300,
+                    info: {
+                        description: 'Complete audit package + system integration snapshot',
+                        stats: {
+                            'Date': '2025-10-15',
+                            'Files': '24 files',
+                            'Backup': 'Git + Local (236 MB)',
+                            'Systems': 'All operational'
+                        }
+                    }
+                },
+                {
+                    id: 'v25',
+                    title: 'v2.5',
+                    subtitle: 'Protocol Library',
+                    type: 'version',
+                    x: 300,
+                    y: 450,
+                    active: true,
+                    info: {
+                        description: 'Python library codifying v2.1 directives - Ready for MCP integration',
+                        stats: {
+                            'Code': '1,200+ lines',
+                            'Modules': '3 core modules',
+                            'Tests': 'All passing ✓',
+                            'Status': 'MCP Ready'
+                        }
+                    }
+                }
+            ],
+
+            // Core Components
+            components: [
+                {
+                    id: 'validation',
+                    title: 'Validation Engine',
+                    subtitle: '5-Step Protocol',
+                    type: 'component',
+                    x: 600,
+                    y: 200,
+                    info: {
+                        description: 'Internal validation loop: Challenge → Simplify → Validate → Explain → Confidence',
+                        stats: {
+                            'Steps': '5 validation steps',
+                            'File': 'core/validation.py',
+                            'Lines': '297 lines',
+                            'Confidence Levels': 'HIGH/MEDIUM/LOW'
+                        }
+                    }
+                },
+                {
+                    id: 'output',
+                    title: 'Output Formatter',
+                    subtitle: 'Show Your Work',
+                    type: 'component',
+                    x: 600,
+                    y: 350,
+                    info: {
+                        description: 'Transparent reasoning format - Markdown/JSON output with evidence tracking',
+                        stats: {
+                            'File': 'core/output.py',
+                            'Lines': '262 lines',
+                            'Formats': 'Markdown + JSON',
+                            'Features': 'Evidence + Alternatives'
+                        }
+                    }
+                },
+                {
+                    id: 'patterns',
+                    title: 'Pattern Matcher',
+                    subtitle: '6 Proven Patterns',
+                    type: 'component',
+                    x: 600,
+                    y: 500,
+                    info: {
+                        description: 'Pattern library with matching engine - 5 Tier 1, 1 Tier 2',
+                        stats: {
+                            'File': 'core/patterns.py',
+                            'Lines': '275 lines',
+                            'Tier 1': '5 patterns (95%+ success)',
+                            'Tier 2': '1 pattern (60-80%)'
+                        }
+                    }
+                }
+            ],
+
+            // Integrations
+            integrations: [
+                {
+                    id: 'whatsapp',
+                    title: 'WhatsApp Bridge',
+                    subtitle: 'v1.0 Cloud API',
+                    type: 'integration',
+                    x: 900,
+                    y: 150,
+                    info: {
+                        description: 'Mobile task processing - Meta Cloud API webhook + daemon auto-processor',
+                        stats: {
+                            'Port': '5000',
+                            'Components': '4 services',
+                            'Status': 'Ready (needs launch)',
+                            'Interval': '30s polling'
+                        }
+                    }
+                },
+                {
+                    id: 'security',
+                    title: 'Security Framework',
+                    subtitle: 'v1.0 Enterprise',
+                    type: 'integration',
+                    x: 900,
+                    y: 300,
+                    info: {
+                        description: 'Master cybersecurity framework - Critical vulnerability audits + monitoring',
+                        stats: {
+                            'Framework': 'Enterprise-grade',
+                            'Audits': 'Critical vulnerabilities',
+                            'Monitoring': 'Auto-security',
+                            'Tests': 'Validation suite'
+                        }
+                    }
+                },
+                {
+                    id: 'mcp',
+                    title: 'MCP Integration',
+                    subtitle: 'Analysis Complete',
+                    type: 'integration',
+                    x: 900,
+                    y: 450,
+                    info: {
+                        description: 'Model Context Protocol - 50+ page analysis + 500-line prototype ready',
+                        stats: {
+                            'Analysis': '50+ pages',
+                            'Prototype': '500 lines',
+                            'Status': 'Ready for implementation',
+                            'Est. Time': '13-19 hours'
+                        }
+                    }
+                },
+                {
+                    id: 'xero',
+                    title: 'Xero MCP',
+                    subtitle: 'Official Server',
+                    type: 'integration',
+                    x: 900,
+                    y: 600,
+                    info: {
+                        description: 'Xero accounting integration - Official @xeroapi/xero-mcp-server installed',
+                        stats: {
+                            'Package': '@xeroapi/xero-mcp-server',
+                            'Version': 'v0.0.12',
+                            'Accounts': '102 retrieved',
+                            'Auth': 'OAuth working'
+                        }
+                    }
+                }
+            ],
+
+            // Protocols
+            protocols: [
+                {
+                    id: 'truth',
+                    title: 'Truth Protocol',
+                    subtitle: 'Zero Hallucination',
+                    type: 'protocol',
+                    x: 1200,
+                    y: 200,
+                    info: {
+                        description: 'Never hallucinate - Always verify - Evidence required for all claims',
+                        stats: {
+                            'Rule': 'Verify before claim',
+                            'Standard': '100% verified',
+                            'Check': 'Logs/docs FIRST',
+                            'Severity': 'CRITICAL'
+                        }
+                    }
+                },
+                {
+                    id: 'autonomy',
+                    title: 'Autonomy Protocol',
+                    subtitle: 'Confidence-Based',
+                    type: 'protocol',
+                    x: 1200,
+                    y: 350,
+                    info: {
+                        description: 'Execute at ≥80% confidence - Caveats at 50-79% - Escalate at <50%',
+                        stats: {
+                            'HIGH': '≥80% - Execute',
+                            'MEDIUM': '50-79% - Proceed',
+                            'LOW': '<50% - Escalate',
+                            'Default': 'Autonomous'
+                        }
+                    }
+                },
+                {
+                    id: 'circuit-breaker',
+                    title: 'Circuit Breaker',
+                    subtitle: 'Safety System',
+                    type: 'protocol',
+                    x: 1200,
+                    y: 500,
+                    info: {
+                        description: 'Max 3 retries - Auto-revert on failures - Scope divergence detection',
+                        stats: {
+                            'Max Retries': '3 attempts',
+                            'Auto-revert': 'On test failure',
+                            'Scope Check': 'Divergence alert',
+                            'Safety': 'Multi-layer'
+                        }
+                    }
+                }
+            ],
+
+            // Files
+            files: [
+                {
+                    id: 'proven-patterns',
+                    title: 'proven-patterns.md',
+                    subtitle: '15 KB, 20+ patterns',
+                    type: 'file',
+                    x: 150,
+                    y: 600,
+                    info: {
+                        description: 'Your coding DNA - Architectural patterns extracted from 200+ files across 4 projects',
+                        stats: {
+                            'Size': '15 KB',
+                            'Patterns': '20+ patterns',
+                            'Tiers': 'Tier 1/2/3',
+                            'Source': '4 projects analyzed'
+                        }
+                    }
+                },
+                {
+                    id: 'tech-matrix',
+                    title: 'tech-success-matrix.md',
+                    subtitle: '17 KB, Metrics',
+                    type: 'file',
+                    x: 350,
+                    y: 700,
+                    info: {
+                        description: 'What works and what doesn\'t - Success rates with concrete metrics',
+                        stats: {
+                            'Size': '17 KB',
+                            'Winners': 'Python 95%, SQLite 100%',
+                            'Mixed': 'TA 40%, Sentiment 37%',
+                            'Type': 'Evidence-based'
+                        }
+                    }
+                },
+                {
+                    id: 'decision-causality',
+                    title: 'decision-causality.md',
+                    subtitle: '16 KB, Decisions',
+                    type: 'file',
+                    x: 550,
+                    y: 700,
+                    info: {
+                        description: 'Why you made each choice - Technical decision history with reasoning',
+                        stats: {
+                            'Size': '16 KB',
+                            'Type': 'Decision log',
+                            'Coverage': 'Stack + Architecture',
+                            'Purpose': 'Context preservation'
+                        }
+                    }
+                },
+                {
+                    id: 'config',
+                    title: 'config/ares.yaml',
+                    subtitle: '72 lines, Settings',
+                    type: 'file',
+                    x: 750,
+                    y: 700,
+                    info: {
+                        description: 'Centralized configuration - Protocols, thresholds, user preferences',
+                        stats: {
+                            'Lines': '72 lines',
+                            'Sections': '8 config sections',
+                            'Threshold': '80% confidence',
+                            'Preferences': 'Python + Windows'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // Connections data
+        const connections = [
+            // Core to versions
+            { from: 'ares-core', to: 'v21', strength: 'strong' },
+            { from: 'ares-core', to: 'v23', strength: 'strong' },
+            { from: 'ares-core', to: 'v25', strength: 'strong' },
+
+            // Versions evolution
+            { from: 'v21', to: 'v23', strength: 'medium' },
+            { from: 'v23', to: 'v25', strength: 'medium' },
+
+            // v2.5 to components
+            { from: 'v25', to: 'validation', strength: 'strong' },
+            { from: 'v25', to: 'output', strength: 'strong' },
+            { from: 'v25', to: 'patterns', strength: 'strong' },
+
+            // Components to integrations
+            { from: 'validation', to: 'whatsapp', strength: 'medium' },
+            { from: 'validation', to: 'security', strength: 'medium' },
+            { from: 'validation', to: 'mcp', strength: 'strong' },
+
+            // MCP connections
+            { from: 'mcp', to: 'xero', strength: 'medium' },
+
+            // Protocols
+            { from: 'validation', to: 'truth', strength: 'strong' },
+            { from: 'validation', to: 'autonomy', strength: 'strong' },
+            { from: 'validation', to: 'circuit-breaker', strength: 'strong' },
+
+            // Files to core
+            { from: 'proven-patterns', to: 'ares-core', strength: 'strong' },
+            { from: 'tech-matrix', to: 'ares-core', strength: 'strong' },
+            { from: 'decision-causality', to: 'ares-core', strength: 'strong' },
+            { from: 'config', to: 'v25', strength: 'strong' },
+
+            // Patterns to pattern matcher
+            { from: 'proven-patterns', to: 'patterns', strength: 'strong' },
+            { from: 'tech-matrix', to: 'patterns', strength: 'medium' }
+        ];
+
+        // Initialize
+        let nodes = [];
+        let showConnections = true;
+        let draggedNode = null;
+
+        function init() {
+            createNodes();
+            drawConnections();
+            setupDragging();
+        }
+
+        function createNodes() {
+            const container = document.getElementById('mindmap');
+
+            // Create all nodes
+            const allNodes = [
+                aresData.core,
+                ...aresData.versions,
+                ...aresData.components,
+                ...aresData.integrations,
+                ...aresData.protocols,
+                ...aresData.files
+            ];
+
+            allNodes.forEach(nodeData => {
+                const node = document.createElement('div');
+                node.className = `node ${nodeData.type}${nodeData.active ? ' active' : ''}`;
+                node.id = nodeData.id;
+                node.style.left = nodeData.x + 'px';
+                node.style.top = nodeData.y + 'px';
+
+                node.innerHTML = `
+                    <div class="node-title">${nodeData.title}</div>
+                    <div class="node-subtitle">${nodeData.subtitle}</div>
+                    ${nodeData.active ? '<div class="node-badge">ACTIVE</div>' : ''}
+                `;
+
+                node.onclick = () => showInfo(nodeData);
+                container.appendChild(node);
+                nodes.push({ element: node, data: nodeData });
+            });
+        }
+
+        function drawConnections() {
+            const svg = document.getElementById('connections');
+            svg.innerHTML = '';
+
+            if (!showConnections) return;
+
+            connections.forEach(conn => {
+                const fromNode = document.getElementById(conn.from);
+                const toNode = document.getElementById(conn.to);
+
+                if (!fromNode || !toNode) return;
+
+                const fromRect = fromNode.getBoundingClientRect();
+                const toRect = toNode.getBoundingClientRect();
+
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', fromRect.left + fromRect.width / 2);
+                line.setAttribute('y1', fromRect.top + fromRect.height / 2);
+                line.setAttribute('x2', toRect.left + toRect.width / 2);
+                line.setAttribute('y2', toRect.top + toRect.height / 2);
+                line.className = `connection-${conn.strength}`;
+
+                svg.appendChild(line);
+            });
+        }
+
+        function showInfo(nodeData) {
+            const panel = document.getElementById('info-panel');
+            const content = document.getElementById('info-content');
+
+            let html = `<h3>${nodeData.title}</h3>`;
+            html += `<p>${nodeData.info.description}</p>`;
+            html += `<div style="margin-top: 15px;">`;
+
+            for (const [key, value] of Object.entries(nodeData.info.stats)) {
+                html += `
+                    <div class="stat">
+                        <span class="stat-label">${key}:</span>
+                        <span>${value}</span>
+                    </div>
+                `;
+            }
+
+            html += `</div>`;
+            content.innerHTML = html;
+            panel.style.display = 'block';
+        }
+
+        function closeInfo() {
+            document.getElementById('info-panel').style.display = 'none';
+        }
+
+        function setupDragging() {
+            let isDragging = false;
+            let currentNode = null;
+            let offsetX = 0;
+            let offsetY = 0;
+
+            document.querySelectorAll('.node').forEach(node => {
+                node.addEventListener('mousedown', (e) => {
+                    if (e.target.closest('.node-title, .node-subtitle')) {
+                        isDragging = true;
+                        currentNode = node;
+                        offsetX = e.clientX - node.offsetLeft;
+                        offsetY = e.clientY - node.offsetTop;
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && currentNode) {
+                    currentNode.style.left = (e.clientX - offsetX) + 'px';
+                    currentNode.style.top = (e.clientY - offsetY) + 'px';
+                    drawConnections();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                currentNode = null;
+            });
+        }
+
+        function resetView() {
+            nodes.forEach(node => {
+                node.element.style.left = node.data.x + 'px';
+                node.element.style.top = node.data.y + 'px';
+            });
+            drawConnections();
+        }
+
+        function toggleConnections() {
+            showConnections = !showConnections;
+            drawConnections();
+        }
+
+        function expandAll() {
+            // Spread nodes out radially
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const radius = 400;
+
+            nodes.forEach((node, index) => {
+                if (node.data.id === 'ares-core') return;
+
+                const angle = (index / nodes.length) * 2 * Math.PI;
+                const x = centerX + radius * Math.cos(angle) - 75;
+                const y = centerY + radius * Math.sin(angle) - 50;
+
+                node.element.style.left = x + 'px';
+                node.element.style.top = y + 'px';
+            });
+
+            drawConnections();
+        }
+
+        function collapseAll() {
+            resetView();
+        }
+
+        // Window resize handler
+        window.addEventListener('resize', () => {
+            drawConnections();
+        });
+
+        // Initialize on load
+        window.onload = init;
+    </script>
+</body>
+</html>

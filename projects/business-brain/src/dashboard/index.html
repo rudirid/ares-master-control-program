@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Brain - AI Workflow Discovery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .workflow-card {
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .workflow-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .workflow-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .confidence-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            background: #667eea;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .suggestion-card {
+            border: 2px solid #e0e0e0;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            background: white;
+            transition: border-color 0.3s ease;
+        }
+
+        .suggestion-card:hover {
+            border-color: #667eea;
+        }
+
+        .suggestion-card h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .roi-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .roi-item {
+            text-align: center;
+        }
+
+        .roi-value {
+            font-size: 1.5em;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .roi-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .complexity {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .complexity.low {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .complexity.medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .complexity.high {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #5568d3;
+        }
+
+        .demo-section {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .demo-section button {
+            font-size: 1.2em;
+            padding: 15px 40px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .highlight h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 Business Brain</h1>
+            <p>AI-Powered Workflow Discovery & Automation</p>
+        </header>
+
+        <div id="stats-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 id="stat-workflows">0</h3>
+                    <p>Workflows Discovered</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="stat-suggestions">0</h3>
+                    <p>Automation Suggestions</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="stat-hours">0h</h3>
+                    <p>Potential Time Saved/Week</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="stat-cost">$0</h3>
+                    <p>Potential Annual Savings</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section section">
+            <h2>Try the Demo</h2>
+            <p style="margin-bottom: 20px; color: #666;">
+                Click below to analyze sample business data and see what workflows we discover
+            </p>
+            <button onclick="runDemo()" id="demo-btn">🚀 Analyze Sample Business Data</button>
+            <div id="demo-status" style="margin-top: 20px;"></div>
+        </div>
+
+        <div id="results-container" style="display: none;">
+            <div class="section">
+                <h2>🔍 Discovered Workflows</h2>
+                <div id="workflows-list"></div>
+            </div>
+
+            <div class="section">
+                <h2>💡 Automation Suggestions</h2>
+                <div class="highlight">
+                    <h3>What makes this different?</h3>
+                    <p>These aren't generic suggestions - they're based on YOUR actual business patterns. The AI discovered these workflows automatically by analyzing your communications. No manual setup required.</p>
+                </div>
+                <div id="suggestions-list"></div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Total Impact</h2>
+                <div id="total-potential"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8000';
+
+        async function runDemo() {
+            const btn = document.getElementById('demo-btn');
+            const status = document.getElementById('demo-status');
+
+            btn.disabled = true;
+            btn.textContent = '⏳ Analyzing...';
+            status.innerHTML = '<div class="loading">Discovering workflow patterns in your business data...</div>';
+
+            try {
+                // Sample business emails for demo
+                const sampleData = {
+                    emails: [
+                        {
+                            from_address: "accounts@acmesupply.com",
+                            to_address: "you@business.com",
+                            subject: "Invoice #12345 - Payment Due",
+                            body: "Invoice for office supplies. Total: $450.00. Due date: 2024-02-15",
+                            date: "2024-02-01T10:00:00Z"
+                        },
+                        {
+                            from_address: "billing@acmesupply.com",
+                            to_address: "you@business.com",
+                            subject: "Invoice #12389 - Monthly Statement",
+                            body: "Monthly office supplies invoice. Amount: $420.00. Payment due: 2024-03-15",
+                            date: "2024-03-01T10:00:00Z"
+                        },
+                        {
+                            from_address: "invoices@acmesupply.com",
+                            to_address: "you@business.com",
+                            subject: "Invoice #12423 Due",
+                            body: "Invoice for April supplies. Total amount: $385.00. Due: 2024-04-15",
+                            date: "2024-04-01T10:00:00Z"
+                        },
+                        {
+                            from_address: "customer@email.com",
+                            to_address: "you@business.com",
+                            subject: "Question about your services",
+                            body: "Hi, I was wondering if you could help me with pricing information for your services?",
+                            date: "2024-03-15T14:30:00Z"
+                        },
+                        {
+                            from_address: "client@company.com",
+                            to_address: "you@business.com",
+                            subject: "Inquiry about availability",
+                            body: "Hello, can you let me know your availability for a consultation next week?",
+                            date: "2024-03-18T09:15:00Z"
+                        },
+                        {
+                            from_address: "prospect@business.net",
+                            to_address: "you@business.com",
+                            subject: "Quick question",
+                            body: "Hi there, just wondering if you offer weekend appointments? Thanks!",
+                            date: "2024-03-20T16:45:00Z"
+                        }
+                    ],
+                    hourly_rate: 75.0
+                };
+
+                const response = await fetch(`${API_URL}/api/discover`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(sampleData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    displayResults(result);
+                    status.innerHTML = '<div style="color: #28a745; font-weight: 600;">✅ Analysis complete! See results below.</div>';
+                } else {
+                    throw new Error('Analysis failed');
+                }
+
+            } catch (error) {
+                status.innerHTML = `<div style="color: #dc3545;">❌ Error: ${error.message}</div>`;
+                btn.disabled = false;
+                btn.textContent = '🚀 Analyze Sample Business Data';
+            }
+        }
+
+        function displayResults(result) {
+            // Update stats
+            document.getElementById('stat-workflows').textContent = result.workflows_discovered;
+            document.getElementById('stat-suggestions').textContent = result.suggestions_generated;
+            document.getElementById('stat-hours').textContent =
+                Math.round(result.total_potential.total_hours_per_week) + 'h';
+            document.getElementById('stat-cost').textContent =
+                '$' + Math.round(result.total_potential.total_cost_per_year).toLocaleString();
+
+            // Display workflows
+            const workflowsList = document.getElementById('workflows-list');
+            workflowsList.innerHTML = result.workflows.map(w => `
+                <div class="workflow-card">
+                    <h4>${w.description}</h4>
+                    <p><strong>Type:</strong> ${w.type.replace(/_/g, ' ').toUpperCase()}</p>
+                    <p><strong>Frequency:</strong> ${w.frequency}</p>
+                    <p><strong>Occurrences:</strong> ${w.example_count}</p>
+                    <span class="confidence-badge">${Math.round(w.confidence * 100)}% Confidence</span>
+                </div>
+            `).join('');
+
+            // Display suggestions
+            const suggestionsList = document.getElementById('suggestions-list');
+            suggestionsList.innerHTML = result.suggestions.map(s => `
+                <div class="suggestion-card">
+                    <h4>${s.title}</h4>
+                    <p>${s.description_enhanced || s.description}</p>
+                    <span class="complexity ${s.implementation_complexity}">${s.implementation_complexity.toUpperCase()} Complexity</span>
+
+                    <div class="roi-info">
+                        <div class="roi-item">
+                            <div class="roi-value">${s.roi_data.occurrences_per_week}</div>
+                            <div class="roi-label">Times/Week</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-value">${Math.round(s.roi_data.time_saved_per_occurrence_minutes)}m</div>
+                            <div class="roi-label">Saved/Task</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-value">${s.roi_data.hours_saved_per_week}h</div>
+                            <div class="roi-label">Hours/Week</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-value">$${Math.round(s.roi_data.cost_saved_per_year).toLocaleString()}</div>
+                            <div class="roi-label">Saved/Year</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Display total potential
+            const totalPotential = document.getElementById('total-potential');
+            totalPotential.innerHTML = `
+                <div style="text-align: center; font-size: 1.2em; line-height: 2;">
+                    <p>By implementing these automations, you could save:</p>
+                    <h3 style="color: #667eea; font-size: 2.5em; margin: 20px 0;">
+                        ${result.total_potential.total_hours_per_week} hours per week
+                    </h3>
+                    <p>That's <strong>${Math.round(result.total_potential.total_hours_per_year)}</strong> hours per year</p>
+                    <p>Worth approximately <strong style="color: #28a745; font-size: 1.3em;">$${Math.round(result.total_potential.total_cost_per_year).toLocaleString()}</strong> annually</p>
+                    <p style="margin-top: 20px; color: #666;">
+                        <em>Equivalent to ${result.total_potential.equivalent_full_time_employees} full-time employees</em>
+                    </p>
+                </div>
+            `;
+
+            // Show results
+            document.getElementById('results-container').style.display = 'block';
+
+            // Scroll to results
+            document.getElementById('results-container').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

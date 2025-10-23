@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASX Trading AI - LIVE SYSTEM STATUS</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .section {
+            background: #000;
+            border: 2px solid #00ff00;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ffff;
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .metric {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .metric-label {
+            color: #ffff00;
+            display: inline-block;
+            width: 300px;
+        }
+        .metric-value {
+            color: #00ff00;
+            font-weight: bold;
+        }
+        .good { color: #00ff00; }
+        .warning { color: #ffff00; }
+        .bad { color: #ff0000; }
+        .table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+        }
+        .table th {
+            background: #003300;
+            color: #00ff00;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #00ff00;
+        }
+        .table td {
+            padding: 8px;
+            border: 1px solid #003300;
+        }
+        .table tr:hover {
+            background: #001a00;
+        }
+        .status-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .status-live { background: #00ff00; animation: blink 1s infinite; }
+        .status-waiting { background: #ffff00; }
+        .status-error { background: #ff0000; }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .gap {
+            background: #330000;
+            border: 2px solid #ff0000;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .gap-title {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ASX TRADING AI - LIVE SYSTEM STATUS</h1>
+    <p>Last Updated: <span id="last-update">Never</span> | Auto-refresh: 5s</p>
+
+    <!-- SYSTEM HEALTH -->
+    <div class="section">
+        <div class="section-title">🟢 SYSTEM HEALTH</div>
+        <div class="metric">
+            <span class="status-dot status-live"></span>
+            <span class="metric-label">Server Status:</span>
+            <span class="metric-value" id="server-status">CHECKING...</span>
+        </div>
+        <div class="metric">
+            <span class="metric-label">Database Connection:</span>
+            <span class="metric-value" id="db-status">CHECKING...</span>
+        </div>
+    </div>
+
+    <!-- PIPELINE STATUS -->
+    <div class="section">
+        <div class="section-title">📊 DATA PIPELINE STATUS</div>
+
+        <div class="metric">
+            <span class="metric-label">1. ANNOUNCEMENTS COLLECTED:</span>
+            <span class="metric-value" id="total-announcements">0</span>
+        </div>
+
+        <div class="metric">
+            <span class="metric-label">2. RECOMMENDATIONS GENERATED:</span>
+            <span class="metric-value" id="total-recommendations">0</span>
+        </div>
+
+        <div class="metric">
+            <span class="metric-label">3. TRADES EXECUTED:</span>
+            <span class="metric-value" id="total-trades">0</span>
+        </div>
+
+        <div class="metric">
+            <span class="metric-label">4. P&L CALCULATED:</span>
+            <span class="metric-value" id="total-pnl">$0.00</span>
+        </div>
+    </div>
+
+    <!-- GAPS IDENTIFIED -->
+    <div class="section">
+        <div class="section-title">⚠️ GAPS & BLOCKERS</div>
+        <div id="gaps-container"></div>
+    </div>
+
+    <!-- REAL ANNOUNCEMENTS -->
+    <div class="section">
+        <div class="section-title">📢 LATEST REAL ANNOUNCEMENTS (Last 20)</div>
+        <table class="table" id="announcements-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Ticker</th>
+                    <th>Title</th>
+                    <th>PS</th>
+                    <th>Age (min)</th>
+                    <th>Processed?</th>
+                </tr>
+            </thead>
+            <tbody id="announcements-body">
+                <tr><td colspan="6">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <div class="section">
+        <div class="section-title">💡 RECOMMENDATIONS GENERATED</div>
+        <table class="table" id="recommendations-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Ticker</th>
+                    <th>Action</th>
+                    <th>Confidence</th>
+                    <th>Entry Price</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody id="recommendations-body">
+                <tr><td colspan="6">No recommendations yet</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- TRADE OUTCOMES -->
+    <div class="section">
+        <div class="section-title">📈 TRADE OUTCOMES & P&L</div>
+        <table class="table" id="trades-table">
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Action</th>
+                    <th>Entry</th>
+                    <th>Exit</th>
+                    <th>P&L ($)</th>
+                    <th>Return (%)</th>
+                    <th>Outcome</th>
+                </tr>
+            </thead>
+            <tbody id="trades-body">
+                <tr><td colspan="7">No trades yet</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8000/api/data';
+
+        // Refresh every 5 seconds
+        setInterval(refreshData, 5000);
+        refreshData();
+
+        async function refreshData() {
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+
+                document.getElementById('server-status').textContent = 'LIVE';
+                document.getElementById('server-status').className = 'metric-value good';
+                document.getElementById('db-status').textContent = 'CONNECTED';
+                document.getElementById('db-status').className = 'metric-value good';
+
+                updatePipelineStatus(data);
+                updateGaps(data);
+                updateAnnouncements(data.announcements || []);
+                updateRecommendations(data.trade_outcomes || []);
+                updateTrades(data.trade_outcomes || []);
+
+                document.getElementById('last-update').textContent = new Date().toLocaleTimeString();
+            } catch (error) {
+                document.getElementById('server-status').textContent = 'ERROR';
+                document.getElementById('server-status').className = 'metric-value bad';
+                document.getElementById('db-status').textContent = 'ERROR';
+                document.getElementById('db-status').className = 'metric-value bad';
+                console.error('Error:', error);
+            }
+        }
+
+        function updatePipelineStatus(data) {
+            const stats = data.stats || {};
+            const pnl = data.pnl_summary || {};
+
+            document.getElementById('total-announcements').textContent = stats.total_announcements || 0;
+            document.getElementById('total-recommendations').textContent = stats.recommendations || 0;
+            document.getElementById('total-trades').textContent = pnl.total_trades || 0;
+
+            const totalPnL = pnl.total_pnl || 0;
+            const pnlEl = document.getElementById('total-pnl');
+            pnlEl.textContent = '$' + totalPnL.toFixed(2);
+            pnlEl.className = 'metric-value ' + (totalPnL > 0 ? 'good' : totalPnL < 0 ? 'bad' : '');
+        }
+
+        function updateGaps(data) {
+            const stats = data.stats || {};
+            const pnl = data.pnl_summary || {};
+            const gaps = [];
+
+            // Identify gaps
+            if (stats.total_announcements > 0 && stats.recommendations === 0) {
+                gaps.push({
+                    title: 'NO RECOMMENDATIONS GENERATED',
+                    details: `${stats.total_announcements} announcements collected but 0 recommendations. Check filters:
+                    - Time filter (10 AM - 2 PM window)
+                    - Materiality filter (price-sensitive only)
+                    - Sentiment filter (positive/negative signals)
+                    System may be working correctly if all announcements are non-tradeable.`
+                });
+            }
+
+            if (stats.recommendations > 0 && pnl.total_trades === 0) {
+                gaps.push({
+                    title: 'RECOMMENDATIONS NOT CONVERTING TO TRADES',
+                    details: `${stats.recommendations} recommendations generated but 0 trades executed.
+                    Check trade_tracker.py integration with recommendation engine.`
+                });
+            }
+
+            if (stats.total_announcements === 0) {
+                gaps.push({
+                    title: 'NO ANNOUNCEMENTS BEING COLLECTED',
+                    details: 'ASX scraper may not be running or ASX feed is down.
+                    Check live_paper_trader.py is running.'
+                });
+            }
+
+            // Display gaps
+            const container = document.getElementById('gaps-container');
+            if (gaps.length === 0) {
+                container.innerHTML = '<div class="metric good">✓ NO GAPS - SYSTEM WORKING END-TO-END</div>';
+            } else {
+                container.innerHTML = gaps.map(gap => `
+                    <div class="gap">
+                        <div class="gap-title">${gap.title}</div>
+                        <pre style="margin-top: 10px; white-space: pre-wrap;">${gap.details}</pre>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function updateAnnouncements(announcements) {
+            const tbody = document.getElementById('announcements-body');
+
+            if (announcements.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6">No announcements yet - waiting for ASX feed</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = announcements.slice(0, 20).map(ann => `
+                <tr>
+                    <td>${ann.detected_timestamp ? ann.detected_timestamp.substring(11, 19) : '-'}</td>
+                    <td><strong>${ann.ticker}</strong></td>
+                    <td>${ann.title.substring(0, 80)}</td>
+                    <td class="${ann.price_sensitive ? 'good' : ''}">${ann.price_sensitive ? 'YES' : 'no'}</td>
+                    <td>${ann.age_minutes !== null ? ann.age_minutes.toFixed(1) : '-'}</td>
+                    <td class="${ann.processed ? 'good' : 'warning'}">${ann.processed ? 'YES' : 'PENDING'}</td>
+                </tr>
+            `).join('');
+        }
+
+        function updateRecommendations(outcomes) {
+            const tbody = document.getElementById('recommendations-body');
+
+            if (outcomes.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6">No recommendations yet - system is filtering announcements</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = outcomes.map(trade => `
+                <tr>
+                    <td>${trade.entry_timestamp ? trade.entry_timestamp.substring(11, 19) : '-'}</td>
+                    <td><strong>${trade.ticker}</strong></td>
+                    <td class="${trade.recommendation === 'BUY' ? 'good' : 'bad'}">${trade.recommendation || 'N/A'}</td>
+                    <td>${trade.confidence ? (trade.confidence * 100).toFixed(1) + '%' : '-'}</td>
+                    <td>$${trade.entry_price ? trade.entry_price.toFixed(2) : '-'}</td>
+                    <td>${trade.announcement_title ? trade.announcement_title.substring(0, 50) : 'N/A'}</td>
+                </tr>
+            `).join('');
+        }
+
+        function updateTrades(outcomes) {
+            const tbody = document.getElementById('trades-body');
+
+            if (outcomes.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7">No trades yet - waiting for recommendations</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = outcomes.map(trade => {
+                const isWin = trade.outcome === 'WIN';
+                const returnClass = trade.return_pct > 0 ? 'good' : 'bad';
+
+                return `
+                    <tr>
+                        <td><strong>${trade.ticker}</strong></td>
+                        <td class="${trade.recommendation === 'BUY' ? 'good' : 'bad'}">${trade.recommendation || 'N/A'}</td>
+                        <td>$${trade.entry_price ? trade.entry_price.toFixed(2) : '-'}</td>
+                        <td>$${trade.exit_price ? trade.exit_price.toFixed(2) : '-'}</td>
+                        <td class="${returnClass}"><strong>${trade.return_dollars > 0 ? '+' : ''}$${trade.return_dollars ? trade.return_dollars.toFixed(2) : '0.00'}</strong></td>
+                        <td class="${returnClass}"><strong>${trade.return_pct > 0 ? '+' : ''}${trade.return_pct ? trade.return_pct.toFixed(2) : '0.00'}%</strong></td>
+                        <td class="${isWin ? 'good' : 'bad'}">${trade.outcome || 'OPEN'}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+    </script>
+</body>
+</html>

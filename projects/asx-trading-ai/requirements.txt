@@ -1,0 +1,14 @@
+# Stock Trading AI - Python Dependencies
+
+# Data retrieval
+yfinance>=0.2.32
+
+# Data processing
+pandas>=2.1.0
+numpy>=1.24.0
+
+# Database
+# sqlite3 is included in Python standard library
+
+# Utilities
+python-dateutil>=2.8.2

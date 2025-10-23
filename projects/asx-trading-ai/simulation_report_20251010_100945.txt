@@ -1,0 +1,1006 @@
+================================================================================
+ASX STOCK TRADING AI - 300 SAMPLE PROOF OF CONCEPT
+================================================================================
+
+Generated: 2025-10-10 10:09:45
+Initial Capital: $10,000.00
+Final Capital: $10,000.00
+Total Return: 0.00%
+
+FULL EVENT LOG:
+--------------------------------------------------------------------------------
+1. [2025-10-09] NEWS - VRS: Change of Director's Interest - Shirley4
+						
+                            pages266.9KB
+2. [2025-10-09] NEWS - AUE: Application for quotation of securities - AUE6
+						
+                            pages18.3KB
+3. [2025-10-09] NEWS - AUE: Application for quotation of securities - AUE6
+						
+                            pages18.8KB
+4. [2025-10-09] NEWS - CTW: CitiFirst MINIs Stop Loss Trigger Event 9 October 20251
+						
+                            
+        
+5. [2025-10-09] NEWS - IOZ: REVISED ESTIMATED DISTRIBUTION ANNOUNCEMENT3
+						
+                            pages198.3KB
+6. [2025-10-09] NEWS - M24: Notice of Annual General Meeting/Proxy Form15
+						
+                            pages336.5KB
+7. [2025-10-09] NEWS - AEL: Change in substantial holding from MUFG7
+						
+                            pages983.1KB
+8. [2025-10-09] NEWS - IAG: Notification regarding unquoted securities - IAG6
+						
+                            pages19.7KB
+9. [2025-10-09] NEWS - HRE: Date of Annual General Meeting1
+						
+                            
+                            
+   
+10. [2025-10-09] NEWS - RPL: Notification of cessation of securities - RPL4
+						
+                            pages14.8KB
+11. [2025-10-09] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+12. [2025-10-09] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+13. [2025-10-09] NEWS - RPL: Notification of cessation of securities - RPL4
+						
+                            pages14.8KB
+14. [2025-10-09] NEWS - SW1: Change in substantial holding - Sofoulis2
+						
+                            pages159.1KB
+15. [2025-10-09] NEWS - DAL: Exercise of Performance Rights1
+						
+                            
+                            
+   
+16. [2025-10-09] NEWS - IAG: Notification of cessation of securities - IAG4
+						
+                            pages15.3KB
+17. [2025-10-09] NEWS - POD: Ceasing to be a substantial holder3
+						
+                            pages164.7KB
+18. [2025-10-09] NEWS - VRS: Notification of cessation of securities - VRS4
+						
+                            pages14.7KB
+19. [2025-10-09] NEWS - DVL: Notification of cessation of securities - DVL4
+						
+                            pages14.8KB
+20. [2025-10-09] NEWS - SGH: Notification regarding unquoted securities - SGH8
+						
+                            pages26.4KB
+21. [2025-10-09] NEWS - ARC: Notification regarding unquoted securities - ARC6
+						
+                            pages19.9KB
+22. [2025-10-09] NEWS - DAL: Application for quotation of securities - DAL6
+						
+                            pages19.0KB
+23. [2025-10-09] NEWS - TNY: Change of Director's Interest Notice - Z Paterson3
+						
+                            pages212.6KB
+24. [2025-10-09] NEWS - LO1: Motor Finance Update2
+						
+                            pages581.1KB
+25. [2025-10-09] NEWS - NNL: Response to ASX Price and Volume Query3
+						
+                            pages495.0KB
+26. [2025-10-09] NEWS - GCM: Notice Under Section 708A1
+						
+                            
+                            
+        
+27. [2025-10-09] NEWS - TNY: Notification of cessation of securities - TNY4
+						
+                            pages14.9KB
+28. [2025-10-09] NEWS - MYR: Notification of cessation of securities - MYR4
+						
+                            pages14.8KB
+29. [2025-10-09] NEWS - GCM: Application for quotation of securities - GCM10
+						
+                            pages318.5KB
+30. [2025-10-09] NEWS - MYR: Application for quotation of securities - MYR8
+						
+                            pages24.5KB
+31. [2025-10-09] NEWS - TGP: Change in substantial holding5
+						
+                            pages260.0KB
+32. [2025-10-09] NEWS - GRL: Change of Director's Interest Notice Sparks2
+						
+                            pages287.7KB
+33. [2025-10-09] NEWS - NZS: Convertible Note Subscription2
+						
+                            pages363.4KB
+34. [2025-10-09] NEWS - GRL: Change of Director's Interest Notice Read2
+						
+                            pages345.4KB
+35. [2025-10-09] NEWS - L1G: Notification of cessation of securities - L1G5
+						
+                            pages17.3KB
+36. [2025-10-09] NEWS - GRL: Change of Director's Interest Notice Owens3
+						
+                            pages346.6KB
+37. [2025-10-09] NEWS - ATV: ATV ASIC Form 604 Change Substantial Sholder Pine Street PL7
+						
+                            page
+38. [2025-10-09] NEWS - NOL: Appendix 3Y3
+						
+                            pages288.2KB
+39. [2025-10-09] NEWS - WHK: Change of Director's Interest Notice (GP)2
+						
+                            pages186.1KB
+40. [2025-10-09] NEWS - L1G: Notification regarding unquoted securities - L1G8
+						
+                            pages26.5KB
+41. [2025-10-09] NEWS - PWH: Becoming a substantial holder30
+						
+                            pages463.2KB
+42. [2025-10-09] NEWS - PRN: Ceasing to be a substantial holder5
+						
+                            pages597.4KB
+43. [2025-10-09] NEWS - C79: Change in substantial holding10
+						
+                            pages266.3KB
+44. [2025-10-09] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+45. [2025-10-09] NEWS - CU6: Becoming a substantial holder6
+						
+                            pages306.4KB
+46. [2025-10-09] NEWS - PPC: Change in substantial holding4
+						
+                            pages256.6KB
+47. [2025-10-09] NEWS - CYL: Becoming a substantial holder26
+						
+                            pages3.0MB
+48. [2025-10-09] NEWS - A11: Notification of cessation of securities - A114
+						
+                            pages14.7KB
+49. [2025-10-09] NEWS - WMA: Results of 2025 Annual General Meeting3
+						
+                            pages272.4KB
+50. [2025-10-09] NEWS - TVN: Application for quotation of securities - TVN6
+						
+                            pages18.3KB
+51. [2025-10-09] NEWS - MTC: Change of Director's Interest Notice - C Stevenson2
+						
+                            pages228.6KB
+52. [2025-10-09] NEWS - MOT: Daily Fund Update1
+						
+                            
+                            
+                
+53. [2025-10-09] NEWS - MXT: Daily Fund Update1
+						
+                            
+                            
+                
+54. [2025-10-09] NEWS - NOL: Cleansing Notice1
+						
+                            
+                            
+                 
+55. [2025-10-09] NEWS - SGH: Notification regarding unquoted securities - SGH5
+						
+                            pages16.8KB
+56. [2025-10-09] NEWS - JBH: Notification regarding unquoted securities - JBH6
+						
+                            pages18.8KB
+57. [2025-10-09] NEWS - NME: Date of AGM1
+						
+                            
+                            
+                      
+58. [2025-10-09] NEWS - GFL: Application for quotation of securities - GFL6
+						
+                            pages18.1KB
+59. [2025-10-09] NEWS - GCM: Application for quotation of securities - GCM10
+						
+                            pages318.5KB
+60. [2025-10-09] NEWS - AAU: Change in substantial holding2
+						
+                            pages131.5KB
+61. [2025-10-09] NEWS - SGH: Notification of cessation of securities - SGH4
+						
+                            pages14.6KB
+62. [2025-10-09] NEWS - TOV: EMU Further Undertaking2
+						
+                            pages84.5KB
+63. [2025-10-09] NEWS - LSR: Notification regarding unquoted securities - LSR7
+						
+                            pages20.7KB
+64. [2025-10-09] NEWS - L1G: Notification regarding unquoted securities - L1G6
+						
+                            pages19.8KB
+65. [2025-10-09] NEWS - TKL: Change of name, code, AGM date and director nominations1
+						
+                            
+       
+66. [2025-10-09] NEWS - NSR: Becoming a substantial holder7
+						
+                            pages357.7KB
+67. [2025-10-09] NEWS - NOL: Notification of cessation of securities - NOL4
+						
+                            pages14.7KB
+68. [2025-10-09] NEWS - NUF: Change in substantial holding4
+						
+                            pages228.0KB
+69. [2025-10-09] NEWS - GMG: Notice of Annual General Meetings31
+						
+                            pages2.6MB
+70. [2025-10-09] NEWS - CTW: CitiFirst Instalment MINIs Strike Changes Effective 10 Oct257
+						
+                            pag
+71. [2025-10-09] NEWS - CTW: CitiFirst MINIs Strike Changes Effective 10 Oct 2529
+						
+                            pages2.7MB
+72. [2025-10-09] NEWS - RAC: Application for quotation of securities - RAC8
+						
+                            pages20.7KB
+73. [2025-10-09] NEWS - BSN: Notice of Annual General Meeting/Proxy Form29
+						
+                            pages1.1MB
+74. [2025-10-09] NEWS - A1N: Appendix 3Z Final Directors Interest Notice2
+						
+                            pages291.3KB
+75. [2025-10-09] NEWS - TTX: 2025 Notice of Annual General Meeting26
+						
+                            pages581.4KB
+76. [2025-10-09] NEWS - NOL: Application for quotation of securities - NOL6
+						
+                            pages18.9KB
+77. [2025-10-09] NEWS - MTM: Change of Director's Interest Notice4
+						
+                            pages384.1KB
+78. [2025-10-09] NEWS - MTM: AGM Date and Director Nominations1
+						
+                            
+                            
+
+79. [2025-10-09] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+80. [2025-10-09] NEWS - NAN: Becoming a substantial holder6
+						
+                            pages303.1KB
+81. [2025-10-09] NEWS - ABX: Notice of Extraordinary General Meeting/Proxy Form16
+						
+                            pages664.3KB
+82. [2025-10-09] NEWS - OLL: Notification of cessation of securities - OLL4
+						
+                            pages14.8KB
+83. [2025-10-09] NEWS - PIC: Daily Net Tangible Asset Statement1
+						
+                            
+                            
+84. [2025-10-09] NEWS - DAF: Response to ASX Query Letter12
+						
+                            pages577.4KB
+85. [2025-10-09] NEWS - EDV: Notification of cessation of securities - EDV4
+						
+                            pages15.3KB
+86. [2025-10-09] NEWS - REI: Dividend component details4
+						
+                            pages332.3KB
+87. [2025-10-09] RECOMMENDATION - REI: BUY recommendation - Confidence: 0.60
+88. [2025-10-09] NEWS - JMS: Change in substantial holding6
+						
+                            pages444.5KB
+89. [2025-10-09] NEWS - MA1: Daily Estimate NTA for 08.10.20251
+						
+                            
+                            
+
+90. [2025-10-09] NEWS - SXE: Change of Director's Interest Notice2
+						
+                            pages212.2KB
+91. [2025-10-09] NEWS - SXE: Change of Director's Interest Notice2
+						
+                            pages213.2KB
+92. [2025-10-09] NEWS - NAG: Date of AGM & Closing Date for Director Nominations1
+						
+                            
+           
+93. [2025-10-09] NEWS - GCQ: Monthly Portfolio & Performance Update - September 20255
+						
+                            pages448
+94. [2025-10-09] NEWS - GLN: Amendment to Appendix 2A of 17 January 202521
+						
+                            pages615.6KB
+95. [2025-10-09] NEWS - GLN: Amendment to Appendix 2A of 17 December 202421
+						
+                            pages613.7KB
+96. [2025-10-09] NEWS - AAR: Notification of Upcoming Expiry of AARO Listed Options3
+						
+                            pages1.2M
+97. [2025-10-09] NEWS - SCW: Appendix 2A20
+						
+                            pages504.5KB
+98. [2025-10-09] NEWS - IG6: Notice of Date of AGM and Director Nominations1
+						
+                            
+                
+99. [2025-10-09] NEWS - CVB: Change in substantial holding - Arun Singh - Voting & Issues2
+						
+                            pag
+100. [2025-10-09] NEWS - FLT: Ceasing to be a substantial holder4
+						
+                            pages191.2KB
+101. [2025-10-09] NEWS - SCW: EMTN Offering Circular & Pricing Supplement166
+						
+                            pages2.7MB
+102. [2025-10-09] NEWS - FID: Becoming a substantial holder6
+						
+                            pages265.7KB
+103. [2025-10-09] NEWS - GLN: Clarification of Shares Issued to Service Providers2
+						
+                            pages228.9KB
+104. [2025-10-09] NEWS - CWY: Becoming a substantial holder5
+						
+                            pages1.7MB
+105. [2025-10-09] NEWS - ODA: Correction in Appendix 3Y3
+						
+                            pages509.8KB
+106. [2025-10-09] NEWS - SLC: Ceasing to be a substantial holder3
+						
+                            pages1.5MB
+107. [2025-10-09] NEWS - A8G: Response to ASX Price and Volume Query3
+						
+                            pages342.9KB
+108. [2025-10-09] NEWS - AMI: Notification of cessation of securities - AMI4
+						
+                            pages14.7KB
+109. [2025-10-09] NEWS - GCI: Net Tangible Asset Backing1
+						
+                            
+                            
+       
+110. [2025-10-09] NEWS - FLX: Becoming a substantial holder - Briarwood Capital Partners2
+						
+                            pages
+111. [2025-10-09] NEWS - WC1: Results of General Meeting2
+						
+                            pages134.7KB
+112. [2025-10-09] NEWS - WLD: ATO Class Ruling WLD 15 cent Capital Return 20257
+						
+                            pages849.1KB
+113. [2025-10-09] NEWS - MEZ: Share Rights Vested1
+						
+                            
+                            
+              
+114. [2025-10-09] NEWS - CLZ: Proposed issue of securities - CLZ5
+						
+                            pages17.2KB
+115. [2025-10-09] NEWS - CLZ: Cleansing Prospectus32
+						
+                            pages665.6KB
+116. [2025-10-09] NEWS - HDN: DRP Issue Price2
+						
+                            pages191.2KB
+117. [2025-10-09] NEWS - MDR: FY25 Annual Report69
+						
+                            pages993.1KB
+118. [2025-10-09] NEWS - OM1: Trading Halt2
+						
+                            pages241.1KB
+119. [2025-10-09] NEWS - SPQ: Trading Halt2
+						
+                            pages257.3KB
+120. [2025-10-09] NEWS - SRG: Results of Annual General Meeting2
+						
+                            pages405.9KB
+121. [2025-10-09] NEWS - AJX: Investor Webinar1
+						
+                            
+                            
+                 
+122. [2025-10-09] NEWS - VR8: AGM Date and Closing Date for Nominations1
+						
+                            
+                     
+123. [2025-10-09] NEWS - A2M: Annexure to Notification regarding unquoted securities1
+						
+                            
+        
+124. [2025-10-09] NEWS - LEL: Lithium Mineralisation Confirmed at White Plains Project13
+						
+                            pages1
+125. [2025-10-09] NEWS - NET: Initial Director's Interest Notice2
+						
+                            pages138.3KB
+126. [2025-10-09] NEWS - GAS: AGM DATE AND CLOSING DATE FOR DIRECTOR NOMINATIONS2
+						
+                            pages287.2KB
+127. [2025-10-09] NEWS - PGO: Extension to Voluntary Suspension1
+						
+                            
+                            
+
+128. [2025-10-09] NEWS - KMD: Ongoing Disclosure Notice - Ben Washington3
+						
+                            pages231.4KB
+129. [2025-10-09] NEWS - A2M: Notification regarding unquoted securities - A2M7
+						
+                            pages20.9KB
+130. [2025-10-09] NEWS - DVP: Notice of Annual General Meeting/Proxy Form36
+						
+                            pages911.9KB
+131. [2025-10-09] NEWS - A2M: Notification of cessation of securities - A2M4
+						
+                            pages14.7KB
+132. [2025-10-09] NEWS - MMS: 2025 Sustainability Report32
+						
+                            pages12.0MB
+133. [2025-10-09] NEWS - OM1: Pause in Trading1
+						
+                            
+                            
+                 
+134. [2025-10-09] NEWS - MAT: Secondary Trading Notice1
+						
+                            
+                            
+         
+135. [2025-10-09] NEWS - ARI: Cleansing Notice1
+						
+                            
+                            
+                 
+136. [2025-10-09] NEWS - ARI: Application for quotation of securities - ARI7
+						
+                            pages21.2KB
+137. [2025-10-09] NEWS - WC1: Prospectus39
+						
+                            pages613.0KB
+138. [2025-10-09] NEWS - ILA: Results of AGM3
+						
+                            pages162.4KB
+139. [2025-10-09] NEWS - BCM: Cleansing Notice1
+						
+                            
+                            
+                 
+140. [2025-10-09] NEWS - BCM: Application for quotation of securities - BCM6
+						
+                            pages18.5KB
+141. [2025-10-09] NEWS - ABX: Strategic Bauxite Investment Funding Received4
+						
+                            pages401.0KB
+142. [2025-10-09] RECOMMENDATION - ABX: BUY recommendation - Confidence: 0.60
+143. [2025-10-09] NEWS - CVB: Change in substantial holding - Ilwella - Voting Power Only3
+						
+                            page
+144. [2025-10-09] NEWS - ARX: Notification of Quarterly Results Webinar1
+						
+                            
+                     
+145. [2025-10-09] NEWS - SPK: Ongoing Disclosure Notice3
+						
+                            pages178.9KB
+146. [2025-10-09] NEWS - SPQ: Pause in Trading1
+						
+                            
+                            
+                 
+147. [2025-10-09] NEWS - RLF: Change in substantial holding3
+						
+                            pages770.0KB
+148. [2025-10-09] NEWS - FID: Results of Meeting2
+						
+                            pages213.6KB
+149. [2025-10-09] NEWS - GUL: Notice and Access Letter1
+						
+                            
+                            
+         
+150. [2025-10-09] NEWS - CTW: CitiFirst IOZ Instalment MINIs Distribution Estimated Amount1
+						
+                            
+  
+151. [2025-10-09] NEWS - GUL: Proxy Form3
+						
+                            pages334.6KB
+152. [2025-10-09] NEWS - SRG: Annual General Meeting - Managing Director's Presentation25
+						
+                            pages
+153. [2025-10-09] NEWS - GUL: Notice of Annual General Meeting10
+						
+                            pages397.4KB
+154. [2025-10-09] NEWS - RIM: Results of General Meeting2
+						
+                            pages317.4KB
+155. [2025-10-09] NEWS - SRG: Annual General Meeting - Chair's Address3
+						
+                            pages298.8KB
+156. [2025-10-09] NEWS - CTW: CitiFirst ILC SFIs Distribution Estimated Amount1
+						
+                            
+              
+157. [2025-10-09] NEWS - CTW: CitiFirst IHD SFIs Distribution Estimated Amount1
+						
+                            
+              
+158. [2025-10-09] NEWS - CTW: CitiFirst IOZ SFIs Distribution Estimated Amount1
+						
+                            
+              
+159. [2025-10-09] NEWS - BAP: Notice of Meeting - Confirmation of FY26 Performance Rights1
+						
+                            
+   
+160. [2025-10-09] NEWS - EGL: Jefferies Corporate Summit 2025 Presentation20
+						
+                            pages7.1MB
+161. [2025-10-09] NEWS - VN8: Orders Lodged with ASIC - Vonex to be Suspended at Close1
+						
+                            
+      
+162. [2025-10-09] NEWS - FLX: Cleansing Notice Tranche 2 Placement & Consideration Shares2
+						
+                            page
+163. [2025-10-09] NEWS - AGI: CEO - Mr Harald Neumann1
+						
+                            
+                            
+          
+164. [2025-10-09] NEWS - PCI: Daily Net Tangible Asset Statement1
+						
+                            
+                            
+165. [2025-10-09] NEWS - FLX: Completion of Nexvia Acquisition2
+						
+                            pages235.4KB
+166. [2025-10-09] NEWS - JEP: Distribution Tax Estimates2
+						
+                            pages659.6KB
+167. [2025-10-09] NEWS - MAT: Notification regarding unquoted securities - MAT6
+						
+                            pages20.0KB
+168. [2025-10-09] NEWS - JPH: Distribution Tax Estimates2
+						
+                            pages663.5KB
+169. [2025-10-09] NEWS - JPE: Distribution Tax Estimates2
+						
+                            pages661.7KB
+170. [2025-10-09] NEWS - NVO: Statement of CDIs on issue - NVO3
+						
+                            pages12.4KB
+171. [2025-10-09] NEWS - MAT: Application for quotation of securities - MAT6
+						
+                            pages18.5KB
+172. [2025-10-09] NEWS - FLX: Notification regarding unquoted securities - FLX6
+						
+                            pages20.3KB
+173. [2025-10-09] NEWS - JHP: Distribution Tax Estimates2
+						
+                            pages660.0KB
+174. [2025-10-09] NEWS - FLX: Application for quotation of securities - FLX6
+						
+                            pages18.7KB
+175. [2025-10-09] NEWS - SKY: Notice of 2025 Annual General Meeting and Proxy Form38
+						
+                            pages834.6
+176. [2025-10-09] NEWS - RDS: Cleansing Statement1
+						
+                            
+                            
+              
+177. [2025-10-09] NEWS - RDS: Application for quotation of securities - RDS6
+						
+                            pages18.5KB
+178. [2025-10-09] NEWS - REP: REP Distribution components September 2025 Quarter2
+						
+                            pages216.5KB
+179. [2025-10-09] NEWS - TNE: Analyst Presn - TNE Unleashes AI Revolution21
+						
+                            pages1.1MB
+180. [2025-10-09] NEWS - LGL: Notification of cessation of securities - LGL4
+						
+                            pages15.3KB
+181. [2025-10-09] NEWS - AN3: Appointments to ANZ Group Executive Committee1
+						
+                            
+                 
+182. [2025-10-09] NEWS - WTM: Results of Meeting1
+						
+                            
+                            
+               
+183. [2025-10-09] NEWS - NPM: Results of Meeting2
+						
+                            pages149.0KB
+184. [2025-10-09] NEWS - DRX: Receipt of R&D Tax Incentive Rebate2
+						
+                            pages305.1KB
+185. [2025-10-09] NEWS - JHX: Update to Appendix 2A20
+						
+                            pages501.7KB
+186. [2025-10-09] NEWS - AOV: Notification of cessation of securities - AOV4
+						
+                            pages14.6KB
+187. [2025-10-09] NEWS - VN8: Court Approves Scheme of Arrangement2
+						
+                            pages253.3KB
+188. [2025-10-09] NEWS - ZEO: Change in substantial holding2
+						
+                            pages181.8KB
+189. [2025-10-09] NEWS - ORN: Application for quotation of securities - ORN5
+						
+                            pages16.7KB
+190. [2025-10-09] NEWS - AOV: Notification regarding unquoted securities - AOV6
+						
+                            pages18.7KB
+191. [2025-10-09] NEWS - HVY: Date of AGM and Closing Date for Director Nominations2
+						
+                            pages352.4
+192. [2025-10-09] NEWS - DME: Change in substantial holding T.T.2
+						
+                            pages195.1KB
+193. [2025-10-09] NEWS - DME: Change of Director's Interest Notice T.T.3
+						
+                            pages358.9KB
+194. [2025-10-09] NEWS - EBO: NZX Capital Change Notice2
+						
+                            pages188.3KB
+195. [2025-10-09] NEWS - ATA: Notification of cessation of securities - ATA4
+						
+                            pages14.7KB
+196. [2025-10-09] NEWS - AS2: Non-renounceable Entitlement Offer Prospectus43
+						
+                            pages691.8KB
+197. [2025-10-09] NEWS - EBO: Notification regarding unquoted securities - EBO7
+						
+                            pages20.3KB
+198. [2025-10-09] NEWS - LIC: Notification regarding unquoted securities - LIC5
+						
+                            pages16.9KB
+199. [2025-10-09] NEWS - VBS: Date of 2025 Annual General Meeting1
+						
+                            
+                           
+200. [2025-10-09] NEWS - ODA: Change of Director's Interest Notice - Patrick Bodegraven2
+						
+                            pages2
+201. [2025-10-09] NEWS - NOL: Appendix 3Y3
+						
+                            pages276.3KB
+202. [2025-10-09] NEWS - PMC: Monthly Investment Update and NTA Report3
+						
+                            pages779.2KB
+203. [2025-10-09] RECOMMENDATION - PMC: BUY recommendation - Confidence: 0.60
+204. [2025-10-09] NEWS - KGD: RC Drilling to Complete Phase 1 Commences4
+						
+                            pages758.5KB
+205. [2025-10-09] NEWS - WEB: Notification regarding unquoted securities - WEB6
+						
+                            pages19.5KB
+206. [2025-10-09] NEWS - BOT: Change of Director's Interest Notice - V. Ippolito2
+						
+                            pages237.8KB
+207. [2025-10-09] NEWS - REA: Results of 2025 Annual General Meeting2
+						
+                            pages117.8KB
+208. [2025-10-09] NEWS - ATH: Alterity Presents Positive ATH434 Data at 2025 MDS Congress6
+						
+                            page
+209. [2025-10-09] RECOMMENDATION - ATH: BUY recommendation - Confidence: 0.60
+210. [2025-10-09] NEWS - LM8: Ore Purchase Agreement Update1
+						
+                            
+                            
+    
+211. [2025-10-09] NEWS - PCI: Application for quotation of securities - PCI6
+						
+                            pages17.6KB
+212. [2025-10-09] NEWS - AEI: Date of 2025 Annual General Meeting1
+						
+                            
+                           
+213. [2025-10-09] NEWS - PAC: Updated Calendar of Events for 20251
+						
+                            
+                           
+214. [2025-10-09] NEWS - FLC: Results of Extraordinary General Meeting2
+						
+                            pages270.0KB
+215. [2025-10-09] NEWS - PAC: 2025 Annual Report102
+						
+                            pages2.2MB
+216. [2025-10-09] NEWS - NWS: Appendix 3C4
+						
+                            pages76.4KB
+217. [2025-10-09] NEWS - NWS: Appendix 3C4
+						
+                            pages76.4KB
+218. [2025-10-09] NEWS - MBK: Notice of Annual General Meeting/Proxy Form33
+						
+                            pages1.3MB
+219. [2025-10-09] NEWS - PAC: Notice of Annual General Meeting/Proxy Form16
+						
+                            pages1.1MB
+220. [2025-10-09] NEWS - MOM: Update - Proposed issue of securities - MOM9
+						
+                            pages31.0KB
+221. [2025-10-09] NEWS - HUB: Notification regarding unquoted securities - HUB5
+						
+                            pages16.7KB
+222. [2025-10-09] NEWS - MOM: Update - Proposed issue of securities - MOM5
+						
+                            pages18.6KB
+223. [2025-10-09] NEWS - KLS: Notification regarding unquoted securities - KLS6
+						
+                            pages18.2KB
+224. [2025-10-09] NEWS - MOM: Update - Proposed issue of securities - MOM7
+						
+                            pages24.5KB
+225. [2025-10-09] NEWS - SEG: Change in substantial holding2
+						
+                            pages85.7KB
+226. [2025-10-09] NEWS - SEG: Change in substantial holding3
+						
+                            pages300.4KB
+227. [2025-10-09] NEWS - SEG: Change in substantial holding2
+						
+                            pages221.1KB
+228. [2025-10-09] NEWS - ASE: Application for quotation of securities - ASE6
+						
+                            pages18.4KB
+229. [2025-10-09] NEWS - HCH: Regulatory Green Light for La Verde Expansion Drilling7
+						
+                            pages1.5M
+230. [2025-10-09] RECOMMENDATION - HCH: BUY recommendation - Confidence: 0.60
+231. [2025-10-09] NEWS - PUR: Notification of cessation of securities - PUR5
+						
+                            pages16.2KB
+232. [2025-10-09] NEWS - PUR: Application for quotation of securities - PUR8
+						
+                            pages20.9KB
+233. [2025-10-09] NEWS - PUR: Section 708A Cleansing Notice & Appendix 3Y6
+						
+                            pages405.4KB
+234. [2025-10-09] NEWS - OB1: Change of Director Interest Notices6
+						
+                            pages380.9KB
+235. [2025-10-09] NEWS - CYG: Change in substantial holding from SNC3
+						
+                            pages210.9KB
+236. [2025-10-09] NEWS - MOT: Application for quotation of securities - MOT6
+						
+                            pages17.6KB
+237. [2025-10-09] NEWS - IMI: Antimony Identified on EL7356, Victoria15
+						
+                            pages1.6MB
+238. [2025-10-09] NEWS - MXT: Application for quotation of securities - MXT6
+						
+                            pages17.6KB
+239. [2025-10-09] NEWS - ARB: Update - Dividend/Distribution - ARB5
+						
+                            pages21.0KB
+240. [2025-10-09] RECOMMENDATION - ARB: BUY recommendation - Confidence: 0.60
+241. [2025-10-09] NEWS - CIW: Trading Halt2
+						
+                            pages249.6KB
+242. [2025-10-09] NEWS - WHI: Appendix 4G and Corporate Governance Statement23
+						
+                            pages679.3KB
+243. [2025-10-09] NEWS - GW1: Change of Director's Interest Notice2
+						
+                            pages203.3KB
+244. [2025-10-09] NEWS - AUZ: Cleansing notice2
+						
+                            pages118.6KB
+245. [2025-10-09] NEWS - AUZ: Application for quotation of securities - AUZ6
+						
+                            pages18.2KB
+246. [2025-10-09] NEWS - WHI: Notice of AGM / Proxy Form8
+						
+                            pages522.9KB
+247. [2025-10-09] NEWS - SVL: Cleansing Notice2
+						
+                            pages213.1KB
+248. [2025-10-09] NEWS - TMK: TMK Operations and Technical Team Expanded2
+						
+                            pages260.0KB
+249. [2025-10-09] NEWS - MA1: Update - Dividend/Distribution - MA15
+						
+                            pages18.9KB
+250. [2025-10-09] RECOMMENDATION - MA1: BUY recommendation - Confidence: 0.60
+251. [2025-10-09] NEWS - GT1: Trading Halt2
+						
+                            pages406.5KB
+252. [2025-10-09] NEWS - X2M: Cleansing notice2
+						
+                            pages184.3KB
+253. [2025-10-09] NEWS - MOM: Proposed issue of securities - MOM5
+						
+                            pages18.6KB
+254. [2025-10-09] NEWS - MOM: Proposed issue of securities - MOM9
+						
+                            pages31.3KB
+255. [2025-10-09] NEWS - CIP: Notification of cessation of securities - CIP4
+						
+                            pages14.7KB
+256. [2025-10-09] NEWS - MOM: Proposed issue of securities - MOM6
+						
+                            pages21.4KB
+257. [2025-10-09] NEWS - MOM: Proposed issue of securities - MOM5
+						
+                            pages18.7KB
+258. [2025-10-09] NEWS - MOM: Proposed issue of securities - MOM7
+						
+                            pages24.6KB
+259. [2025-10-09] NEWS - MOM: Acquisition of Interest Sasare Gold & Copper Project Zambia39
+						
+                            pag
+260. [2025-10-09] RECOMMENDATION - MOM: BUY recommendation - Confidence: 0.60
+261. [2025-10-09] NEWS - X2M: Notification of cessation of securities - X2M6
+						
+                            pages19.8KB
+262. [2025-10-09] NEWS - SVL: Application for quotation of securities - SVL6
+						
+                            pages18.3KB
+263. [2025-10-09] NEWS - GRL: Application for quotation of securities - GRL6
+						
+                            pages18.1KB
+264. [2025-10-09] NEWS - GRL: Non-Renounceable Entitlement Offer Closes Oversubscribed3
+						
+                            pages30
+265. [2025-10-09] NEWS - GT1: Pause in Trading1
+						
+                            
+                            
+                 
+266. [2025-10-09] NEWS - CTN: Priority Targets for Upcoming Central Yilgarn Exploration14
+						
+                            pages
+267. [2025-10-09] NEWS - JBY: Cleansing Notice1
+						
+                            
+                            
+                 
+268. [2025-10-09] NEWS - CIW: Pause in Trading1
+						
+                            
+                            
+                 
+269. [2025-10-09] NEWS - NCC: NAOS Investor Roadshow - Presentation Materials45
+						
+                            pages1.6MB
+270. [2025-10-09] NEWS - NAC: NAOS Investor Roadshow - Presentation Materials45
+						
+                            pages1.6MB
+271. [2025-10-09] NEWS - QML: Share Purchase Plan Offer Document13
+						
+                            pages207.5KB
+272. [2025-10-09] NEWS - FID: Executive Chairman's Address to Shareholders8
+						
+                            pages486.2KB
+273. [2025-10-09] NEWS - X2M: Application for quotation of securities - X2M8
+						
+                            pages20.9KB
+274. [2025-10-09] NEWS - NSC: NAOS Investor Roadshow - Presentation Materials45
+						
+                            pages1.6MB
+275. [2025-10-09] NEWS - AZJ: Aurizon Sustainability Report40
+						
+                            pages9.2MB
+276. [2025-10-09] NEWS - KKO: South African Government Dignitaries Site Visit Presentation16
+						
+                            pa
+277. [2025-10-09] NEWS - BKI: BKI September 2025 NTA & Monthly Report2
+						
+                            pages601.0KB
+278. [2025-10-09] NEWS - 14D: Proposed issue of securities - 14D10
+						
+                            pages34.1KB
+279. [2025-10-09] NEWS - BIM: Proposed issue of securities - BIM6
+						
+                            pages23.3KB
+280. [2025-10-09] NEWS - BIM: Proposed issue of securities - BIM7
+						
+                            pages24.3KB
+281. [2025-10-09] NEWS - BIM: Acquisition of Serbian Gold Project21
+						
+                            pages1.8MB
+282. [2025-10-09] RECOMMENDATION - BIM: BUY recommendation - Confidence: 0.60
+283. [2025-10-09] NEWS - L1G: Assets Under Management - September 20251
+						
+                            
+                      
+284. [2025-10-09] NEWS - IFT: Infratil Interim Results announcement date1
+						
+                            
+                    
+285. [2025-10-09] NEWS - MTH: SILVER RICH TARGET 5, SAMPLING UP TO 3,300 G/T SILVER25
+						
+                            pages10.4
+286. [2025-10-09] NEWS - UNT: Progress Update - Global Expansion, Pricing & Partnerships5
+						
+                            pages
+287. [2025-10-09] RECOMMENDATION - UNT: BUY recommendation - Confidence: 0.60
+288. [2025-10-09] NEWS - TMB: Cleansing Statement1
+						
+                            
+                            
+              
+289. [2025-10-09] NEWS - KME: Update - Notification of buy-back - KME6
+						
+                            pages18.3KB
+290. [2025-10-09] NEWS - TMB: Notification regarding unquoted securities - TMB6
+						
+                            pages20.2KB
+291. [2025-10-09] NEWS - EUR: CRML Signs Another Offtake LOI Tanbreez Rare Earths Project3
+						
+                            page
+292. [2025-10-09] NEWS - DMP: 2025 AGM Notice of Meeting/Proxy Form14
+						
+                            pages981.5KB
+293. [2025-10-09] NEWS - GG8: Initial Director's Interest Notice2
+						
+                            pages191.0KB
+294. [2025-10-09] NEWS - IIQ: Trading Halt2
+						
+                            pages258.5KB
+295. [2025-10-09] NEWS - GBZ: Proposed issue of securities - GBZ5
+						
+                            pages19.0KB
+296. [2025-10-09] NEWS - GBZ: $40m Institutional Placement to Drive Drummond Basin Growth5
+						
+                            page
+297. [2025-10-09] NEWS - EPM: Trading Halt2
+						
+                            pages337.8KB
+298. [2025-10-09] NEWS - WLD: Proposed Voluntary Delisting of Wellard9
+						
+                            pages809.3KB
+299. [2025-10-09] NEWS - A3D: 2025 Key Dates Calendar1
+						
+                            
+                            
+          
+300. [2025-10-09] NEWS - GG8: Key Leadership Appointments Drive Growth & Comet Vale Update23
+						
+                            pa
+301. [2025-10-09] RECOMMENDATION - GG8: BUY recommendation - Confidence: 0.60
+302. [2025-10-09] NEWS - LSA: Drilling resumes at North Cobar Copper-Gold Project17
+						
+                            pages2.0MB
+303. [2025-10-09] NEWS - MM8: Medallion Strengthens Leadership Team2
+						
+                            pages187.2KB
+304. [2025-10-09] NEWS - I88: Extensive Downhole Uranium Intersected at Portland Creek22
+						
+                            pages2
+305. [2025-10-09] NEWS - LTR: Amended debt and offtake arrangements2
+						
+                            pages234.1KB
+306. [2025-10-09] NEWS - OZM: Feasibility Progress Highlights Strong Development Pathway19
+						
+                            page
+307. [2025-10-09] RECOMMENDATION - OZM: BUY recommendation - Confidence: 0.60
+308. [2025-10-09] NEWS - UVA: Uvre secures approval to dual list on NZ Stock Exchange14
+						
+                            pages88
+309. [2025-10-09] RECOMMENDATION - UVA: BUY recommendation - Confidence: 0.60
+310. [2025-10-09] NEWS - KKC: Net Tangible Asset Backing2
+						
+                            pages263.9KB
+311. [2025-10-09] NEWS - RF1: Update - Notification of buy-back - RF16
+						
+                            pages18.3KB
+312. [2025-10-09] NEWS - PYC: ADOA Program Progressing to Multiple Dose Study3
+						
+                            pages230.0KB
+313. [2025-10-09] NEWS - KAI: Kairos Plans Drill Program to Test Roe Hills Gold Resource18
+						
+                            page
+314. [2025-10-09] NEWS - KNG: Leliyn Drilling Commences for Metallurgical Samples11
+						
+                            pages1.6MB
+
+
+COMPLETED TRADES:
+--------------------------------------------------------------------------------

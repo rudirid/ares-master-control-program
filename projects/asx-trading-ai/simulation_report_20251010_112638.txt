@@ -1,0 +1,1673 @@
+================================================================================
+ASX STOCK TRADING AI - 300 SAMPLE PROOF OF CONCEPT
+================================================================================
+
+Generated: 2025-10-10 11:26:38
+Initial Capital: $10,000.00
+Final Capital: $9,412.61
+Total Return: -5.87%
+
+FULL EVENT LOG:
+--------------------------------------------------------------------------------
+1. [2023-10-18] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+2. [2023-10-18] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+3. [2023-10-18] TECH_REJECTED - BHP: Technical analysis rejected: Insufficient technical data
+4. [2023-10-24] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+5. [2023-10-28] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+6. [2023-11-04] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+7. [2023-11-07] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+8. [2023-11-07] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+9. [2023-11-09] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+10. [2023-11-09] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+11. [2023-11-09] TECH_REJECTED - BHP: Technical analysis rejected: Insufficient technical data
+12. [2023-11-10] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+13. [2023-11-10] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+14. [2023-11-10] TECH_REJECTED - BHP: Technical analysis rejected: Insufficient technical data
+15. [2023-11-16] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+16. [2023-11-20] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+17. [2023-11-20] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+18. [2023-11-21] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+19. [2023-11-21] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+20. [2023-11-21] ENTRY - BHP: BUY 46 shares at $43.49
+21. [2023-11-22] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+22. [2023-11-22] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+23. [2023-11-22] REJECTED - BHP: Position rejected: Already have position in BHP
+24. [2023-11-27] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+25. [2023-11-27] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+26. [2023-11-27] REJECTED - BHP: Position rejected: Already have position in BHP
+27. [2023-12-02] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+28. [2023-12-02] EXIT - BHP: SELL 46 shares at $42.81 - Holding period reached
+29. [2023-12-04] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+30. [2023-12-04] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+31. [2023-12-04] ENTRY - BHP: BUY 47 shares at $42.29
+32. [2023-12-10] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+33. [2023-12-10] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+34. [2023-12-10] REJECTED - BHP: Position rejected: Already have position in BHP
+35. [2023-12-10] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+36. [2023-12-10] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+37. [2023-12-10] REJECTED - BHP: Position rejected: Already have position in BHP
+38. [2023-12-10] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+39. [2023-12-10] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+40. [2023-12-14] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+41. [2023-12-14] EXIT - BHP: SELL 47 shares at $43.82 - Holding period reached
+42. [2023-12-15] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+43. [2023-12-15] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+44. [2023-12-18] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+45. [2023-12-18] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+46. [2023-12-22] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+47. [2023-12-22] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+48. [2023-12-22] ENTRY - BHP: BUY 43 shares at $45.69
+49. [2023-12-23] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+50. [2023-12-23] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+51. [2023-12-23] REJECTED - BHP: Position rejected: Already have position in BHP
+52. [2023-12-23] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+53. [2023-12-23] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+54. [2023-12-23] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+55. [2023-12-25] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+56. [2023-12-25] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+57. [2023-12-25] REJECTED - BHP: Position rejected: Already have position in BHP
+58. [2023-12-27] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+59. [2023-12-27] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+60. [2023-12-27] REJECTED - BHP: Position rejected: Already have position in BHP
+61. [2023-12-28] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+62. [2024-01-06] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+63. [2024-01-06] EXIT - BHP: SELL 43 shares at $44.19 - Holding period reached
+64. [2024-01-06] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+65. [2024-01-07] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+66. [2024-01-07] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+67. [2024-01-07] ENTRY - BHP: BUY 45 shares at $44.24
+68. [2024-01-09] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+69. [2024-01-09] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+70. [2024-01-13] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+71. [2024-01-14] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+72. [2024-01-14] EXIT - BHP: SELL 45 shares at $42.93 - Holding period reached
+73. [2024-01-14] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+74. [2024-01-14] ENTRY - BHP: BUY 46 shares at $42.97
+75. [2024-01-14] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+76. [2024-01-14] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+77. [2024-01-14] REJECTED - BHP: Position rejected: Already have position in BHP
+78. [2024-01-23] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+79. [2024-01-23] EXIT - BHP: SELL 46 shares at $42.05 - Holding period reached
+80. [2024-01-27] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+81. [2024-01-27] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+82. [2024-02-03] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+83. [2024-02-03] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+84. [2024-02-03] ENTRY - BHP: BUY 46 shares at $42.23
+85. [2024-02-03] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+86. [2024-02-03] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+87. [2024-02-03] REJECTED - BHP: Position rejected: Already have position in BHP
+88. [2024-02-05] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+89. [2024-02-07] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+90. [2024-02-07] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+91. [2024-02-07] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 49.0, trend down)
+92. [2024-02-08] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+93. [2024-02-08] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+94. [2024-02-08] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 56.06, trend down)
+95. [2024-02-08] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+96. [2024-02-09] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+97. [2024-02-10] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+98. [2024-02-10] EXIT - BHP: SELL 46 shares at $41.84 - Holding period reached
+99. [2024-02-13] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+100. [2024-02-16] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+101. [2024-02-16] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+102. [2024-02-16] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+103. [2024-02-16] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+104. [2024-03-01] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+105. [2024-03-01] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+106. [2024-03-01] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 40.43, trend down)
+107. [2024-03-06] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+108. [2024-03-06] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+109. [2024-03-09] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+110. [2024-03-09] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+111. [2024-03-09] ENTRY - BHP: BUY 49 shares at $39.91
+112. [2024-03-13] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+113. [2024-03-13] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+114. [2024-03-15] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+115. [2024-03-15] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+116. [2024-03-15] REJECTED - BHP: Position rejected: Already have position in BHP
+117. [2024-03-15] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+118. [2024-03-17] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+119. [2024-03-17] EXIT - BHP: SELL 49 shares at $39.49 - Holding period reached
+120. [2024-03-31] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+121. [2024-03-31] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+122. [2024-04-01] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+123. [2024-04-03] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+124. [2024-04-04] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+125. [2024-04-04] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+126. [2024-04-04] ENTRY - BHP: BUY 47 shares at $41.34
+127. [2024-04-06] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+128. [2024-04-06] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+129. [2024-04-06] REJECTED - BHP: Position rejected: Already have position in BHP
+130. [2024-04-06] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+131. [2024-04-08] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+132. [2024-04-08] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+133. [2024-04-11] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+134. [2024-04-11] EXIT - BHP: SELL 47 shares at $42.78 - Holding period reached
+135. [2024-04-11] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+136. [2024-04-11] ENTRY - BHP: BUY 46 shares at $42.43
+137. [2024-04-11] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+138. [2024-04-11] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+139. [2024-04-11] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+140. [2024-04-11] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+141. [2024-04-11] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+142. [2024-04-11] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+143. [2024-04-12] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+144. [2024-04-12] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+145. [2024-04-14] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+146. [2024-04-14] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+147. [2024-04-14] REJECTED - BHP: Position rejected: Already have position in BHP
+148. [2024-04-22] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+149. [2024-04-22] EXIT - BHP: SELL 46 shares at $42.29 - Holding period reached
+150. [2024-04-22] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+151. [2024-04-22] ENTRY - BHP: BUY 46 shares at $42.41
+152. [2024-04-22] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+153. [2024-04-22] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+154. [2024-04-23] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+155. [2024-04-23] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+156. [2024-04-23] REJECTED - BHP: Position rejected: Already have position in BHP
+157. [2024-04-23] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+158. [2024-04-23] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+159. [2024-04-24] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+160. [2024-04-24] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+161. [2024-05-02] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+162. [2024-05-02] EXIT - BHP: SELL 46 shares at $39.46 - Stop loss triggered
+163. [2024-05-03] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+164. [2024-05-03] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+165. [2024-05-03] ENTRY - BHP: BUY 48 shares at $39.85
+166. [2024-05-05] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+167. [2024-05-07] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+168. [2024-05-07] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+169. [2024-05-07] REJECTED - BHP: Position rejected: Already have position in BHP
+170. [2024-05-11] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+171. [2024-05-11] EXIT - BHP: SELL 48 shares at $40.27 - Holding period reached
+172. [2024-05-11] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+173. [2024-05-11] ENTRY - BHP: BUY 48 shares at $40.31
+174. [2024-05-14] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+175. [2024-05-14] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+176. [2024-05-14] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+177. [2024-05-19] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+178. [2024-05-19] EXIT - BHP: SELL 48 shares at $42.57 - Holding period reached
+179. [2024-05-19] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+180. [2024-05-19] ENTRY - BHP: BUY 46 shares at $42.62
+181. [2024-05-19] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+182. [2024-05-19] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+183. [2024-05-21] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+184. [2024-05-21] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+185. [2024-05-21] REJECTED - BHP: Position rejected: Already have position in BHP
+186. [2024-05-24] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+187. [2024-05-24] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+188. [2024-05-24] REJECTED - BHP: Position rejected: Already have position in BHP
+189. [2024-05-27] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+190. [2024-05-27] EXIT - BHP: SELL 46 shares at $42.04 - Holding period reached
+191. [2024-05-28] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+192. [2024-05-29] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+193. [2024-05-29] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+194. [2024-05-29] ENTRY - BHP: BUY 47 shares at $41.29
+195. [2024-05-31] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+196. [2024-05-31] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+197. [2024-05-31] REJECTED - BHP: Position rejected: Already have position in BHP
+198. [2024-06-04] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+199. [2024-06-07] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+200. [2024-06-07] EXIT - BHP: SELL 47 shares at $41.47 - Holding period reached
+201. [2024-06-09] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+202. [2024-06-09] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+203. [2024-06-09] ENTRY - BHP: BUY 48 shares at $40.77
+204. [2024-06-14] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+205. [2024-06-14] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+206. [2024-06-17] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+207. [2024-06-17] EXIT - BHP: SELL 48 shares at $39.61 - Holding period reached
+208. [2024-06-17] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+209. [2024-06-17] ENTRY - BHP: BUY 48 shares at $39.89
+210. [2024-06-21] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+211. [2024-06-22] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+212. [2024-06-22] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+213. [2024-06-22] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+214. [2024-06-26] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+215. [2024-06-26] EXIT - BHP: SELL 48 shares at $40.36 - Holding period reached
+216. [2024-06-26] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+217. [2024-06-27] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+218. [2024-06-27] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+219. [2024-06-27] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 39.49, trend down)
+220. [2024-06-28] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+221. [2024-06-28] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+222. [2024-07-01] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+223. [2024-07-01] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+224. [2024-07-03] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+225. [2024-07-03] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+226. [2024-07-03] ENTRY - BHP: BUY 46 shares at $41.73
+227. [2024-07-04] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+228. [2024-07-07] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+229. [2024-07-07] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+230. [2024-07-09] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+231. [2024-07-09] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+232. [2024-07-09] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+233. [2024-07-09] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+234. [2024-07-10] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+235. [2024-07-10] EXIT - BHP: SELL 46 shares at $40.20 - Holding period reached
+236. [2024-07-10] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+237. [2024-07-18] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+238. [2024-07-18] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+239. [2024-07-18] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 49.84, trend down)
+240. [2024-07-19] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+241. [2024-07-19] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+242. [2024-07-19] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 38.33, trend down)
+243. [2024-07-19] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+244. [2024-07-19] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+245. [2024-07-19] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 38.33, trend down)
+246. [2024-07-19] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+247. [2024-07-19] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+248. [2024-07-21] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+249. [2024-07-21] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+250. [2024-07-22] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+251. [2024-07-24] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+252. [2024-07-24] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+253. [2024-07-24] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 19.43, trend down)
+254. [2024-07-30] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+255. [2024-07-30] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+256. [2024-07-30] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 33.6, trend down)
+257. [2024-08-01] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+258. [2024-08-01] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+259. [2024-08-01] ENTRY - BHP: BUY 49 shares at $39.13
+260. [2024-08-02] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+261. [2024-08-02] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+262. [2024-08-03] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+263. [2024-08-04] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+264. [2024-08-08] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+265. [2024-08-08] EXIT - BHP: SELL 49 shares at $37.44 - Holding period reached
+266. [2024-08-08] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+267. [2024-08-09] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+268. [2024-08-09] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+269. [2024-08-09] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 43.81, trend down)
+270. [2024-08-11] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+271. [2024-08-11] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+272. [2024-08-11] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 43.81, trend down)
+273. [2024-08-12] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+274. [2024-08-12] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+275. [2024-08-15] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+276. [2024-08-15] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+277. [2024-08-15] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 28.14, trend down)
+278. [2024-08-16] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+279. [2024-08-16] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+280. [2024-08-18] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+281. [2024-08-19] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+282. [2024-08-19] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+283. [2024-08-20] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+284. [2024-08-20] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+285. [2024-08-20] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 35.12, trend down)
+286. [2024-08-21] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+287. [2024-08-21] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+288. [2024-08-21] ENTRY - BHP: BUY 50 shares at $38.16
+289. [2024-08-21] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+290. [2024-08-21] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+291. [2024-09-02] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+292. [2024-09-02] EXIT - BHP: SELL 50 shares at $37.55 - Holding period reached
+293. [2024-09-05] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+294. [2024-09-06] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+295. [2024-09-06] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+296. [2024-09-06] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 39.47, trend down)
+297. [2024-09-06] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+298. [2024-09-06] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+299. [2024-09-11] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+300. [2024-09-11] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+301. [2024-09-11] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+302. [2024-09-11] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+303. [2024-09-12] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+304. [2024-09-13] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+305. [2024-09-13] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+306. [2024-09-17] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+307. [2024-09-19] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+308. [2024-09-19] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+309. [2024-09-19] ENTRY - BHP: BUY 49 shares at $38.69
+310. [2024-09-20] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+311. [2024-09-20] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+312. [2024-09-20] REJECTED - BHP: Position rejected: Already have position in BHP
+313. [2024-09-26] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+314. [2024-09-26] EXIT - BHP: SELL 49 shares at $41.55 - Holding period reached
+315. [2024-09-26] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+316. [2024-09-26] ENTRY - BHP: BUY 45 shares at $42.91
+317. [2024-10-04] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+318. [2024-10-04] EXIT - BHP: SELL 45 shares at $42.72 - Holding period reached
+319. [2024-10-04] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+320. [2024-10-05] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+321. [2024-10-06] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+322. [2024-10-06] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+323. [2024-10-06] ENTRY - BHP: BUY 45 shares at $43.03
+324. [2024-10-07] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+325. [2024-10-12] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+326. [2024-10-12] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+327. [2024-10-12] REJECTED - BHP: Position rejected: Already have position in BHP
+328. [2024-10-13] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+329. [2024-10-13] EXIT - BHP: SELL 45 shares at $41.97 - Holding period reached
+330. [2024-10-16] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+331. [2024-10-19] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+332. [2024-10-20] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+333. [2024-10-21] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+334. [2024-10-21] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+335. [2024-10-21] ENTRY - BHP: BUY 47 shares at $40.42
+336. [2024-10-22] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+337. [2024-10-22] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+338. [2024-10-24] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+339. [2024-10-24] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+340. [2024-10-24] REJECTED - BHP: Position rejected: Already have position in BHP
+341. [2024-10-25] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+342. [2024-10-25] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+343. [2024-10-25] REJECTED - BHP: Position rejected: Already have position in BHP
+344. [2024-10-25] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+345. [2024-10-29] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+346. [2024-10-29] EXIT - BHP: SELL 47 shares at $41.24 - Holding period reached
+347. [2024-10-31] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+348. [2024-10-31] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+349. [2024-11-06] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+350. [2024-11-06] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+351. [2024-11-06] ENTRY - BHP: BUY 47 shares at $41.23
+352. [2024-11-15] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+353. [2024-11-15] EXIT - BHP: SELL 47 shares at $38.40 - Stop loss triggered
+354. [2024-11-15] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+355. [2024-11-16] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+356. [2024-11-19] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+357. [2024-11-20] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+358. [2024-11-20] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+359. [2024-11-20] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 25.38, trend down)
+360. [2024-11-23] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+361. [2024-11-23] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+362. [2024-11-23] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 27.82, trend down)
+363. [2024-11-26] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+364. [2024-11-27] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+365. [2024-11-27] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+366. [2024-12-01] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+367. [2024-12-01] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+368. [2024-12-01] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 37.14, trend down)
+369. [2024-12-03] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+370. [2024-12-05] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+371. [2024-12-05] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+372. [2024-12-05] ENTRY - BHP: BUY 48 shares at $39.04
+373. [2024-12-09] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+374. [2024-12-11] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+375. [2024-12-15] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+376. [2024-12-15] EXIT - BHP: SELL 48 shares at $38.66 - Holding period reached
+377. [2024-12-15] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+378. [2024-12-15] ENTRY - BHP: BUY 49 shares at $38.70
+379. [2024-12-17] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+380. [2024-12-23] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+381. [2024-12-23] EXIT - BHP: SELL 49 shares at $38.23 - Holding period reached
+382. [2024-12-23] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+383. [2024-12-23] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 42.78, trend down)
+384. [2024-12-23] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+385. [2024-12-23] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+386. [2024-12-25] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+387. [2024-12-27] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+388. [2024-12-28] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+389. [2025-01-02] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+390. [2025-01-02] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+391. [2025-01-02] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+392. [2025-01-02] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+393. [2025-01-06] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+394. [2025-01-06] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+395. [2025-01-06] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 18.98, trend down)
+396. [2025-01-06] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+397. [2025-01-06] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+398. [2025-01-12] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+399. [2025-01-13] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+400. [2025-01-13] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+401. [2025-01-13] ENTRY - BHP: BUY 49 shares at $38.52
+402. [2025-01-13] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+403. [2025-01-13] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+404. [2025-01-13] REJECTED - BHP: Position rejected: Already have position in BHP
+405. [2025-01-14] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+406. [2025-01-14] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+407. [2025-01-14] REJECTED - BHP: Position rejected: Already have position in BHP
+408. [2025-01-15] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+409. [2025-01-15] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+410. [2025-01-16] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+411. [2025-01-16] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+412. [2025-01-16] REJECTED - BHP: Position rejected: Already have position in BHP
+413. [2025-01-17] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+414. [2025-01-17] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+415. [2025-01-26] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+416. [2025-01-26] EXIT - BHP: SELL 49 shares at $37.83 - Holding period reached
+417. [2025-01-31] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+418. [2025-02-05] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+419. [2025-02-05] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+420. [2025-02-05] ENTRY - BHP: BUY 49 shares at $38.62
+421. [2025-02-05] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+422. [2025-02-06] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+423. [2025-02-06] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+424. [2025-02-07] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+425. [2025-02-07] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+426. [2025-02-07] REJECTED - BHP: Position rejected: Already have position in BHP
+427. [2025-02-11] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+428. [2025-02-11] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+429. [2025-02-11] REJECTED - BHP: Position rejected: Already have position in BHP
+430. [2025-02-14] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+431. [2025-02-14] EXIT - BHP: SELL 49 shares at $39.21 - Holding period reached
+432. [2025-02-14] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+433. [2025-02-14] ENTRY - BHP: BUY 48 shares at $39.13
+434. [2025-02-14] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+435. [2025-02-16] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+436. [2025-02-17] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+437. [2025-02-22] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+438. [2025-02-22] EXIT - BHP: SELL 48 shares at $39.10 - Holding period reached
+439. [2025-02-22] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+440. [2025-02-22] ENTRY - BHP: BUY 48 shares at $39.13
+441. [2025-02-22] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+442. [2025-02-22] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+443. [2025-02-22] REJECTED - BHP: Position rejected: Already have position in BHP
+444. [2025-02-22] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+445. [2025-02-22] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+446. [2025-02-24] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+447. [2025-02-24] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+448. [2025-02-24] REJECTED - BHP: Position rejected: Already have position in BHP
+449. [2025-02-24] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+450. [2025-02-25] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+451. [2025-02-25] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+452. [2025-02-25] REJECTED - BHP: Position rejected: Already have position in BHP
+453. [2025-02-26] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+454. [2025-02-27] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+455. [2025-02-27] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+456. [2025-03-01] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+457. [2025-03-01] EXIT - BHP: SELL 48 shares at $37.95 - Holding period reached
+458. [2025-03-01] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+459. [2025-03-01] ENTRY - BHP: BUY 49 shares at $37.98
+460. [2025-03-01] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+461. [2025-03-01] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+462. [2025-03-02] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+463. [2025-03-08] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+464. [2025-03-08] EXIT - BHP: SELL 49 shares at $38.33 - Holding period reached
+465. [2025-03-08] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+466. [2025-03-11] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+467. [2025-03-11] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+468. [2025-03-11] ENTRY - BHP: BUY 49 shares at $38.12
+469. [2025-03-12] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+470. [2025-03-13] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+471. [2025-03-13] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+472. [2025-03-13] REJECTED - BHP: Position rejected: Already have position in BHP
+473. [2025-03-16] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+474. [2025-03-20] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+475. [2025-03-20] EXIT - BHP: SELL 49 shares at $38.26 - Holding period reached
+476. [2025-03-21] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+477. [2025-03-21] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+478. [2025-03-23] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+479. [2025-03-23] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+480. [2025-03-23] ENTRY - BHP: BUY 49 shares at $38.48
+481. [2025-03-23] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+482. [2025-03-26] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+483. [2025-03-28] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+484. [2025-03-28] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+485. [2025-03-31] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+486. [2025-03-31] EXIT - BHP: SELL 49 shares at $37.35 - Holding period reached
+487. [2025-03-31] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+488. [2025-03-31] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 38.55, trend down)
+489. [2025-04-03] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+490. [2025-04-03] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+491. [2025-04-03] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 38.42, trend down)
+492. [2025-04-05] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+493. [2025-04-05] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+494. [2025-04-05] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 28.23, trend down)
+495. [2025-04-08] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+496. [2025-04-09] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+497. [2025-04-09] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+498. [2025-04-09] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+499. [2025-04-09] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+500. [2025-04-13] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+501. [2025-04-21] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+502. [2025-04-21] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+503. [2025-04-22] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+504. [2025-04-25] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+505. [2025-04-26] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+506. [2025-04-27] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+507. [2025-04-27] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+508. [2025-05-07] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+509. [2025-05-07] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+510. [2025-05-08] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+511. [2025-05-08] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+512. [2025-05-08] ENTRY - BHP: BUY 51 shares at $36.74
+513. [2025-05-09] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+514. [2025-05-15] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+515. [2025-05-15] EXIT - BHP: SELL 51 shares at $38.32 - Holding period reached
+516. [2025-05-17] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+517. [2025-05-17] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+518. [2025-05-17] ENTRY - BHP: BUY 49 shares at $37.93
+519. [2025-05-18] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+520. [2025-05-18] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+521. [2025-05-18] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+522. [2025-05-18] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+523. [2025-05-19] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+524. [2025-05-19] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+525. [2025-05-19] REJECTED - BHP: Position rejected: Already have position in BHP
+526. [2025-05-19] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+527. [2025-05-19] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+528. [2025-05-21] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+529. [2025-05-21] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+530. [2025-05-21] REJECTED - BHP: Position rejected: Already have position in BHP
+531. [2025-05-22] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+532. [2025-05-23] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+533. [2025-05-23] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+534. [2025-05-24] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+535. [2025-05-24] EXIT - BHP: SELL 49 shares at $37.71 - Holding period reached
+536. [2025-05-24] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+537. [2025-05-26] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+538. [2025-05-26] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+539. [2025-05-26] ENTRY - BHP: BUY 49 shares at $37.82
+540. [2025-05-27] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+541. [2025-05-29] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+542. [2025-06-04] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+543. [2025-06-04] EXIT - BHP: SELL 49 shares at $37.11 - Holding period reached
+544. [2025-06-04] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+545. [2025-06-04] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+546. [2025-06-04] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+547. [2025-06-06] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+548. [2025-06-06] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+549. [2025-06-06] ENTRY - BHP: BUY 49 shares at $37.66
+550. [2025-06-09] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+551. [2025-06-09] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+552. [2025-06-16] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+553. [2025-06-16] EXIT - BHP: SELL 49 shares at $36.61 - Holding period reached
+554. [2025-06-16] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+555. [2025-06-18] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+556. [2025-06-18] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+557. [2025-06-18] ENTRY - BHP: BUY 52 shares at $35.36
+558. [2025-06-18] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+559. [2025-06-24] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+560. [2025-06-24] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+561. [2025-06-24] TECH_REJECTED - BHP: Technical analysis rejected: CONFLICT: News bullish but technicals bearish (RSI: 41.15, trend down)
+562. [2025-06-29] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+563. [2025-06-29] EXIT - BHP: SELL 52 shares at $35.93 - Holding period reached
+564. [2025-06-29] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+565. [2025-06-29] ENTRY - BHP: BUY 52 shares at $35.97
+566. [2025-07-01] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+567. [2025-07-05] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+568. [2025-07-05] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+569. [2025-07-05] REJECTED - BHP: Position rejected: Already have position in BHP
+570. [2025-07-07] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+571. [2025-07-07] EXIT - BHP: SELL 52 shares at $37.74 - Holding period reached
+572. [2025-07-07] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+573. [2025-07-07] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+574. [2025-07-07] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+575. [2025-07-09] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+576. [2025-07-15] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+577. [2025-07-15] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+578. [2025-07-18] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+579. [2025-07-18] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+580. [2025-07-18] ENTRY - BHP: BUY 47 shares at $39.60
+581. [2025-07-23] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+582. [2025-07-23] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+583. [2025-07-23] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+584. [2025-07-24] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+585. [2025-07-28] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+586. [2025-07-28] EXIT - BHP: SELL 47 shares at $39.40 - Holding period reached
+587. [2025-07-28] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+588. [2025-07-28] ENTRY - BHP: BUY 47 shares at $39.56
+589. [2025-07-28] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+590. [2025-07-28] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+591. [2025-07-29] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+592. [2025-08-05] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+593. [2025-08-05] EXIT - BHP: SELL 47 shares at $38.92 - Holding period reached
+594. [2025-08-06] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+595. [2025-08-06] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+596. [2025-08-13] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+597. [2025-08-16] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+598. [2025-08-16] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+599. [2025-08-16] ENTRY - BHP: BUY 46 shares at $40.59
+600. [2025-08-16] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+601. [2025-08-16] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+602. [2025-08-16] REJECTED - BHP: Position rejected: Already have position in BHP
+603. [2025-08-22] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+604. [2025-08-28] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+605. [2025-08-28] EXIT - BHP: SELL 46 shares at $42.05 - Holding period reached
+606. [2025-08-29] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+607. [2025-08-29] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+608. [2025-09-01] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+609. [2025-09-01] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+610. [2025-09-01] ENTRY - BHP: BUY 45 shares at $41.94
+611. [2025-09-01] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+612. [2025-09-04] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+613. [2025-09-06] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+614. [2025-09-08] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+615. [2025-09-08] EXIT - BHP: SELL 45 shares at $41.35 - Holding period reached
+616. [2025-09-08] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+617. [2025-09-08] ENTRY - BHP: BUY 46 shares at $40.99
+618. [2025-09-09] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+619. [2025-09-10] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+620. [2025-09-10] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+621. [2025-09-10] REJECTED - BHP: Position rejected: Already have position in BHP
+622. [2025-09-11] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+623. [2025-09-11] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+624. [2025-09-11] REJECTED - BHP: Position rejected: Already have position in BHP
+625. [2025-09-11] NEWS - NAB: Shareholder resolution for consideration at the 2025 AGM2
+						
+                            pages14
+626. [2025-09-11] FILTERED - NAB: Filtered: Shareholder resolution for consideration at the 2025 AGM2
+		... (quality: 0.50)
+627. [2025-09-13] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+628. [2025-09-13] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+629. [2025-09-13] REJECTED - BHP: Position rejected: Already have position in BHP
+630. [2025-09-15] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+631. [2025-09-15] EXIT - BHP: SELL 46 shares at $40.56 - Holding period reached
+632. [2025-09-15] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+633. [2025-09-15] ENTRY - BHP: BUY 46 shares at $40.79
+634. [2025-09-22] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+635. [2025-09-22] EXIT - BHP: SELL 46 shares at $40.01 - Holding period reached
+636. [2025-09-22] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+637. [2025-09-22] ENTRY - BHP: BUY 46 shares at $40.24
+638. [2025-09-23] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+639. [2025-09-23] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+640. [2025-09-23] REJECTED - BHP: Position rejected: Already have position in BHP
+641. [2025-09-23] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+642. [2025-09-26] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+643. [2025-09-26] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+644. [2025-09-26] REJECTED - BHP: Position rejected: Already have position in BHP
+645. [2025-09-26] NEWS - TLS: Update - Notification of buy-back - TLS6
+						
+                            pages18.4KB
+646. [2025-10-01] NEWS - BHP: Update - Dividend/Distribution - BHP6
+						
+                            pages23.5KB
+647. [2025-10-01] EXIT - BHP: SELL 46 shares at $41.45 - Holding period reached
+648. [2025-10-01] RECOMMENDATION - BHP: BUY recommendation - Confidence: 0.60
+649. [2025-10-01] ENTRY - BHP: BUY 45 shares at $41.96
+650. [2025-10-01] EXIT - BHP: SELL 45 shares at $41.45 - End of simulation
+
+
+COMPLETED TRADES:
+--------------------------------------------------------------------------------
+
+Ticker: BHP
+  Entry: 2023-11-21 @ $43.49
+  Exit:  2023-12-02 @ $42.81
+  Hold:  11 days
+  P/L:   -1.66%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2023-12-04 @ $42.29
+  Exit:  2023-12-14 @ $43.82
+  Hold:  10 days
+  P/L:   3.51%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2023-12-22 @ $45.69
+  Exit:  2024-01-06 @ $44.19
+  Hold:  15 days
+  P/L:   -3.38%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-01-07 @ $44.24
+  Exit:  2024-01-14 @ $42.93
+  Hold:  7 days
+  P/L:   -3.05%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-01-14 @ $42.97
+  Exit:  2024-01-23 @ $42.05
+  Hold:  9 days
+  P/L:   -2.25%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-02-03 @ $42.23
+  Exit:  2024-02-10 @ $41.84
+  Hold:  7 days
+  P/L:   -1.02%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-03-09 @ $39.91
+  Exit:  2024-03-17 @ $39.49
+  Hold:  8 days
+  P/L:   -1.16%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-04-04 @ $41.34
+  Exit:  2024-04-11 @ $42.78
+  Hold:  7 days
+  P/L:   3.38%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-04-11 @ $42.43
+  Exit:  2024-04-22 @ $42.29
+  Hold:  11 days
+  P/L:   -0.42%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-04-22 @ $42.41
+  Exit:  2024-05-02 @ $39.46
+  Hold:  10 days
+  P/L:   -7.04%
+  Reason: Stop loss triggered
+
+Ticker: BHP
+  Entry: 2024-05-03 @ $39.85
+  Exit:  2024-05-11 @ $40.27
+  Hold:  8 days
+  P/L:   0.97%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-05-11 @ $40.31
+  Exit:  2024-05-19 @ $42.57
+  Hold:  8 days
+  P/L:   5.50%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-05-19 @ $42.62
+  Exit:  2024-05-27 @ $42.04
+  Hold:  8 days
+  P/L:   -1.44%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-05-29 @ $41.29
+  Exit:  2024-06-07 @ $41.47
+  Hold:  9 days
+  P/L:   0.32%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-06-09 @ $40.77
+  Exit:  2024-06-17 @ $39.61
+  Hold:  8 days
+  P/L:   -2.94%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-06-17 @ $39.89
+  Exit:  2024-06-26 @ $40.36
+  Hold:  9 days
+  P/L:   1.06%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-07-03 @ $41.73
+  Exit:  2024-07-10 @ $40.20
+  Hold:  7 days
+  P/L:   -3.77%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-08-01 @ $39.13
+  Exit:  2024-08-08 @ $37.44
+  Hold:  7 days
+  P/L:   -4.41%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-08-21 @ $38.16
+  Exit:  2024-09-02 @ $37.55
+  Hold:  12 days
+  P/L:   -1.69%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-09-19 @ $38.69
+  Exit:  2024-09-26 @ $41.55
+  Hold:  7 days
+  P/L:   7.27%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-09-26 @ $42.91
+  Exit:  2024-10-04 @ $42.72
+  Hold:  8 days
+  P/L:   -0.56%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-10-06 @ $43.03
+  Exit:  2024-10-13 @ $41.97
+  Hold:  7 days
+  P/L:   -2.56%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-10-21 @ $40.42
+  Exit:  2024-10-29 @ $41.24
+  Hold:  8 days
+  P/L:   1.93%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-11-06 @ $41.23
+  Exit:  2024-11-15 @ $38.40
+  Hold:  9 days
+  P/L:   -6.98%
+  Reason: Stop loss triggered
+
+Ticker: BHP
+  Entry: 2024-12-05 @ $39.04
+  Exit:  2024-12-15 @ $38.66
+  Hold:  10 days
+  P/L:   -1.06%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2024-12-15 @ $38.70
+  Exit:  2024-12-23 @ $38.23
+  Hold:  8 days
+  P/L:   -1.31%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-01-13 @ $38.52
+  Exit:  2025-01-26 @ $37.83
+  Hold:  13 days
+  P/L:   -1.89%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-02-05 @ $38.62
+  Exit:  2025-02-14 @ $39.21
+  Hold:  9 days
+  P/L:   1.44%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-02-14 @ $39.13
+  Exit:  2025-02-22 @ $39.10
+  Hold:  8 days
+  P/L:   -0.20%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-02-22 @ $39.13
+  Exit:  2025-03-01 @ $37.95
+  Hold:  7 days
+  P/L:   -3.14%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-03-01 @ $37.98
+  Exit:  2025-03-08 @ $38.33
+  Hold:  7 days
+  P/L:   0.81%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-03-11 @ $38.12
+  Exit:  2025-03-20 @ $38.26
+  Hold:  9 days
+  P/L:   0.26%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-03-23 @ $38.48
+  Exit:  2025-03-31 @ $37.35
+  Hold:  8 days
+  P/L:   -3.04%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-05-08 @ $36.74
+  Exit:  2025-05-15 @ $38.32
+  Hold:  7 days
+  P/L:   4.19%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-05-17 @ $37.93
+  Exit:  2025-05-24 @ $37.71
+  Hold:  7 days
+  P/L:   -0.66%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-05-26 @ $37.82
+  Exit:  2025-06-04 @ $37.11
+  Hold:  9 days
+  P/L:   -1.98%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-06-06 @ $37.66
+  Exit:  2025-06-16 @ $36.61
+  Hold:  10 days
+  P/L:   -2.90%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-06-18 @ $35.36
+  Exit:  2025-06-29 @ $35.93
+  Hold:  11 days
+  P/L:   1.51%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-06-29 @ $35.97
+  Exit:  2025-07-07 @ $37.74
+  Hold:  8 days
+  P/L:   4.82%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-07-18 @ $39.60
+  Exit:  2025-07-28 @ $39.40
+  Hold:  10 days
+  P/L:   -0.59%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-07-28 @ $39.56
+  Exit:  2025-08-05 @ $38.92
+  Hold:  8 days
+  P/L:   -1.73%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-08-16 @ $40.59
+  Exit:  2025-08-28 @ $42.05
+  Hold:  12 days
+  P/L:   3.51%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-09-01 @ $41.94
+  Exit:  2025-09-08 @ $41.35
+  Hold:  7 days
+  P/L:   -1.51%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-09-08 @ $40.99
+  Exit:  2025-09-15 @ $40.56
+  Hold:  7 days
+  P/L:   -1.15%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-09-15 @ $40.79
+  Exit:  2025-09-22 @ $40.01
+  Hold:  7 days
+  P/L:   -2.01%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-09-22 @ $40.24
+  Exit:  2025-10-01 @ $41.45
+  Hold:  9 days
+  P/L:   2.90%
+  Reason: Holding period reached
+
+Ticker: BHP
+  Entry: 2025-10-01 @ $41.96
+  Exit:  2025-10-01 @ $41.45
+  Hold:  0 days
+  P/L:   -1.32%
+  Reason: End of simulation

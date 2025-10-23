@@ -1,0 +1,55 @@
+{
+  "data": {
+    "displayName": "BHP GROUP LIMITED",
+    "issueType": "CS",
+    "items": [
+      {
+        "announcementType": "DISTRIBUTION ANNOUNCEMENT",
+        "date": "2025-10-09T06:33:12.000Z",
+        "documentKey": "2924-03005897-3A678366",
+        "fileSize": "20KB",
+        "headline": "Update - Dividend/Distribution - BHP",
+        "isPriceSensitive": false,
+        "url": ""
+      },
+      {
+        "announcementType": "ISSUED CAPITAL",
+        "date": "2025-10-08T04:18:22.000Z",
+        "documentKey": "2924-03005241-3A678267",
+        "fileSize": "12KB",
+        "headline": "Notification of cessation of securities - BHP",
+        "isPriceSensitive": false,
+        "url": ""
+      },
+      {
+        "announcementType": "ISSUED CAPITAL",
+        "date": "2025-10-06T06:25:09.000Z",
+        "documentKey": "2924-03004096-3A678078",
+        "fileSize": "14KB",
+        "headline": "Notification regarding unquoted securities - BHP",
+        "isPriceSensitive": false,
+        "url": ""
+      },
+      {
+        "announcementType": "NOTICE OF MEETING",
+        "date": "2025-09-15T22:26:17.000Z",
+        "documentKey": "2924-02993799-3A676401",
+        "fileSize": "656KB",
+        "headline": "BHP 2025 Proxy Form",
+        "isPriceSensitive": false,
+        "url": ""
+      },
+      {
+        "announcementType": "OTHER",
+        "date": "2025-09-15T22:25:37.000Z",
+        "documentKey": "2924-02993794-3A676396",
+        "fileSize": "3830KB",
+        "headline": "BHP 2025 Notice of Annual General Meeting",
+        "isPriceSensitive": false,
+        "url": ""
+      }
+    ],
+    "symbol": "BHP",
+    "xid": "60947"
+  }
+}

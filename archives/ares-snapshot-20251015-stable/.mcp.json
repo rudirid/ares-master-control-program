@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "playwright-chrome": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@automatalabs/mcp-server-playwright"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSER": "chromium",
+        "PLAYWRIGHT_CHANNEL": "chrome",
+        "PLAYWRIGHT_USER_DATA_DIR": "C:\\Users\\riord\\AppData\\Local\\Google\\Chrome\\User Data",
+        "PLAYWRIGHT_HEADLESS": "false"
+      }
+    }
+  }
+}

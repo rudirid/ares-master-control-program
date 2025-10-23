@@ -1,0 +1,29 @@
+{
+  "name": "ares-mcp-server",
+  "version": "2.5.0",
+  "description": "ARES Master Control Program - MCP Server exposing proven patterns and internal validation protocols",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "ai",
+    "ares",
+    "patterns",
+    "validation"
+  ],
+  "author": "Riord",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

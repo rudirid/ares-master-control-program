@@ -1,0 +1,34 @@
+{
+  "name": "gemini-research-mcp",
+  "version": "1.0.0",
+  "description": "MCP server integrating Gemini's research capabilities with Google Scholar and YouTube for deep research and weighted decision-making",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "gemini",
+    "research",
+    "google-scholar",
+    "youtube",
+    "ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

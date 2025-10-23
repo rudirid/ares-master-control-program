@@ -1,0 +1,39 @@
+================================================================================
+BEHAVIORAL FILTER COMPARISON TEST
+================================================================================
+
+TEST 1: WITHOUT Behavioral Filters
+--------------------------------------------------------------------------------
+
+Results WITHOUT Behavioral Filters:
+  Total Trades: 47
+  Win Rate: 34.0%
+  Return: -5.87%
+  Final Capital: $9,412.61
+  Filtered Announcements: 79
+
+================================================================================
+
+TEST 2: WITH Behavioral Filters
+--------------------------------------------------------------------------------
+
+Results WITH Behavioral Filters:
+  Total Trades: 0
+  Win Rate: 0.0%
+  Return: +0.00%
+  Final Capital: $10,000.00
+  Filtered Announcements: 300
+
+================================================================================
+COMPARISON
+================================================================================
+
+Traceback (most recent call last):
+  File "C:\Users\riord\Documents\ClaudeWorkshop\StockTradingAI\test_filter_comparison.py", line 112, in <module>
+    run_comparison()
+  File "C:\Users\riord\Documents\ClaudeWorkshop\StockTradingAI\test_filter_comparison.py", line 92, in run_comparison
+    print(f"Trades: {results1['total_trades']} \u2192 {results2['total_trades']} ({results2['total_trades'] - results1['total_trades']:+d})")
+  File "C:\Users\riord\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 11: character maps to <undefined>

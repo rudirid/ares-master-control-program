@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .alert.danger {
+            background: #f8d7da;
+            border-left-color: #dc3545;
+        }
+
+        .alert.success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .metric-card.warning {
+            border-left: 4px solid #ffc107;
+        }
+
+        .metric-card.danger {
+            border-left: 4px solid #dc3545;
+        }
+
+        .metric-card.success {
+            border-left: 4px solid #28a745;
+        }
+
+        .metric-label {
+            color: #7f8c8d;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .metric-value.positive {
+            color: #27ae60;
+        }
+
+        .metric-value.negative {
+            color: #e74c3c;
+        }
+
+        .metric-change {
+            font-size: 14px;
+            margin-top: 5px;
+            color: #7f8c8d;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #f39c12, #e74c3c);
+            transition: width 0.3s;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge.low {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge.medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .badge.high {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .badge.critical {
+            background: #721c24;
+            color: white;
+        }
+
+        .refresh-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .refresh-btn:hover {
+            background: #2980b9;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #7f8c8d;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .correlation-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 5px;
+            margin: 20px 0;
+        }
+
+        .correlation-cell {
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Risk Management Dashboard</h1>
+            <p class="subtitle">Real-time risk monitoring and exposure analysis</p>
+            <button class="refresh-btn" onclick="loadData()">Refresh Data</button>
+        </header>
+
+        <!-- Circuit Breaker Alert -->
+        <div id="circuitBreakerAlert" style="display: none;"></div>
+
+        <!-- Risk Metrics -->
+        <div class="metrics-grid" id="metricsGrid">
+            <div class="loading">Loading risk metrics...</div>
+        </div>
+
+        <!-- Exposure Chart -->
+        <div class="section">
+            <h2 class="section-title">Portfolio Exposure</h2>
+            <div class="chart-container">
+                <canvas id="exposureChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Sector Diversification -->
+        <div class="section">
+            <h2 class="section-title">Sector Diversification</h2>
+            <div class="chart-container">
+                <canvas id="sectorChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Active Positions Table -->
+        <div class="section">
+            <h2 class="section-title">Active Positions & Risk Levels</h2>
+            <div id="positionsTable">
+                <div class="loading">Loading positions...</div>
+            </div>
+        </div>
+
+        <!-- Correlation Matrix -->
+        <div class="section">
+            <h2 class="section-title">Position Correlation</h2>
+            <p style="color: #7f8c8d; margin-bottom: 15px;">
+                Higher correlation means positions move together (higher risk)
+            </p>
+            <div id="correlationMatrix">
+                <div class="loading">Calculating correlations...</div>
+            </div>
+        </div>
+
+        <!-- Worst Case Scenario -->
+        <div class="section">
+            <h2 class="section-title">Worst Case Scenario Analysis</h2>
+            <div id="worstCaseAnalysis">
+                <div class="loading">Running scenario analysis...</div>
+            </div>
+        </div>
+
+        <!-- Risk Events Log -->
+        <div class="section">
+            <h2 class="section-title">Recent Risk Events</h2>
+            <div id="riskEventsLog">
+                <div class="loading">Loading risk events...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let exposureChart;
+        let sectorChart;
+
+        async function loadData() {
+            try {
+                const response = await fetch('http://localhost:8002/api/risk-data');
+                const data = await response.json();
+
+                updateMetrics(data.metrics);
+                updateCircuitBreakerAlert(data.circuit_breaker);
+                updateExposureChart(data.exposure_breakdown);
+                updateSectorChart(data.sector_exposure);
+                updatePositionsTable(data.active_positions);
+                updateCorrelationMatrix(data.correlation_matrix);
+                updateWorstCase(data.worst_case);
+                updateRiskEvents(data.risk_events);
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('metricsGrid').innerHTML =
+                    '<div class="error">Error loading data. Make sure the risk server is running: python risk_dashboard_server.py</div>';
+            }
+        }
+
+        function updateCircuitBreakerAlert(circuitBreaker) {
+            const alertDiv = document.getElementById('circuitBreakerAlert');
+
+            if (circuitBreaker.is_active) {
+                alertDiv.style.display = 'block';
+                alertDiv.className = 'alert danger';
+                alertDiv.innerHTML = `
+                    <strong>CIRCUIT BREAKER ACTIVE</strong><br>
+                    ${circuitBreaker.reason}<br>
+                    All trading is paused until ${new Date(circuitBreaker.deactivate_at).toLocaleString()}
+                `;
+            } else {
+                alertDiv.style.display = 'none';
+            }
+        }
+
+        function updateMetrics(metrics) {
+            let html = '';
+
+            // Portfolio exposure
+            const exposureClass = metrics.exposure_pct > 75 ? 'danger' : metrics.exposure_pct > 60 ? 'warning' : 'success';
+            html += `
+                <div class="metric-card ${exposureClass}">
+                    <div class="metric-label">Portfolio Exposure</div>
+                    <div class="metric-value">${metrics.exposure_pct.toFixed(1)}%</div>
+                    <div class="metric-change">$${metrics.total_exposure.toLocaleString()} / $${metrics.portfolio_value.toLocaleString()}</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${metrics.exposure_pct}%"></div>
+                    </div>
+                </div>
+            `;
+
+            // Daily loss
+            const lossClass = metrics.daily_loss_pct < -3 ? 'danger' : metrics.daily_loss_pct < 0 ? 'warning' : 'success';
+            html += `
+                <div class="metric-card ${lossClass}">
+                    <div class="metric-label">Daily P/L</div>
+                    <div class="metric-value ${metrics.daily_loss_pct >= 0 ? 'positive' : 'negative'}">${metrics.daily_loss_pct >= 0 ? '+' : ''}${metrics.daily_loss_pct.toFixed(2)}%</div>
+                    <div class="metric-change">Limit: -${metrics.limits.daily_loss_limit_pct}%</div>
+                </div>
+            `;
+
+            // Active positions
+            html += `
+                <div class="metric-card">
+                    <div class="metric-label">Active Positions</div>
+                    <div class="metric-value">${metrics.active_positions_count}</div>
+                    <div class="metric-change">Max risk per trade: ${metrics.limits.max_risk_per_trade_pct}%</div>
+                </div>
+            `;
+
+            // Stop loss monitoring
+            html += `
+                <div class="metric-card">
+                    <div class="metric-label">Stop Loss Level</div>
+                    <div class="metric-value">${metrics.limits.stop_loss_pct}%</div>
+                    <div class="metric-change">Auto-exit when triggered</div>
+                </div>
+            `;
+
+            document.getElementById('metricsGrid').innerHTML = html;
+        }
+
+        function updateExposureChart(exposure) {
+            const ctx = document.getElementById('exposureChart').getContext('2d');
+
+            if (exposureChart) {
+                exposureChart.destroy();
+            }
+
+            exposureChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Deployed Capital', 'Available Capital', 'Reserved for Risk (2% per trade)'],
+                    datasets: [{
+                        data: [
+                            exposure.deployed,
+                            exposure.available,
+                            exposure.reserved_for_risk
+                        ],
+                        backgroundColor: [
+                            'rgba(52, 152, 219, 0.8)',
+                            'rgba(46, 204, 113, 0.8)',
+                            'rgba(241, 196, 15, 0.8)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateSectorChart(sectorExposure) {
+            const ctx = document.getElementById('sectorChart').getContext('2d');
+
+            if (sectorChart) {
+                sectorChart.destroy();
+            }
+
+            const sectors = Object.keys(sectorExposure);
+            const counts = Object.values(sectorExposure);
+
+            sectorChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sectors,
+                    datasets: [{
+                        label: 'Number of Positions',
+                        data: counts,
+                        backgroundColor: 'rgba(155, 89, 182, 0.8)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updatePositionsTable(positions) {
+            if (positions.length === 0) {
+                document.getElementById('positionsTable').innerHTML =
+                    '<p style="text-align: center; color: #7f8c8d; padding: 20px;">No active positions</p>';
+                return;
+            }
+
+            let html = '<table><thead><tr>';
+            html += '<th>Ticker</th>';
+            html += '<th>Sector</th>';
+            html += '<th>Entry Price</th>';
+            html += '<th>Current Price</th>';
+            html += '<th>P/L</th>';
+            html += '<th>Stop Loss</th>';
+            html += '<th>Risk Level</th>';
+            html += '</tr></thead><tbody>';
+
+            positions.forEach(pos => {
+                const plClass = pos.current_pl_pct >= 0 ? 'positive' : 'negative';
+                const riskLevel = Math.abs(pos.current_pl_pct) > 3 ? 'high' : Math.abs(pos.current_pl_pct) > 1 ? 'medium' : 'low';
+
+                html += '<tr>';
+                html += `<td><strong>${pos.ticker}</strong></td>`;
+                html += `<td>${pos.sector}</td>`;
+                html += `<td>$${pos.entry_price.toFixed(2)}</td>`;
+                html += `<td>$${pos.current_price.toFixed(2)}</td>`;
+                html += `<td class="${plClass}">${pos.current_pl_pct >= 0 ? '+' : ''}${pos.current_pl_pct.toFixed(2)}%</td>`;
+                html += `<td>${pos.stop_loss_price.toFixed(2)} (-${pos.stop_loss_pct}%)</td>`;
+                html += `<td><span class="badge ${riskLevel}">${riskLevel.toUpperCase()}</span></td>`;
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            document.getElementById('positionsTable').innerHTML = html;
+        }
+
+        function updateCorrelationMatrix(correlations) {
+            if (!correlations || correlations.length === 0) {
+                document.getElementById('correlationMatrix').innerHTML =
+                    '<p style="text-align: center; color: #7f8c8d;">Not enough positions for correlation analysis</p>';
+                return;
+            }
+
+            let html = '<table><thead><tr><th></th>';
+
+            // Header row
+            correlations.forEach(row => {
+                html += `<th>${row.ticker1}</th>`;
+            });
+            html += '</tr></thead><tbody>';
+
+            // Data rows
+            const uniqueTickers = [...new Set(correlations.map(c => c.ticker1))];
+
+            uniqueTickers.forEach(ticker1 => {
+                html += `<tr><th>${ticker1}</th>`;
+
+                uniqueTickers.forEach(ticker2 => {
+                    const corr = correlations.find(c =>
+                        (c.ticker1 === ticker1 && c.ticker2 === ticker2) ||
+                        (c.ticker1 === ticker2 && c.ticker2 === ticker1)
+                    );
+
+                    const value = corr ? corr.correlation : 1.0;
+                    const color = value > 0.7 ? '#e74c3c' : value > 0.4 ? '#f39c12' : '#27ae60';
+
+                    html += `<td style="background: ${color}; color: white; text-align: center;">${value.toFixed(2)}</td>`;
+                });
+
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            document.getElementById('correlationMatrix').innerHTML = html;
+        }
+
+        function updateWorstCase(worstCase) {
+            let html = '<div style="background: #f8f9fa; padding: 20px; border-radius: 5px;">';
+
+            html += `<h3 style="color: #2c3e50; margin-bottom: 15px;">Scenario: All positions hit stop loss</h3>`;
+
+            html += '<table style="margin: 20px 0;">';
+            html += '<tr><th>Metric</th><th>Value</th></tr>';
+            html += `<tr><td>Total Capital at Risk</td><td>$${worstCase.total_capital_at_risk.toLocaleString()}</td></tr>`;
+            html += `<tr><td>Potential Max Loss</td><td class="negative">-$${worstCase.max_loss.toLocaleString()} (-${worstCase.max_loss_pct.toFixed(2)}%)</td></tr>`;
+            html += `<tr><td>Portfolio Value After</td><td>$${worstCase.portfolio_value_after.toLocaleString()}</td></tr>`;
+            html += `<tr><td>Recovery Required</td><td>${worstCase.recovery_pct_needed.toFixed(2)}%</td></tr>`;
+            html += '</table>';
+
+            if (worstCase.max_loss_pct > 10) {
+                html += '<div class="alert danger"><strong>High Risk:</strong> Worst case scenario exceeds 10% portfolio loss. Consider reducing position sizes or diversifying.</div>';
+            } else if (worstCase.max_loss_pct > 5) {
+                html += '<div class="alert">Moderate risk level. Current exposure is within acceptable limits.</div>';
+            } else {
+                html += '<div class="alert success">Low risk. Portfolio is well-protected against worst case scenario.</div>';
+            }
+
+            html += '</div>';
+            document.getElementById('worstCaseAnalysis').innerHTML = html;
+        }
+
+        function updateRiskEvents(events) {
+            if (events.length === 0) {
+                document.getElementById('riskEventsLog').innerHTML =
+                    '<p style="text-align: center; color: #7f8c8d;">No recent risk events</p>';
+                return;
+            }
+
+            let html = '<table><thead><tr>';
+            html += '<th>Time</th>';
+            html += '<th>Type</th>';
+            html += '<th>Severity</th>';
+            html += '<th>Description</th>';
+            html += '<th>Action</th>';
+            html += '</tr></thead><tbody>';
+
+            events.forEach(event => {
+                html += '<tr>';
+                html += `<td>${new Date(event.timestamp).toLocaleString()}</td>`;
+                html += `<td>${event.type}</td>`;
+                html += `<td><span class="badge ${event.severity.toLowerCase()}">${event.severity}</span></td>`;
+                html += `<td>${event.description}</td>`;
+                html += `<td>${event.action_taken || '-'}</td>`;
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            document.getElementById('riskEventsLog').innerHTML = html;
+        }
+
+        // Load data on page load
+        loadData();
+
+        // Auto-refresh every 30 seconds
+        setInterval(loadData, 30000);
+    </script>
+</body>
+</html>

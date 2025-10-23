@@ -1,0 +1,145 @@
+================================================================================
+ARES WHATSAPP - QUICK START GUIDE
+================================================================================
+
+CURRENT STATUS: 95% Complete - Only webhook configuration needed
+
+--------------------------------------------------------------------------------
+STEP 1: VERIFY EVERYTHING IS RUNNING
+--------------------------------------------------------------------------------
+
+Run status check:
+> cd C:\Users\riord\.ares-mcp
+> python check_webhook_status.py
+
+Expected output:
+✅ Bridge running (Port 5000)
+✅ Webhook verification working
+✅ Ngrok running
+✅ Public webhook accessible
+
+If anything fails, restart:
+> python whatsapp_bridge_working.py    (in one terminal)
+> ngrok http 5000                       (in another terminal)
+
+--------------------------------------------------------------------------------
+STEP 2: CONFIGURE META WEBHOOK (ONLY STEP YOU NEED TO DO)
+--------------------------------------------------------------------------------
+
+1. Go to: https://developers.facebook.com/apps
+
+2. Select your WhatsApp Business app
+
+3. Click: WhatsApp → Configuration (or Webhook)
+
+4. Click: Edit button
+
+5. Enter EXACTLY these values:
+
+   Callback URL:  https://villageless-ann-collectively.ngrok-free.dev/webhook
+   Verify Token:  ares_webhook_verify_2024
+
+6. Click: "Verify and Save"
+   (Should show green checkmark ✓)
+
+7. Scroll down to "Webhook fields"
+
+8. Check box: "messages"
+
+9. Click: "Subscribe"
+
+--------------------------------------------------------------------------------
+STEP 3: TEST IT
+--------------------------------------------------------------------------------
+
+1. Send ONE WhatsApp message from your phone (+61432154351)
+
+2. Watch bridge console - should see:
+   [WEBHOOK] Received: {...}
+   [MESSAGE] From 61432154351: your message
+   [QUEUED] Task #2
+   [SUCCESS] Message sent
+
+3. Check queue:
+   > curl http://localhost:5000/tasks
+
+   Should show your new message
+
+4. You should receive "Hello World" template back on phone
+
+--------------------------------------------------------------------------------
+TROUBLESHOOTING
+--------------------------------------------------------------------------------
+
+If webhook verification fails:
+→ Check ngrok is running: ngrok http 5000
+→ Check bridge is running: python whatsapp_bridge_working.py
+→ Test locally: curl "http://localhost:5000/webhook?hub.mode=subscribe&hub.verify_token=ares_webhook_verify_2024&hub.challenge=test"
+
+If messages not received after config:
+→ Verify green checkmark in Meta dashboard
+→ Verify "messages" field is subscribed
+→ Check bridge logs for POST requests
+→ Run python check_webhook_status.py
+
+If confirmation not received:
+→ Dev mode only sends "hello_world" template
+→ Wait 5-10 seconds (templates can be slower)
+→ Check phone has internet connection
+
+--------------------------------------------------------------------------------
+SPECIAL COMMANDS
+--------------------------------------------------------------------------------
+
+Send from phone:
+"status" → Get bridge status and task count
+"list"   → View all queued tasks
+Anything else → Adds to task queue
+
+--------------------------------------------------------------------------------
+IMPORTANT NOTES
+--------------------------------------------------------------------------------
+
+⚠️  Dev Mode: Only template messages work (you'll receive "Hello World")
+⚠️  Ngrok Free: 2-hour sessions, URL changes on restart
+⚠️  After Ngrok restart: Update webhook URL in Meta dashboard with new URL
+✅  Phone verified: +61432154351 already set as test recipient
+
+--------------------------------------------------------------------------------
+FILES REFERENCE
+--------------------------------------------------------------------------------
+
+Main bridge:           whatsapp_bridge_working.py
+Status checker:        check_webhook_status.py
+Full audit log:        FULL_AUDIT_LOG.md
+Detailed setup guide:  COMPLETE_META_SETUP.md
+Executive summary:     EXECUTIVE_SUMMARY.md
+Task queue:            mobile_task_queue.json
+
+--------------------------------------------------------------------------------
+CREDENTIALS
+--------------------------------------------------------------------------------
+
+Phone Number ID:  810808242121215
+API Version:      v22.0
+Verify Token:     ares_webhook_verify_2024
+Authorized Phone: +61432154351
+Current Ngrok:    https://villageless-ann-collectively.ngrok-free.dev
+
+--------------------------------------------------------------------------------
+NEXT STEPS AFTER COMPLETION
+--------------------------------------------------------------------------------
+
+1. Test messaging thoroughly
+2. Integrate ares_task_processor.py for task categorization
+3. Create custom message templates
+4. Apply for Meta production approval
+5. Upgrade ngrok for static URL
+
+================================================================================
+
+YOU ARE HERE: → Configure Meta webhook (5 minutes)
+
+See COMPLETE_META_SETUP.md for detailed instructions with screenshots.
+
+================================================================================

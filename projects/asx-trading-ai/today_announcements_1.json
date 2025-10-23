@@ -1,0 +1,957 @@
+{
+  "data": {
+    "items": [
+      {
+        "announcementTypes": [
+          "Periodic Reports - Other",
+          "Net Tangible Asset Backing"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "GVF"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "GVF",
+            "xid": "76686708",
+            "ASXSecurityType": 1,
+            "displayName": "STAUDE CAPITAL GLOBAL VALUE FUND LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU000000GVF5",
+            "xidEntity": 234896098
+          }
+        ],
+        "date": "2025-10-13T22:46:27.000Z",
+        "documentKey": "2924-03007578-2A1629039",
+        "fileSize": "199KB",
+        "headline": "Investment Update and NTA Value as at 30 September 2025",
+        "isPriceSensitive": false,
+        "symbol": "GVF",
+        "symbolsSecondary": [
+          "GVF",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Company Presentation"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "KNI"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "KNI",
+            "xid": "665843237",
+            "ASXSecurityType": 1,
+            "displayName": "KUNIKO LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000159840",
+            "xidEntity": 665876570,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Diversified Metals & Mining"
+          }
+        ],
+        "date": "2025-10-13T22:45:47.000Z",
+        "documentKey": "2924-03007577-6A1290040",
+        "fileSize": "4125KB",
+        "headline": "Presentation - Commonwealth Gold-Silver Project",
+        "isPriceSensitive": true,
+        "symbol": "KNI",
+        "symbolsSecondary": [
+          "KNI",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Appendix 3B (Proposed issue of securities)"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "ALB"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "ALB",
+            "xid": "651050027",
+            "ASXSecurityType": 1,
+            "displayName": "ALBION RESOURCES LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000142002",
+            "xidEntity": 651096675,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Diversified Metals & Mining"
+          }
+        ],
+        "date": "2025-10-13T22:45:42.000Z",
+        "documentKey": "2924-03007576-6A1290042",
+        "fileSize": "16KB",
+        "headline": "Proposed issue of securities - ALB",
+        "isPriceSensitive": false,
+        "symbol": "ALB",
+        "symbolsSecondary": [
+          "ALB",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Placement",
+          "Trading Halt Lifted",
+          "Security Purchase Plan"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "CAT"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "CAT",
+            "xid": "82162985",
+            "ASXSecurityType": 1,
+            "displayName": "CATAPULT SPORTS LTD",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU000000CAT9",
+            "xidEntity": 235364393,
+            "sector": "Information Technology",
+            "industryGroup": "Software & Services",
+            "industry": "Software",
+            "subIndustry": "Application Software"
+          }
+        ],
+        "date": "2025-10-13T22:45:32.000Z",
+        "documentKey": "2924-03007575-3A678674",
+        "fileSize": "85KB",
+        "headline": "Successful Completion of Institutional Placement",
+        "isPriceSensitive": true,
+        "symbol": "CAT",
+        "symbolsSecondary": [
+          "CAT",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Notice of Annual General Meeting",
+          "Proxy Form"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "CC5"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "CC5",
+            "xid": "4721926",
+            "ASXSecurityType": 1,
+            "displayName": "CLEVER CULTURE SYSTEMS LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000367153",
+            "xidEntity": 204164292,
+            "sector": "Health Care",
+            "industryGroup": "Health Care Equipment & Services",
+            "industry": "Health Care Equipment & Supplies",
+            "subIndustry": "Health Care Equipment"
+          }
+        ],
+        "date": "2025-10-13T22:44:57.000Z",
+        "documentKey": "2924-03007573-2A1629038",
+        "fileSize": "753KB",
+        "headline": "Notice of Annual General Meeting/Proxy Form",
+        "isPriceSensitive": false,
+        "symbol": "CC5",
+        "symbolsSecondary": [
+          "CC5",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Progress Report"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "A1G"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "A1G",
+            "xid": "511307838",
+            "ASXSecurityType": 1,
+            "displayName": "AFRICAN GOLD LTD.",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000036949",
+            "xidEntity": 511345097,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Gold"
+          }
+        ],
+        "date": "2025-10-13T22:44:57.000Z",
+        "documentKey": "2924-03007574-6A1290039",
+        "fileSize": "1292KB",
+        "headline": "Systematic Exploration Continues to Strengthen Blaffo Guetto",
+        "isPriceSensitive": true,
+        "symbol": "A1G",
+        "symbolsSecondary": [
+          "A1G",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Appendix 3G"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "M4M"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "M4M",
+            "xid": "66034",
+            "ASXSecurityType": 1,
+            "displayName": "MACRO METALS LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000260903",
+            "xidEntity": 204181317,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Steel"
+          }
+        ],
+        "date": "2025-10-13T22:44:32.000Z",
+        "documentKey": "2924-03007572-6A1290030",
+        "fileSize": "31KB",
+        "headline": "Notification regarding unquoted securities - M4M",
+        "isPriceSensitive": false,
+        "symbol": "M4M",
+        "symbolsSecondary": [
+          "M4M",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Progress Report"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "KNI"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "KNI",
+            "xid": "665843237",
+            "ASXSecurityType": 1,
+            "displayName": "KUNIKO LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000159840",
+            "xidEntity": 665876570,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Diversified Metals & Mining"
+          }
+        ],
+        "date": "2025-10-13T22:44:17.000Z",
+        "documentKey": "2924-03007571-6A1290037",
+        "fileSize": "490KB",
+        "headline": "Commonwealth Gold-Silver Project Presentation",
+        "isPriceSensitive": true,
+        "symbol": "KNI",
+        "symbolsSecondary": [
+          "KNI",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Net Tangible Asset Backing",
+          "Asset Acquisition"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "TVL"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "TVL",
+            "xid": "679871607",
+            "ASXSecurityType": 1,
+            "displayName": "TOUCH VENTURES LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000175424",
+            "xidEntity": 679866639
+          }
+        ],
+        "date": "2025-10-13T22:44:02.000Z",
+        "documentKey": "2924-03007570-3A678679",
+        "fileSize": "417KB",
+        "headline": "September Net Tangible Asset Backing and Investment in MARI",
+        "isPriceSensitive": false,
+        "symbol": "TVL",
+        "symbolsSecondary": [
+          "TVL",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Appendix 3B (Proposed issue of securities)"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "SRG"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "SRG",
+            "xid": "261694",
+            "ASXSecurityType": 1,
+            "displayName": "SRG GLOBAL LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000032914",
+            "xidEntity": 204198323,
+            "sector": "Industrials",
+            "industryGroup": "Capital Goods",
+            "industry": "Construction & Engineering",
+            "subIndustry": "Construction & Engineering"
+          }
+        ],
+        "date": "2025-10-13T22:43:32.000Z",
+        "documentKey": "2924-03007569-6A1290029",
+        "fileSize": "15KB",
+        "headline": "Proposed issue of securities - SRG",
+        "isPriceSensitive": false,
+        "symbol": "SRG",
+        "symbolsSecondary": [
+          "SRG",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Web Cast"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "SRG"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "SRG",
+            "xid": "261694",
+            "ASXSecurityType": 1,
+            "displayName": "SRG GLOBAL LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000032914",
+            "xidEntity": 204198323,
+            "sector": "Industrials",
+            "industryGroup": "Capital Goods",
+            "industry": "Construction & Engineering",
+            "subIndustry": "Construction & Engineering"
+          }
+        ],
+        "date": "2025-10-13T22:43:27.000Z",
+        "documentKey": "2924-03007568-6A1289919",
+        "fileSize": "219KB",
+        "headline": "TAMS Acquisition Investor Briefing",
+        "isPriceSensitive": true,
+        "symbol": "SRG",
+        "symbolsSecondary": [
+          "SRG",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Profit Guidance",
+          "Web Cast",
+          "Issued Capital - Other",
+          "Asset Acquisition"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "SRG"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "SRG",
+            "xid": "261694",
+            "ASXSecurityType": 1,
+            "displayName": "SRG GLOBAL LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000032914",
+            "xidEntity": 204198323,
+            "sector": "Industrials",
+            "industryGroup": "Capital Goods",
+            "industry": "Construction & Engineering",
+            "subIndustry": "Construction & Engineering"
+          }
+        ],
+        "date": "2025-10-13T22:43:22.000Z",
+        "documentKey": "2924-03007567-6A1289918",
+        "fileSize": "802KB",
+        "headline": "TAMS Acquisition Announcement",
+        "isPriceSensitive": true,
+        "symbol": "SRG",
+        "symbolsSecondary": [
+          "SRG",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Trading Halt"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "JGH"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "JGH",
+            "xid": "152189",
+            "ASXSecurityType": 1,
+            "displayName": "JADE GAS HOLDINGS LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000178477",
+            "xidEntity": 204246905,
+            "sector": "Energy",
+            "industryGroup": "Energy",
+            "industry": "Oil, Gas & Consumable Fuels",
+            "subIndustry": "Oil & Gas Exploration & Production"
+          }
+        ],
+        "date": "2025-10-13T22:43:12.000Z",
+        "documentKey": "2924-03007566-6A1290036",
+        "fileSize": "238KB",
+        "headline": "Trading Halt",
+        "isPriceSensitive": true,
+        "symbol": "JGH",
+        "symbolsSecondary": [
+          "JGH",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Profit Guidance",
+          "Company Presentation",
+          "Issued Capital - Other",
+          "Asset Acquisition",
+          "Trading Halt Lifted"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "SRG"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "SRG",
+            "xid": "261694",
+            "ASXSecurityType": 1,
+            "displayName": "SRG GLOBAL LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000032914",
+            "xidEntity": 204198323,
+            "sector": "Industrials",
+            "industryGroup": "Capital Goods",
+            "industry": "Construction & Engineering",
+            "subIndustry": "Construction & Engineering"
+          }
+        ],
+        "date": "2025-10-13T22:43:12.000Z",
+        "documentKey": "2924-03007565-6A1289915",
+        "fileSize": "7686KB",
+        "headline": "TAMS Acquisition Investor Presentation",
+        "isPriceSensitive": true,
+        "symbol": "SRG",
+        "symbolsSecondary": [
+          "SRG",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Progress Report"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "OCN"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "OCN",
+            "xid": "719663393",
+            "ASXSecurityType": 1,
+            "displayName": "OCEANA LITHIUM LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000217648",
+            "xidEntity": 719522714,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Diversified Metals & Mining"
+          }
+        ],
+        "date": "2025-10-13T22:42:02.000Z",
+        "documentKey": "2924-03007564-6A1290034",
+        "fileSize": "836KB",
+        "headline": "Ground EM Survey to Commence at Bangemall Project",
+        "isPriceSensitive": true,
+        "symbol": "OCN",
+        "symbolsSecondary": [
+          "OCN",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Debt Facility"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "AGR"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "AGR",
+            "xid": "10316346",
+            "ASXSecurityType": 1,
+            "displayName": "AGUIA RESOURCES LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU000000AGR4",
+            "xidEntity": 204275297,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Diversified Metals & Mining"
+          }
+        ],
+        "date": "2025-10-13T22:41:47.000Z",
+        "documentKey": "2924-03007563-2A1629035",
+        "fileSize": "286KB",
+        "headline": "Aguia Board Approves Bank Loan For Tres Estradas Phosphate",
+        "isPriceSensitive": true,
+        "symbol": "AGR",
+        "symbolsSecondary": [
+          "AGR",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Appendix 2A"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "OLL"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "OLL",
+            "xid": "566256296",
+            "ASXSecurityType": 1,
+            "displayName": "OPENLEARNING LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000065401",
+            "xidEntity": 562151958,
+            "sector": "Information Technology",
+            "industryGroup": "Software & Services",
+            "industry": "Software",
+            "subIndustry": "Application Software"
+          }
+        ],
+        "date": "2025-10-13T22:41:02.000Z",
+        "documentKey": "2924-03007562-6A1290035",
+        "fileSize": "15KB",
+        "headline": "Application for quotation of securities - OLL",
+        "isPriceSensitive": false,
+        "symbol": "OLL",
+        "symbolsSecondary": [
+          "OLL",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Company Presentation"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "FLG"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "FLG",
+            "xid": "609761665",
+            "ASXSecurityType": 1,
+            "displayName": "FLAGSHIP MINERALS LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000379323",
+            "xidEntity": 589914024,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Diversified Metals & Mining"
+          }
+        ],
+        "date": "2025-10-13T22:40:22.000Z",
+        "documentKey": "2924-03007561-6A1290032",
+        "fileSize": "4025KB",
+        "headline": "Corporate Presentation",
+        "isPriceSensitive": false,
+        "symbol": "FLG",
+        "symbolsSecondary": [
+          "FLG",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Daily Share Buy-Back Notice"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "PE1"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "PE1",
+            "xid": "519810560",
+            "ASXSecurityType": 1,
+            "displayName": "PENGANA PRIVATE EQUITY TRUST",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000039521",
+            "xidEntity": 519792855
+          }
+        ],
+        "date": "2025-10-13T22:40:12.000Z",
+        "documentKey": "2924-03007560-2A1629036",
+        "fileSize": "15KB",
+        "headline": "Update - Notification of buy-back - PE1",
+        "isPriceSensitive": false,
+        "symbol": "PE1",
+        "symbolsSecondary": [
+          "PE1",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Appendix 3H (Notification of cessation of securities)"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "GLH"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "GLH",
+            "xid": "287941",
+            "ASXSecurityType": 1,
+            "displayName": "GLOBAL HEALTH LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU000000GLH2",
+            "xidEntity": 204126383,
+            "sector": "Health Care",
+            "industryGroup": "Health Care Equipment & Services",
+            "industry": "Health Care Technology",
+            "subIndustry": "Health Care Technology"
+          }
+        ],
+        "date": "2025-10-13T22:38:52.000Z",
+        "documentKey": "2924-03007559-3A678678",
+        "fileSize": "12KB",
+        "headline": "Notification of cessation of securities - GLH",
+        "isPriceSensitive": false,
+        "symbol": "GLH",
+        "symbolsSecondary": [
+          "GLH",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Change of Director's Interest Notice"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "MGA"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "MGA",
+            "xid": "726789881",
+            "ASXSecurityType": 1,
+            "displayName": "METALSGROVE MINING LTD",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000223257",
+            "xidEntity": 726076206,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Diversified Metals & Mining"
+          }
+        ],
+        "date": "2025-10-13T22:38:07.000Z",
+        "documentKey": "2924-03007558-6A1290031",
+        "fileSize": "274KB",
+        "headline": "Change of Director's Interest Notice",
+        "isPriceSensitive": false,
+        "symbol": "MGA",
+        "symbolsSecondary": [
+          "MGA",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Appendix 2A"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "ARR"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "ARR",
+            "xid": "27209221",
+            "ASXSecurityType": 1,
+            "displayName": "AMERICAN RARE EARTHS LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "NZARRE0004S7",
+            "xidEntity": 204199800,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Diversified Metals & Mining"
+          }
+        ],
+        "date": "2025-10-13T22:37:22.000Z",
+        "documentKey": "2924-03007557-2A1629034",
+        "fileSize": "22KB",
+        "headline": "Application for quotation of securities - ARR",
+        "isPriceSensitive": false,
+        "symbol": "ARR",
+        "symbolsSecondary": [
+          "ARR",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Net Tangible Asset Backing"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "KKC"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "KKC",
+            "xid": "563128495",
+            "ASXSecurityType": 6,
+            "displayName": "KKR CREDIT INCOME FUND",
+            "issueType": "UT",
+            "issueTypeName": "Unit Trust Fund",
+            "issueTypeCode": 6,
+            "isin": "AU0000060014",
+            "xidEntity": 556163906
+          }
+        ],
+        "date": "2025-10-13T22:36:17.000Z",
+        "documentKey": "2924-03007556-2A1629032",
+        "fileSize": "126KB",
+        "headline": "Monthly Net Tangible Asset Backing 30 September 2025",
+        "isPriceSensitive": false,
+        "symbol": "KKC",
+        "symbolsSecondary": [
+          "KKC",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Profit Guidance",
+          "Trading Update",
+          "Company Presentation",
+          "Chair's Address to Shareholders"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "ABB"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "ABB",
+            "xid": "619934150",
+            "ASXSecurityType": 1,
+            "displayName": "AUSSIE BROADBAND LIMITED",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU0000106643",
+            "xidEntity": 611426313,
+            "sector": "Communication Services",
+            "industryGroup": "Telecommunication Services",
+            "industry": "Diversified Telecommunication Services",
+            "subIndustry": "Alternative Carriers"
+          }
+        ],
+        "date": "2025-10-13T22:35:42.000Z",
+        "documentKey": "2924-03007555-3A678676",
+        "fileSize": "1188KB",
+        "headline": "AGM Presentations and Trading Update",
+        "isPriceSensitive": true,
+        "symbol": "ABB",
+        "symbolsSecondary": [
+          "ABB",
+          ""
+        ],
+        "url": ""
+      },
+      {
+        "announcementTypes": [
+          "Progress Report",
+          "Company Administration - Other"
+        ],
+        "companies": [
+          {
+            "symbolDisplay": "G88"
+          }
+        ],
+        "companyInfo": [
+          {
+            "symbol": "G88",
+            "xid": "409569783",
+            "ASXSecurityType": 1,
+            "displayName": "GOLDEN MILE RESOURCES LTD",
+            "issueType": "CS",
+            "issueTypeName": "Common Stock",
+            "issueTypeCode": 1,
+            "isin": "AU000000G887",
+            "xidEntity": 409594076,
+            "sector": "Materials",
+            "industryGroup": "Materials",
+            "industry": "Metals & Mining",
+            "subIndustry": "Diversified Metals & Mining"
+          }
+        ],
+        "date": "2025-10-13T22:35:37.000Z",
+        "documentKey": "2924-03007554-3A678677",
+        "fileSize": "10985KB",
+        "headline": "Gold Exploration Planned for Aurora Gold Prospect AZ USA",
+        "isPriceSensitive": true,
+        "symbol": "G88",
+        "symbolsSecondary": [
+          "G88",
+          ""
+        ],
+        "url": ""
+      }
+    ],
+    "count": 10000
+  }
+}

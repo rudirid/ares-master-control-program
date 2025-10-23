@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "C:\Users\riord\Documents\ClaudeWorkshop\StockTradingAI\run_300_sample_test.py", line 228, in <module>
+    results = run_300_sample_test()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\riord\Documents\ClaudeWorkshop\StockTradingAI\run_300_sample_test.py", line 70, in run_300_sample_test
+    results = simulator.run_simulation(max_articles=300)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\riord\Documents\ClaudeWorkshop\StockTradingAI\backtesting\historical_simulator.py", line 671, in run_simulation
+    logger.info(f"Final Capital: ${results['final_capital']:,.2f}")
+                                   ~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'final_capital'
+
+================================================================================
+  ASX STOCK TRADING AI - 300 SAMPLE PROOF OF CONCEPT
+================================================================================
+
+Start Time: 2025-10-10 10:01:54
+Database: C:\Users\riord\Documents\ClaudeWorkshop\StockTradingAI\data\trading.db
+Initial Capital: $10,000
+Samples: 300 news articles
+Risk Management: ENABLED
+  - Max risk per trade: 2%
+  - Stop loss: 5%
+  - Min confidence: 70%
+  - Max positions per sector: 3
+  - Circuit breaker: 5% daily loss
+
+--------------------------------------------------------------------------------
+INITIALIZING SIMULATOR...
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+RUNNING SIMULATION (This may take a few minutes)...
+--------------------------------------------------------------------------------
+
+ERROR: 'final_capital'

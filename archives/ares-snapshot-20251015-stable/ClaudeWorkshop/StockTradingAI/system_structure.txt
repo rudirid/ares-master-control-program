@@ -1,0 +1,139 @@
+ASX Stock Trading AI - System Structure
+================================================================================
+
+├── analysis
+│   ├── __init__.py
+│   ├── behavioral_filters.py
+│   ├── local_sentiment_analyzer.py
+│   ├── multi_source_validator.py
+│   ├── news_quality_filter.py
+│   ├── pattern_analyzer.py
+│   ├── performance_attribution.py
+│   ├── performance_attribution_live.py
+│   ├── price_analyzer.py
+│   ├── sentiment_analyzer.py
+│   └── technical_indicators.py
+├── backtesting
+│   ├── __init__.py
+│   ├── backtest_engine.py
+│   ├── benchmark.py
+│   ├── dynamic_exit_manager.py
+│   └── historical_simulator.py
+├── data
+│   └── trading.db
+├── database
+│   └── init_db.py
+├── examples
+│   └── afr_scraper_examples.py
+├── live_trading
+│   ├── announcement_monitor.py
+│   ├── check_stats.py
+│   ├── daily_report.py
+│   ├── enhanced_gui_demo.py
+│   ├── gui_demo.py
+│   ├── live_paper_trader.py
+│   ├── live_recommendation_engine.py
+│   └── readiness_report.py
+├── logs
+│   ├── __main__.log
+│   ├── scrapers_afr_news.log
+│   ├── scrapers_asx_announcements.log
+│   ├── scrapers_director_trades.log
+│   ├── scrapers_hotcopper.log
+│   ├── scrapers_stock_prices.log
+│   ├── scrapers_utils.log
+│   ├── trading_scraper_2025-10-09_16-41-07.log
+│   ├── trading_scraper_2025-10-09_16-41-50.log
+│   ├── trading_scraper_2025-10-09_16-42-54.log
+│   ├── trading_scraper_2025-10-09_16-45-23.log
+│   ├── trading_scraper_2025-10-09_17-01-31.log
+│   ├── trading_scraper_2025-10-09_17-02-15.log
+│   ├── trading_scraper_2025-10-09_17-10-04.log
+│   ├── trading_scraper_2025-10-09_17-11-53.log
+│   ├── trading_scraper_2025-10-09_18-31-00.log
+│   ├── trading_scraper_2025-10-09_18-36-40.log
+│   ├── trading_scraper_2025-10-10_10-06-18.log
+│   ├── trading_scraper_2025-10-10_10-11-41.log
+│   ├── trading_scraper_2025-10-10_10-12-07.log
+│   └── trading_scraper_2025-10-10_10-33-59.log
+├── paper_trading
+│   ├── __init__.py
+│   ├── daily_summary.py
+│   ├── paper_trader.py
+│   ├── recommendation_engine.py
+│   ├── risk_manager.py
+│   └── scheduler.py
+├── results
+│   └── news_impact_analysis.csv
+├── scrapers
+│   ├── AFR_SCRAPER_README.md
+│   ├── ASX_ANNOUNCEMENTS_IMPLEMENTATION.md
+│   ├── README_DIRECTOR_TRADES.md
+│   ├── __init__.py
+│   ├── abc_news.py
+│   ├── afr_news.py
+│   ├── asx_announcements.py
+│   ├── director_trades.py
+│   ├── hotcopper.py
+│   ├── smh_news.py
+│   ├── stock_prices.py
+│   └── utils.py
+├── AFR_SCRAPER_SUMMARY.md
+├── ANALYSIS_GUIDE.md
+├── ANALYSIS_SUMMARY.md
+├── BACKTESTING_GUIDE.md
+├── BEHAVIORAL_FILTERS_RESULTS.md
+├── ENHANCEMENT_RECOMMENDATIONS.md
+├── HOW_IT_WORKS_SIMPLE.md
+├── IMMEDIATE_FIXES.md
+├── IMPLEMENTATION_SUMMARY.md
+├── LIVE_TRADING_SETUP.md
+├── MAIN_USAGE.md
+├── MULTI_SOURCE_GUIDE.md
+├── PAPER_TRADING_GUIDE.md
+├── PATTERN_ANALYSIS_GUIDE.md
+├── QUANTITATIVE_ANALYSIS.md
+├── README.md
+├── READY_TO_START.md
+├── RISK_MANAGEMENT_GUIDE.md
+├── SCRAPER_SETUP.md
+├── analyze_news_impact.py
+├── config.py
+├── create_historical_test_data.py
+├── dashboard.html
+├── dashboard_server.py
+├── diagnose_filters.py
+├── download_asx_top100.py
+├── filter_comparison_results.txt
+├── final_simulation_output.txt
+├── install_dependencies.bat
+├── main.py
+├── paper_trading_dashboard.html
+├── paper_trading_server.py
+├── pattern_dashboard.html
+├── repo_creation.log
+├── requirements.txt
+├── risk_dashboard.html
+├── risk_dashboard_server.py
+├── run_300_sample_test.py
+├── run_backtest.py
+├── self_improvement_analysis_20251010_130550.md
+├── simulation_gui.py
+├── simulation_output.txt
+├── simulation_report_20251010_100253.txt
+├── simulation_report_20251010_100850.txt
+├── simulation_report_20251010_100945.txt
+├── simulation_report_20251010_101058.txt
+├── simulation_report_20251010_101859.txt
+├── simulation_report_20251010_110931.txt
+├── simulation_report_20251010_112638.txt
+├── simulation_report_20251010_124313.txt
+├── simulation_report_20251010_125427.txt
+├── simulation_run_full.txt
+├── system_structure.txt
+├── test_afr_scraper.py
+├── test_director_scraper.py
+├── test_filter_comparison.py
+├── test_hotcopper_scraper.py
+├── test_scraper.py
+└── test_with_technical.log
