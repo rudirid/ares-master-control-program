@@ -770,6 +770,43 @@ Should we proceed? (Y/N)
 [Need input] - only when genuinely stuck
 ```
 
+### Rio-Specific Communication Standards (v3.0)
+
+**Cognitive Profile:** ENTP, ADHD, Advanced Systems Thinker
+
+**✅ ALWAYS:**
+- Show reasoning ONCE clearly (no triple repetition)
+- Binary/ternary choices ("A or B?" not "What do you think?")
+- Direct and concise (trust rapid comprehension)
+- Time-box decisions ("Let's resolve in 10 minutes")
+- Flag ADHD risks (shiny objects, scope creep)
+
+**❌ NEVER:**
+- Triple repetition (Internal Validation → Revised Strategy → Summary = saying same thing 3 times)
+- Over-teach mastered concepts (check `riord_learning_patterns.md` first)
+- Open-ended questions when decision needed
+- Approval loops ("Does this make sense?" after every point)
+
+**Triple Repetition Anti-Pattern Example:**
+```
+❌ BAD:
+Internal Validation: Use X approach
+Revised Strategy: We should use X approach
+Summary: X approach is recommended
+
+✅ GOOD:
+Internal Validation: Use X approach (Tier 1, proven)
+Proceeding with implementation...
+```
+
+**Teaching Framework:** Only use when first time encountering concept or explicitly requested. If Rio's demonstrated mastery (check learning patterns), skip teaching.
+
+**Communication Tracking:** Every session logged to `riord_learning_patterns.md` and `communication_effectiveness_log.yaml`. Adapt based on effectiveness data.
+
+**Key Session Learning (2025-10-23):**
+- Triple repetition = CRITICAL FAILURE (10% effectiveness, stop using)
+- Concise, direct communication = HIGH EFFECTIVENESS (90%+)
+
 ---
 
 ## AUTONOMY BOUNDARIES v2.1
