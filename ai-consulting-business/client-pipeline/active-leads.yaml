@@ -1,0 +1,73 @@
+# ACTIVE LEADS TRACKING
+## Qualified leads currently in pipeline
+
+# TEMPLATE - Copy this for each new lead:
+# - lead_id: "YYYY-MM-DD-businessname"
+#   business_name: "Business Name"
+#   contact_name: "First Last"
+#   contact_method: "phone/email/dm"
+#   contact_info: "+61... or email or LinkedIn"
+#
+#   # Qualification
+#   stage: "2 or 3"
+#   revenue: "$XXXk"
+#   team_size: "X staff"
+#   qualification_score: "X/18"
+#
+#   # Pain & Opportunity
+#   primary_pain: "Specific pain point"
+#   estimated_roi: "$X/month time savings or revenue capture"
+#
+#   # Status
+#   pipeline_stage: "contacted | discovery_scheduled | discovery_completed | proposal_sent | negotiating | closed_won | closed_lost"
+#   next_action: "Specific next step"
+#   next_action_date: "YYYY-MM-DD"
+#
+#   # Relationship
+#   relationship_strength: "cold | warm | strong"
+#   referral_source: "Name or 'Content' or 'Cold'"
+#
+#   # Notes
+#   notes: |
+#     Any important context, conversation highlights, concerns, etc.
+#
+#   # History
+#   history:
+#     - date: "YYYY-MM-DD"
+#       action: "What happened"
+#       outcome: "Result"
+
+# EXAMPLE LEAD (delete this when you add real leads):
+# - lead_id: "2025-01-15-abc-plumbing"
+#   business_name: "ABC Plumbing"
+#   contact_name: "John Smith"
+#   contact_method: "phone"
+#   contact_info: "+61 400 123 456"
+#
+#   stage: "2"
+#   revenue: "$450k"
+#   team_size: "8 staff"
+#   qualification_score: "16/18"
+#
+#   primary_pain: "Spending 15 hours/week on quotes and scheduling, missing calls"
+#   estimated_roi: "$6k/month time savings + $3k/month captured leads"
+#
+#   pipeline_stage: "discovery_scheduled"
+#   next_action: "Discovery call - confirm pain points and demonstrate lead capture ROI"
+#   next_action_date: "2025-01-18"
+#
+#   relationship_strength: "warm"
+#   referral_source: "Referred by Dave at XYZ Electrical"
+#
+#   notes: |
+#     - Very receptive to automation, already uses ServiceM8
+#     - Main concern: implementation time during busy season
+#     - Decision maker, but will check with wife on budget
+#
+#   history:
+#     - date: "2025-01-15"
+#       action: "Initial contact via referral"
+#       outcome: "Booked discovery call for Jan 18"
+
+# YOUR ACTIVE LEADS:
+leads: []

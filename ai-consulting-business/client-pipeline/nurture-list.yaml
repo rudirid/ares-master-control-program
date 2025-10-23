@@ -1,0 +1,60 @@
+# NURTURE LIST
+## Leads with potential but not ready yet - stay in touch until timing is right
+
+# TEMPLATE - Copy this for each nurture lead:
+# - lead_id: "YYYY-MM-DD-businessname"
+#   business_name: "Business Name"
+#   contact_name: "First Last"
+#   contact_info: "email or LinkedIn"
+#
+#   nurture_reason: "timing | budget_growing_into | stage_transition | seasonal | other"
+#   nurture_details: "Why nurturing instead of declining or accepting"
+#   qualification_score: "X/18"
+#
+#   current_stage: "1 or 2 early"
+#   target_stage: "2 or 3"
+#   estimated_ready_date: "YYYY-MM or YYYY-QX"
+#
+#   touchpoint_frequency: "monthly | quarterly | milestone-based"
+#   next_touchpoint_date: "YYYY-MM-DD"
+#   touchpoint_type: "content_share | check_in_email | milestone_congratulations"
+#
+#   notes: |
+#     Why they're worth nurturing, what signals to watch for, etc.
+#
+#   touchpoint_history:
+#     - date: "YYYY-MM-DD"
+#       action: "What you sent/did"
+#       response: "How they responded"
+
+# EXAMPLE (delete when you add real nurture leads):
+# - lead_id: "2025-01-12-definite-plumbing"
+#   business_name: "Definite Plumbing"
+#   contact_name: "Sarah Chen"
+#   contact_info: "sarah@definiteplumbing.com.au"
+#
+#   nurture_reason: "stage_transition"
+#   nurture_details: "$220K revenue, growing 60% YoY, will hit Stage 2 solid in 3-6 months"
+#   qualification_score: "9/18"
+#
+#   current_stage: "1-2 transition"
+#   target_stage: "2"
+#   estimated_ready_date: "2025-Q2"
+#
+#   touchpoint_frequency: "monthly"
+#   next_touchpoint_date: "2025-02-12"
+#   touchpoint_type: "content_share"
+#
+#   notes: |
+#     - Smart operator, tech-savvy, already uses ServiceM8
+#     - Main barrier is budget (tight cash flow right now)
+#     - Watch for hiring signals (job posts, new trucks)
+#     - Engaged with content on LinkedIn
+#
+#   touchpoint_history:
+#     - date: "2025-01-12"
+#       action: "Sent '5 Signs You're Ready for Automation' article + offered to reconnect in Q2"
+#       response: "Replied 'Thanks, I'll reach out when we hit $250K'"
+
+# YOUR NURTURE LEADS:
+nurture_leads: []

@@ -1,0 +1,46 @@
+# DECLINED LEADS TRACKING
+## Leads declined with reasons + follow-up dates for reconnection
+
+# TEMPLATE - Copy this for each declined lead:
+# - lead_id: "YYYY-MM-DD-businessname"
+#   business_name: "Business Name"
+#   contact_name: "First Last"
+#   contact_info: "email or phone"
+#
+#   decline_reason: "stage_1_too_early | stage_5_too_big | wrong_problem | budget_misalignment | not_right_fit | tech_resistant | no_authority"
+#   decline_details: "Specific reason notes"
+#   qualification_score: "X/18"
+#
+#   declined_date: "YYYY-MM-DD"
+#   follow_up_date: "YYYY-MM-DD or null"
+#   follow_up_condition: "When to reconnect (e.g., 'When revenue hits $250K')"
+#
+#   value_provided: "What you offered when declining (resources, referrals, etc.)"
+#
+#   notes: |
+#     Context about the lead, why might reconnect later, etc.
+
+# EXAMPLE (delete when you add real declined leads):
+# - lead_id: "2025-01-10-xyz-landscaping"
+#   business_name: "XYZ Landscaping"
+#   contact_name: "Mike Johnson"
+#   contact_info: "mike@xyzlandscaping.com"
+#
+#   decline_reason: "stage_1_too_early"
+#   decline_details: "$180K revenue, solo operator, not ready for automation yet"
+#   qualification_score: "5/18"
+#
+#   declined_date: "2025-01-10"
+#   follow_up_date: "2025-07-10"
+#   follow_up_condition: "When revenue consistently hits $250K+"
+#
+#   value_provided: "Recommended ServiceM8 basic setup guide, referred to local bookkeeper"
+#
+#   notes: |
+#     - Great operator, clear business acumen
+#     - Growing fast (50% YoY growth)
+#     - Will likely be ready in 6-12 months
+#     - Keep an eye on his social media for growth signals
+
+# YOUR DECLINED LEADS:
+declined_leads: []
