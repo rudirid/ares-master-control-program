@@ -1,0 +1,28 @@
+{
+  "agent_id": "discovery-call-specialist",
+  "version": "1.0.0",
+  "last_updated": "2025-10-24T07:20:05.860162",
+  "knowledge_items": [],
+  "concepts": {},
+  "principles": [],
+  "domain_expertise": {
+    "sales": {
+      "expertise_level": "novice",
+      "knowledge_items_count": 0,
+      "successful_applications": 0,
+      "last_used": "2025-10-24T07:20:05.860162"
+    },
+    "consulting": {
+      "expertise_level": "novice",
+      "knowledge_items_count": 0,
+      "successful_applications": 0,
+      "last_used": "2025-10-24T07:20:05.860162"
+    },
+    "discovery-calls": {
+      "expertise_level": "novice",
+      "knowledge_items_count": 0,
+      "successful_applications": 0,
+      "last_used": "2025-10-24T07:20:05.860162"
+    }
+  }
+}

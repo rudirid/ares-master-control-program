@@ -123,19 +123,55 @@ class AresAgentLifecycle:
         Args:
             task_description: Description of the task
         """
+        from core.agent_evaluator import AgentEvaluator
+
         print("=" * 70)
         print("AGENT EVALUATION")
         print("=" * 70)
         print()
         print(f"Task: {task_description}")
         print()
-        print("Status: NOT IMPLEMENTED YET")
+
+        evaluator = AgentEvaluator()
+        result = evaluator.evaluate(task_description)
+
+        print("Analysis:")
+        print("-" * 70)
+        for reason in result.reasoning:
+            print(f"  • {reason}")
         print()
-        print("Phase 1 will implement:")
-        print("  - Task analysis (domain, complexity, frequency)")
-        print("  - Capability gap detection")
-        print("  - ROI calculation")
-        print("  - ARES decision engine (≥80% confidence)")
+
+        print("Result:")
+        print("-" * 70)
+        print(f"  Decision:          {result.decision}")
+        print(f"  Confidence:        {result.confidence:.1f}%")
+        if result.existing_agent:
+            print(f"  Existing Agent:    {result.existing_agent}")
+        print(f"  Capability Gap:    {result.capability_gap:.0f}%")
+        print(f"  Estimated ROI:     {result.estimated_roi:.1f}x")
+        print(f"  Task Frequency:    {result.task_frequency_per_month:.1f}/month")
+        print()
+
+        # Recommendation
+        if result.decision == "CREATE" and result.confidence >= 80:
+            print("✓ RECOMMENDATION: Create new agent")
+            print()
+            print("Next step:")
+            print(f"  python {Path(__file__).name} create [agent-id] \\")
+            print(f"      --domains \"...\" \\")
+            print(f"      --complexity \"...\" \\")
+            print(f"      --description \"...\"")
+        elif result.decision == "USE_EXISTING":
+            print(f"✓ RECOMMENDATION: Use existing agent '{result.existing_agent}'")
+        elif result.decision == "ENHANCE":
+            print(f"✓ RECOMMENDATION: Enhance existing agent '{result.existing_agent}'")
+        elif result.decision == "DIRECT":
+            print("✓ RECOMMENDATION: Handle directly (no agent needed)")
+            print()
+            print("Reasons:")
+            print("  - Low frequency or low ROI")
+            print("  - More efficient to handle case-by-case")
+
         print("=" * 70)
 
     def create(
@@ -154,22 +190,39 @@ class AresAgentLifecycle:
             complexity: List of complexity levels
             description: Agent description
         """
+        from core.agent_creator import create_agent
+
         print("=" * 70)
         print("AGENT CREATION")
         print("=" * 70)
         print()
         print(f"Agent ID: {agent_id}")
+        print(f"Name: {agent_id.replace('-', ' ').title()}")
         print(f"Domains: {', '.join(domains)}")
         print(f"Complexity: {', '.join(complexity)}")
+        print(f"Description: {description}")
         print()
-        print("Status: NOT IMPLEMENTED YET")
-        print()
-        print("Phase 1 will implement:")
-        print("  - Pattern extraction from proven-patterns.md")
-        print("  - Prompt generation (ARES-compliant)")
-        print("  - Directory structure creation")
-        print("  - Memory initialization")
-        print("  - Registry registration")
+
+        # Create the agent
+        name = agent_id.replace('-', ' ').title()
+        success = create_agent(
+            agent_id=agent_id,
+            name=name,
+            domains=domains,
+            complexity=complexity,
+            description=description
+        )
+
+        if success:
+            print()
+            print("Next steps:")
+            print(f"  1. Review agent files in: agents/{agent_id}/")
+            print(f"  2. Test agent execution (Phase 2 - coming soon)")
+            print(f"  3. Monitor performance after 10 invocations")
+        else:
+            print()
+            print("❌ Agent creation failed. See errors above.")
+
         print("=" * 70)
 
     # ========================================================================

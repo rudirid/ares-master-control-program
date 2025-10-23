@@ -1,0 +1,80 @@
+agent_id: discovery-call-specialist
+version: 1.0.0
+status: active
+created_date: '2025-10-24'
+last_updated: '2025-10-24'
+metadata:
+  name: Discovery Call Specialist
+  description: Specialized agent for discovery call preparation using 5-stage business
+    model, Chris Voss tactics, and human psychology influence patterns
+  category: ares-custom
+  created_by: ARES Agent Lifecycle System v3.5
+domains:
+- sales
+- consulting
+- discovery-calls
+complexity:
+- moderate
+- complex
+priority: 5
+execution:
+  method: Task
+  timeout_seconds: 600
+  subagent_type: general-purpose
+success_criteria:
+- Complete task in < 300 seconds
+- "Success rate \u2265 85.0%"
+- "User satisfaction \u2265 4.0/5.0"
+patterns_used:
+- human-psychology-influence
+- human-psychology-influence
+- ares-internal-validation
+pattern_conditions:
+  human-psychology-influence:
+    scope: sales_only
+    application: subtle
+    ethics: high
+    detection_keywords:
+    - discovery
+    - sales
+    - client
+    - proposal
+    - objection
+performance_targets:
+  success_rate_min: 85.0
+  avg_time_max: 300
+  correction_rate_max: 10
+  user_rating_min: 4.0
+  usage_threshold: 5
+  evolution_trigger: 10
+evolution_policy:
+  auto_update_patterns: true
+  version_bump_threshold: 10
+  deprecation_threshold_days: 90
+  extract_learnings: true
+  min_reflections: 5
+memory:
+  episodic:
+    enabled: true
+    retention_days: 365
+  semantic:
+    enabled: true
+    max_embeddings: 1000
+  procedural:
+    enabled: true
+    skill_threshold: 3
+  load_similar_tasks: true
+  similar_tasks_limit: 5
+metrics:
+  total_invocations: 0
+  successful: 0
+  failed: 0
+  success_rate: 0.0
+  avg_time_seconds: 0.0
+  correction_rate: 0.0
+  user_rating_avg: 0.0
+changelog:
+- version: 1.0.0
+  date: '2025-10-24'
+  changes: Initial agent creation
+  author: ARES Agent Lifecycle System

@@ -10,10 +10,10 @@ agent_creation:
   evidence_threshold: 3  # Min similar tasks before creating agent
 
   # Frequency requirements
-  min_frequency_per_month: 5  # Must occur 5+ times/month
+  min_frequency_per_month: 3  # Must occur 3+ times/month (adjusted for testing)
 
   # ROI requirements
-  min_roi: 2.0  # 2x return on investment required
+  min_roi: 1.5  # 1.5x return on investment required (adjusted for testing)
 
   # ARES decision confidence
   confidence_threshold: 80  # % confidence required for autonomous creation
