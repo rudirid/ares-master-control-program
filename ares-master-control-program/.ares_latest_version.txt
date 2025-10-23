@@ -1,0 +1,3 @@
+LATEST_VERSION=3.0.0
+LATEST_PATH=C:\Users\riord\ares-master-control-program
+VERIFIED=true
