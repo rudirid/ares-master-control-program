@@ -23,25 +23,40 @@ This is your complete customer acquisition system for AI consulting targeting ho
 ```
 /ai-consulting-business/
 │
-├── README.md (this file)
-├── customer-acquisition-agent.md (main agent prompt for Claude)
+├── README.md (this file - system guide)
 │
-├── /frameworks/
+├── /frameworks/ (REFERENCE - reusable knowledge)
 │   ├── 5-stage-business-model.md
 │   ├── adaptive-messaging-framework.md
 │   ├── adaptive-objection-handling.md
 │   └── qualification-criteria.md
 │
-├── /content-strategy/
+├── /content-strategy/ (REFERENCE - content seeds)
 │   └── 20-content-ideas.md
 │
-├── /client-pipeline/
+├── /customer-acquisition/ (OPERATIONAL - active work)
+│   ├── customer-acquisition-agent.md (main agent prompt)
+│   ├── /discovery-calls/
+│   │   └── [client-name]-[date].md (call prep documents)
+│   ├── /proposals/
+│   │   └── (future - client proposals)
+│   └── /follow-ups/
+│       └── (future - follow-up sequences)
+│
+├── /client-pipeline/ (OPERATIONAL - tracking database)
 │   ├── active-leads.yaml
 │   ├── declined-leads.yaml
 │   └── nurture-list.yaml
 │
-└── /case-studies/ (future - add client results here)
+└── /case-studies/ (REFERENCE - proof/results)
+    └── template-case-study.md (use this for new case studies)
 ```
+
+**Organization Philosophy:**
+- **Reference folders** (frameworks, content-strategy, case-studies) = Reusable knowledge, change infrequently
+- **Operational folders** (customer-acquisition, client-pipeline) = Active working files, change frequently
+- **customer-acquisition/** holds all active customer acquisition work (calls, proposals, follow-ups)
+- **client-pipeline/** tracks lead status and history (database)
 
 ---
 
@@ -54,14 +69,14 @@ This is your complete customer acquisition system for AI consulting targeting ho
 1. **Start new chat in Claude Desktop**
 
 2. **Copy-paste the agent prompt:**
-   - File: `customer-acquisition-agent.md`
+   - File: `customer-acquisition/customer-acquisition-agent.md`
    - Or use this shorter invocation:
 
    ```
    Load my Customer Acquisition Agent for AI Consulting.
 
    Agent prompt location:
-   C:\Users\riord\ai-consulting-business\customer-acquisition-agent.md
+   C:\Users\riord\ai-consulting-business\customer-acquisition\customer-acquisition-agent.md
 
    Also reference:
    - Learning patterns: C:\Users\riord\ares-master-control-program\riord_learning_patterns.md
