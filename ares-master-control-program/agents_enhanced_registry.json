@@ -1,0 +1,485 @@
+{
+  "registry_version": "2.0.0",
+  "last_updated": "2025-10-24",
+  "ares_orchestrator_version": "3.0.0",
+  "description": "Enhanced ARES agent registry with 2025 best practices - detailed tool documentation",
+  "enhancements": [
+    "Detailed tool/capability documentation",
+    "Few-shot examples for each agent",
+    "Input/output schemas",
+    "Constraints and best practices",
+    "Success metrics and validation criteria"
+  ],
+
+  "agents": {
+    "claude-code-builtin": {
+      "description": "Built-in Claude Code agents with enhanced documentation",
+      "agents": {
+        "frontend-architect": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["frontend", "ui", "ux"],
+          "complexity": ["moderate", "complex"],
+          "description": "Frontend development specialist: React, Vue, Angular, Next.js, component architecture, state management",
+          "priority": 1,
+          "availability": "always",
+
+          "tools": [
+            {
+              "name": "React Component Design",
+              "description": "Design and implement React components with hooks, props, and state management",
+              "input_schema": {
+                "component_type": "functional|class",
+                "complexity": "simple|moderate|complex",
+                "state_management": "useState|useReducer|Redux|Zustand|none",
+                "styling": "CSS|Tailwind|styled-components|CSS-in-JS"
+              },
+              "output_schema": {
+                "component_code": "string (TypeScript/JavaScript)",
+                "props_interface": "TypeScript interface",
+                "tests": "Jest/React Testing Library tests",
+                "documentation": "Component usage docs"
+              },
+              "constraints": [
+                "Must use TypeScript for new projects",
+                "Accessibility (WCAG 2.1 AA) required",
+                "Mobile-first responsive design",
+                "Follow React best practices (hooks, composition)"
+              ],
+              "examples": [
+                {
+                  "task": "Create login form component with validation",
+                  "good_output": "import React, { useState } from 'react';\n\ninterface LoginFormProps {\n  onSubmit: (email: string, password: string) => void;\n}\n\nexport const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {\n  const [email, setEmail] = useState('');\n  const [password, setPassword] = useState('');\n  const [errors, setErrors] = useState({});\n\n  const validate = () => {\n    const newErrors = {};\n    if (!email.includes('@')) newErrors.email = 'Invalid email';\n    if (password.length < 8) newErrors.password = 'Min 8 characters';\n    return newErrors;\n  };\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    const newErrors = validate();\n    if (Object.keys(newErrors).length === 0) {\n      onSubmit(email, password);\n    } else {\n      setErrors(newErrors);\n    }\n  };\n\n  return (\n    <form onSubmit={handleSubmit} aria-label=\"Login form\">\n      <input\n        type=\"email\"\n        value={email}\n        onChange={(e) => setEmail(e.target.value)}\n        aria-label=\"Email\"\n        aria-invalid={!!errors.email}\n      />\n      {errors.email && <span role=\"alert\">{errors.email}</span>}\n      <input\n        type=\"password\"\n        value={password}\n        onChange={(e) => setPassword(e.target.value)}\n        aria-label=\"Password\"\n        aria-invalid={!!errors.password}\n      />\n      {errors.password && <span role=\"alert\">{errors.password}</span>}\n      <button type=\"submit\">Login</button>\n    </form>\n  );\n};"
+                }
+              ]
+            },
+            {
+              "name": "State Management Architecture",
+              "description": "Design state management strategy for complex applications",
+              "best_practices": [
+                "Use local state (useState) for UI state",
+                "Use Context API for theme, auth (infrequent updates)",
+                "Use Redux/Zustand for complex global state",
+                "Avoid prop drilling - lift state appropriately"
+              ]
+            }
+          ],
+
+          "success_metrics": {
+            "component_reusability": "≥80% components reusable",
+            "accessibility_score": "≥90% Lighthouse accessibility",
+            "test_coverage": "≥80% for critical user flows",
+            "bundle_size": "First load < 100KB gzipped"
+          }
+        },
+
+        "backend-architect": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["backend", "api", "database"],
+          "complexity": ["moderate", "complex"],
+          "description": "Backend development specialist: API design (REST, GraphQL, tRPC), authentication, microservices, server-side logic",
+          "priority": 1,
+          "availability": "always",
+
+          "tools": [
+            {
+              "name": "REST API Design",
+              "description": "Design RESTful API endpoints with proper HTTP methods, status codes, and schemas",
+              "input_schema": {
+                "resource": "string (e.g., 'users', 'posts')",
+                "operations": "array of CRUD operations",
+                "auth_required": "boolean",
+                "framework": "FastAPI|Express|Django|Flask"
+              },
+              "output_schema": {
+                "endpoints": "array of {method, path, request_schema, response_schema}",
+                "middleware": "auth, validation, error handling",
+                "tests": "integration tests for each endpoint"
+              },
+              "constraints": [
+                "Use conventional HTTP methods (GET, POST, PUT, PATCH, DELETE)",
+                "Return appropriate status codes (200, 201, 400, 401, 404, 500)",
+                "Include input validation (Pydantic, Joi, etc.)",
+                "Implement rate limiting for public APIs",
+                "Add CORS headers for web clients"
+              ],
+              "examples": [
+                {
+                  "task": "Create user management API",
+                  "good_output": "from fastapi import FastAPI, HTTPException, Depends\nfrom pydantic import BaseModel, EmailStr\nfrom typing import List\n\napp = FastAPI()\n\nclass UserCreate(BaseModel):\n    email: EmailStr\n    password: str  # min 8 chars, validated\n    name: str\n\nclass UserResponse(BaseModel):\n    id: int\n    email: EmailStr\n    name: str\n\n@app.post('/api/users', response_model=UserResponse, status_code=201)\nasync def create_user(user: UserCreate):\n    # Validate password strength\n    if len(user.password) < 8:\n        raise HTTPException(400, 'Password must be ≥8 characters')\n    # Hash password, create user\n    # ...\n    return UserResponse(id=1, email=user.email, name=user.name)\n\n@app.get('/api/users/{user_id}', response_model=UserResponse)\nasync def get_user(user_id: int):\n    # Fetch user from database\n    # ...\n    if not user:\n        raise HTTPException(404, 'User not found')\n    return user\n\n@app.get('/api/users', response_model=List[UserResponse])\nasync def list_users(skip: int = 0, limit: int = 10):\n    # Pagination\n    users = fetch_users(skip, limit)\n    return users"
+                }
+              ],
+              "best_practices": [
+                "Version your API (/api/v1/users)",
+                "Use nouns for resources, verbs for operations",
+                "Pagination for list endpoints",
+                "Idempotency for PUT/PATCH/DELETE",
+                "Return 201 Created with Location header",
+                "Document with OpenAPI/Swagger"
+              ]
+            },
+            {
+              "name": "Authentication & Authorization",
+              "description": "Implement secure authentication and role-based authorization",
+              "patterns": ["JWT tokens", "OAuth2", "Session-based", "API keys"],
+              "best_practices": [
+                "Use bcrypt/argon2 for password hashing",
+                "Implement refresh tokens for JWTs",
+                "Rate limit login endpoints (5 attempts/15 min)",
+                "Use HTTPS only for auth endpoints",
+                "Validate tokens on every protected route"
+              ]
+            }
+          ],
+
+          "success_metrics": {
+            "api_response_time": "p95 < 200ms",
+            "error_rate": "< 1% for 5xx errors",
+            "test_coverage": "≥90% for business logic",
+            "security_scan": "No critical vulnerabilities"
+          }
+        },
+
+        "database-expert": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["database", "sql", "nosql", "data_modeling"],
+          "complexity": ["moderate", "complex"],
+          "description": "Database specialist: Schema design, normalization, query optimization, indexes, migrations, PostgreSQL, MongoDB, Redis",
+          "priority": 1,
+          "availability": "always",
+
+          "tools": [
+            {
+              "name": "Schema Design",
+              "description": "Design normalized database schemas with proper relationships and indexes",
+              "input_schema": {
+                "entities": "array of entity names",
+                "relationships": "array of {from, to, type: 1-1|1-N|N-N}",
+                "database_type": "PostgreSQL|MySQL|MongoDB|SQLite"
+              },
+              "output_schema": {
+                "tables": "array of {name, columns, constraints}",
+                "indexes": "array of index definitions",
+                "migrations": "SQL migration scripts",
+                "diagram": "ER diagram or schema visualization"
+              },
+              "constraints": [
+                "Normalize to 3NF unless performance requires denormalization",
+                "Use foreign keys for referential integrity",
+                "Add indexes on frequently queried columns",
+                "Use appropriate data types (avoid VARCHAR(255) everywhere)",
+                "Include created_at, updated_at timestamps"
+              ],
+              "examples": [
+                {
+                  "task": "Design schema for e-commerce platform",
+                  "good_output": "-- Users table\nCREATE TABLE users (\n    id SERIAL PRIMARY KEY,\n    email VARCHAR(255) UNIQUE NOT NULL,\n    password_hash VARCHAR(255) NOT NULL,\n    name VARCHAR(100),\n    created_at TIMESTAMP DEFAULT NOW(),\n    updated_at TIMESTAMP DEFAULT NOW()\n);\n\nCREATE INDEX idx_users_email ON users(email);\n\n-- Products table\nCREATE TABLE products (\n    id SERIAL PRIMARY KEY,\n    name VARCHAR(255) NOT NULL,\n    description TEXT,\n    price DECIMAL(10, 2) NOT NULL,\n    stock_quantity INTEGER DEFAULT 0,\n    category_id INTEGER REFERENCES categories(id),\n    created_at TIMESTAMP DEFAULT NOW(),\n    updated_at TIMESTAMP DEFAULT NOW()\n);\n\nCREATE INDEX idx_products_category ON products(category_id);\nCREATE INDEX idx_products_price ON products(price);\n\n-- Orders table\nCREATE TABLE orders (\n    id SERIAL PRIMARY KEY,\n    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,\n    status VARCHAR(50) DEFAULT 'pending',\n    total_amount DECIMAL(10, 2) NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    updated_at TIMESTAMP DEFAULT NOW()\n);\n\nCREATE INDEX idx_orders_user_id ON orders(user_id);\nCREATE INDEX idx_orders_status ON orders(status);\n\n-- Order items (many-to-many)\nCREATE TABLE order_items (\n    id SERIAL PRIMARY KEY,\n    order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,\n    product_id INTEGER REFERENCES products(id),\n    quantity INTEGER NOT NULL,\n    price_at_purchase DECIMAL(10, 2) NOT NULL,\n    UNIQUE(order_id, product_id)\n);"
+                }
+              ],
+              "best_practices": [
+                "Use transactions for multi-table operations",
+                "Avoid N+1 queries (use JOINs or eager loading)",
+                "Add indexes for foreign keys and WHERE/ORDER BY columns",
+                "Use connection pooling (10-20 connections)",
+                "Regular VACUUM/ANALYZE for PostgreSQL"
+              ]
+            }
+          ],
+
+          "success_metrics": {
+            "query_performance": "p95 < 100ms",
+            "index_usage": "≥90% of queries use indexes",
+            "normalization": "3NF for transactional tables",
+            "backup_recovery": "RPO < 1 hour, RTO < 4 hours"
+          }
+        },
+
+        "test-engineer": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["testing", "qa", "automation"],
+          "complexity": ["simple", "moderate", "complex"],
+          "description": "Testing specialist: Unit tests, integration tests, E2E tests, test strategies, coverage analysis",
+          "priority": 1,
+          "availability": "always",
+
+          "tools": [
+            {
+              "name": "Unit Test Generation",
+              "description": "Create comprehensive unit tests with high coverage",
+              "frameworks": ["Jest", "pytest", "JUnit", "Go test"],
+              "best_practices": [
+                "Test one thing per test (single assertion principle)",
+                "Use descriptive test names (it('should return 404 when user not found'))",
+                "Arrange-Act-Assert pattern",
+                "Mock external dependencies",
+                "Test edge cases and error conditions"
+              ],
+              "examples": [
+                {
+                  "task": "Test user validation function",
+                  "good_output": "import pytest\nfrom myapp.validators import validate_user\n\ndef test_validate_user_with_valid_data():\n    # Arrange\n    user_data = {\n        'email': 'test@example.com',\n        'password': 'SecurePass123',\n        'name': 'Test User'\n    }\n    \n    # Act\n    result = validate_user(user_data)\n    \n    # Assert\n    assert result.is_valid == True\n    assert len(result.errors) == 0\n\ndef test_validate_user_with_invalid_email():\n    user_data = {'email': 'invalid', 'password': 'SecurePass123'}\n    result = validate_user(user_data)\n    assert result.is_valid == False\n    assert 'email' in result.errors\n\ndef test_validate_user_with_short_password():\n    user_data = {'email': 'test@example.com', 'password': 'short'}\n    result = validate_user(user_data)\n    assert result.is_valid == False\n    assert 'password' in result.errors\n    assert 'at least 8 characters' in result.errors['password']\n\ndef test_validate_user_with_missing_fields():\n    user_data = {}\n    result = validate_user(user_data)\n    assert result.is_valid == False\n    assert 'email' in result.errors\n    assert 'password' in result.errors"
+                }
+              ]
+            }
+          ],
+
+          "success_metrics": {
+            "code_coverage": "≥80% line coverage, ≥70% branch coverage",
+            "test_execution_time": "Unit tests < 5 min, integration tests < 15 min",
+            "flakiness_rate": "< 1% flaky tests",
+            "mutation_testing_score": "≥70% (if using mutation testing)"
+          }
+        },
+
+        "devops-expert": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["devops", "cicd", "infrastructure", "deployment"],
+          "complexity": ["moderate", "complex"],
+          "description": "DevOps specialist: Docker, CI/CD pipelines, Kubernetes, deployment strategies, infrastructure as code",
+          "priority": 1,
+          "availability": "always",
+
+          "tools": [
+            {
+              "name": "Docker Containerization",
+              "description": "Create production-ready Docker images and compose files",
+              "best_practices": [
+                "Use multi-stage builds to reduce image size",
+                "Don't run as root (use USER directive)",
+                "Use .dockerignore to exclude unnecessary files",
+                "Pin base image versions (ubuntu:22.04, not ubuntu:latest)",
+                "Health checks with HEALTHCHECK directive",
+                "Minimize layers (combine RUN commands)"
+              ],
+              "examples": [
+                {
+                  "task": "Dockerize Python FastAPI application",
+                  "good_output": "# Multi-stage build for smaller image\nFROM python:3.11-slim as builder\n\nWORKDIR /app\n\n# Install dependencies in builder stage\nCOPY requirements.txt .\nRUN pip install --no-cache-dir --user -r requirements.txt\n\n# Final stage\nFROM python:3.11-slim\n\nWORKDIR /app\n\n# Create non-root user\nRUN useradd -m -u 1000 appuser\n\n# Copy dependencies from builder\nCOPY --from=builder /root/.local /home/appuser/.local\n\n# Copy application code\nCOPY --chown=appuser:appuser . .\n\n# Switch to non-root user\nUSER appuser\n\n# Add local bin to PATH\nENV PATH=/home/appuser/.local/bin:$PATH\n\n# Health check\nHEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \\\n    CMD python -c \"import requests; requests.get('http://localhost:8000/health')\"\n\nEXPOSE 8000\n\nCMD [\"uvicorn\", \"main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]"
+                }
+              ]
+            },
+            {
+              "name": "CI/CD Pipeline",
+              "description": "Create automated build, test, and deployment pipelines",
+              "platforms": ["GitHub Actions", "GitLab CI", "Jenkins", "CircleCI"],
+              "pipeline_stages": [
+                "Lint & Format (pre-commit hooks)",
+                "Unit Tests",
+                "Integration Tests",
+                "Build (Docker image)",
+                "Security Scan (Trivy, Snyk)",
+                "Deploy to Staging",
+                "E2E Tests on Staging",
+                "Deploy to Production (manual approval)"
+              ]
+            }
+          ],
+
+          "success_metrics": {
+            "deployment_frequency": "≥1 deploy/day",
+            "lead_time_for_changes": "< 1 hour (commit to production)",
+            "change_failure_rate": "< 15%",
+            "mttr": "< 1 hour (mean time to recovery)"
+          }
+        },
+
+        "code-reviewer": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["code_review", "quality", "security"],
+          "complexity": ["simple", "moderate", "complex"],
+          "description": "Code review specialist: Quality analysis, security vulnerabilities, performance optimization, best practices enforcement",
+          "priority": 2,
+          "availability": "always",
+
+          "review_checklist": [
+            "Functionality: Does code do what it's supposed to?",
+            "Code quality: Is code clean, readable, maintainable?",
+            "Testing: Are there adequate tests?",
+            "Security: Any vulnerabilities (SQL injection, XSS, etc.)?",
+            "Performance: Any obvious bottlenecks?",
+            "Error handling: Are errors handled gracefully?",
+            "Documentation: Is code well-documented?",
+            "Best practices: Follows language/framework conventions?"
+          ],
+
+          "severity_levels": {
+            "CRITICAL": "Security vulnerabilities, data loss risks, production-breaking bugs",
+            "HIGH": "Significant bugs, poor error handling, performance issues",
+            "MEDIUM": "Code smells, minor bugs, missing tests",
+            "LOW": "Style issues, minor improvements, suggestions"
+          }
+        },
+
+        "llm-integration-expert": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["llm_integration", "ai", "prompt_engineering"],
+          "complexity": ["moderate", "complex"],
+          "description": "LLM integration specialist: OpenAI, Anthropic Claude, prompt engineering, streaming, function calling, embeddings",
+          "priority": 1,
+          "availability": "always",
+
+          "tools": [
+            {
+              "name": "Prompt Engineering",
+              "description": "Design effective prompts for LLMs with clear instructions and examples",
+              "best_practices": [
+                "Be specific and explicit in instructions",
+                "Provide few-shot examples (3-5 examples)",
+                "Use delimiters to separate sections (XML tags, ###, etc.)",
+                "Specify output format (JSON, markdown, etc.)",
+                "Add thinking/reasoning steps for complex tasks",
+                "Test prompts iteratively and measure performance"
+              ],
+              "prompt_patterns": [
+                "System prompt + User prompt",
+                "Few-shot learning (examples)",
+                "Chain-of-thought reasoning",
+                "ReAct pattern (Reasoning + Acting)",
+                "Role prompting (You are an expert...)",
+                "Constrained generation (JSON schema)"
+              ]
+            },
+            {
+              "name": "Function Calling",
+              "description": "Implement LLM function calling for tool use",
+              "frameworks": ["OpenAI function calling", "Anthropic tool use", "LangChain tools"]
+            }
+          ]
+        },
+
+        "rag-builder": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["rag_system", "embeddings", "vector_db"],
+          "complexity": ["moderate", "complex"],
+          "description": "RAG system specialist: Document processing, chunking strategies, embeddings, vector databases, semantic search",
+          "priority": 1,
+          "availability": "always",
+
+          "pipeline_stages": [
+            "Document ingestion (PDF, MD, HTML, etc.)",
+            "Text chunking (semantic, fixed-size, recursive)",
+            "Embedding generation (OpenAI, Cohere, local models)",
+            "Vector storage (Pinecone, Weaviate, Chroma, FAISS)",
+            "Retrieval (similarity search, hybrid search)",
+            "Reranking (cross-encoder, MMR)",
+            "Generation (LLM with retrieved context)"
+          ],
+
+          "best_practices": [
+            "Chunk size: 512-1024 tokens (balance context vs. precision)",
+            "Chunk overlap: 10-20% for continuity",
+            "Use metadata filters (date, source, category)",
+            "Implement hybrid search (keyword + semantic)",
+            "Rerank top-K results (K=20) to top-N (N=5)",
+            "Add citation/source tracking",
+            "Monitor retrieval metrics (MRR, NDCG)"
+          ]
+        },
+
+        "mcp-server-builder": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["mcp_server", "protocols", "tools"],
+          "complexity": ["moderate", "complex"],
+          "description": "MCP server specialist: Building Model Context Protocol servers, tool definitions, resource providers",
+          "priority": 1,
+          "availability": "always"
+        },
+
+        "marketing-expert": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["marketing", "copywriting", "seo", "growth"],
+          "complexity": ["moderate", "complex"],
+          "description": "Marketing specialist: Strategy, copywriting, SEO, growth tactics, conversion optimization",
+          "priority": 3,
+          "availability": "always"
+        },
+
+        "web-scraper-expert": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["web_scraping", "data_extraction", "crawling"],
+          "complexity": ["moderate", "complex"],
+          "description": "Web scraping specialist: Data extraction, crawling, parsing, ethical scraping practices",
+          "priority": 2,
+          "availability": "always",
+
+          "best_practices": [
+            "Respect robots.txt",
+            "Rate limiting (2-3 seconds between requests)",
+            "Use rotating user agents",
+            "Handle errors gracefully (retries with exponential backoff)",
+            "Cache responses to avoid redundant requests",
+            "Use headless browsers for JS-heavy sites (Playwright, Selenium)"
+          ]
+        },
+
+        "Explore": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["codebase_exploration", "search", "discovery"],
+          "complexity": ["research"],
+          "description": "Codebase exploration specialist: Fast file searches, keyword searches, pattern discovery, architecture understanding",
+          "priority": 3,
+          "availability": "always",
+
+          "thoroughness_levels": {
+            "quick": "Basic glob/grep searches, 1-2 locations",
+            "medium": "Multiple searches, cross-referencing, moderate depth",
+            "very thorough": "Comprehensive analysis, multiple naming conventions, deep exploration"
+          }
+        },
+
+        "general-purpose": {
+          "type": "builtin",
+          "execution_method": "Task",
+          "domains": ["general"],
+          "complexity": ["simple", "moderate", "complex"],
+          "description": "General-purpose agent for complex multi-step tasks, research, and code search",
+          "priority": 7,
+          "availability": "always",
+
+          "use_cases": [
+            "Multi-step tasks requiring coordination",
+            "Research and information gathering",
+            "Tasks spanning multiple domains",
+            "Open-ended problem solving"
+          ]
+        }
+      }
+    },
+
+    "ares-custom": {
+      "description": "Custom ARES-created agents with specialized capabilities",
+      "agents": {}
+    }
+  },
+
+  "execution_methods": {
+    "Task": {
+      "description": "Claude Code Task tool - launches specialized agents",
+      "requires": "Claude Code CLI environment",
+      "parameters": {
+        "subagent_type": "string (required)",
+        "description": "string (required, 3-5 words)",
+        "prompt": "string (required, detailed task description with ARES protocols)"
+      }
+    }
+  },
+
+  "metadata": {
+    "total_agents": 14,
+    "builtin_agents": 14,
+    "custom_agents": 0,
+    "execution_environments": ["Claude Code CLI"],
+    "enhancements_version": "2.0 (2025 best practices integrated)"
+  }
+}

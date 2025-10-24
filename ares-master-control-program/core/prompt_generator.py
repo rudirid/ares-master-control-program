@@ -6,7 +6,9 @@ Generates detailed, context-rich prompts for agents based on task analysis
 from typing import Dict, List, Optional
 from dataclasses import dataclass
 from datetime import datetime
+from pathlib import Path
 from .task_analyzer import TaskAnalysis
+from .knowledge_base_rag import KnowledgeBaseRAG, create_rag
 
 
 @dataclass
@@ -25,8 +27,28 @@ class PromptGenerator:
     - Task context and requirements
     - Ares validation protocols
     - Expected outputs and quality criteria
-    - Relevant patterns from knowledge base
+    - Relevant patterns from knowledge base (via RAG)
+
+    2025 Enhancement: Integrated Knowledge Base RAG for context engineering
     """
+
+    def __init__(self, knowledge_base_path: Optional[Path] = None, enable_rag: bool = True):
+        """
+        Initialize prompt generator
+
+        Args:
+            knowledge_base_path: Path to ARES knowledge base
+            enable_rag: Whether to enable RAG retrieval (default: True)
+        """
+        self.enable_rag = enable_rag
+        self.rag: Optional[KnowledgeBaseRAG] = None
+
+        if enable_rag:
+            try:
+                self.rag = create_rag(knowledge_base_path)
+            except Exception as e:
+                print(f"Warning: Could not initialize RAG system: {e}")
+                self.enable_rag = False
 
     # Template components
     PROMPT_HEADER = """You are a specialized agent working as part of the ARES Master Control Program orchestration system.
@@ -189,7 +211,11 @@ You are part of a multi-agent team:
         )
 
     def _build_context(self, task_analysis: TaskAnalysis, patterns_hint: Optional[List[str]]) -> str:
-        """Build task context section"""
+        """
+        Build task context section with RAG-enhanced knowledge retrieval
+
+        2025 Enhancement: Automatically retrieves relevant patterns from knowledge base
+        """
         # Secondary domains section
         if task_analysis.secondary_domains:
             domains_list = "\n".join(
@@ -207,11 +233,27 @@ You are part of a multi-agent team:
             reasoning=task_analysis.reasoning
         )
 
-        # Add patterns hint if provided
+        # NEW: RAG-based pattern retrieval (2025 best practice)
+        if self.enable_rag and self.rag:
+            try:
+                rag_context = self.rag.get_comprehensive_context(
+                    domain=task_analysis.primary_domain.value,
+                    query=task_analysis.task_description,
+                    include_patterns=2,  # Top 2 patterns
+                    include_tech=1,  # 1 tech recommendation
+                    include_decisions=1,  # 1 past decision
+                    include_anti_patterns=1  # 1 anti-pattern to avoid
+                )
+                if rag_context:
+                    context += "\n" + rag_context + "\n"
+            except Exception as e:
+                print(f"Warning: RAG retrieval failed: {e}")
+
+        # Add manual patterns hint if provided (backwards compatibility)
         if patterns_hint:
-            patterns_section = "\n## RELEVANT PATTERNS FROM KNOWLEDGE BASE\n\n"
+            patterns_section = "\n## ADDITIONAL PATTERNS\n\n"
             patterns_section += "\n".join(f"- {pattern}" for pattern in patterns_hint)
-            patterns_section += "\n\nConsider these proven patterns when designing your solution.\n"
+            patterns_section += "\n\nConsider these patterns when designing your solution.\n"
             context += patterns_section
 
         return context

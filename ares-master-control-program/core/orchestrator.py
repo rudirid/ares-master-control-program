@@ -57,7 +57,9 @@ class AresOrchestrator:
         self,
         registry_path: Optional[Path] = None,
         enable_validation: bool = True,
-        auto_execute_threshold: float = 0.8
+        auto_execute_threshold: float = 0.8,
+        knowledge_base_path: Optional[Path] = None,
+        enable_rag: bool = True
     ):
         """
         Initialize orchestrator
@@ -66,13 +68,19 @@ class AresOrchestrator:
             registry_path: Path to subagent registry
             enable_validation: Whether to apply ARES validation protocols
             auto_execute_threshold: Confidence threshold for autonomous execution (0-1)
+            knowledge_base_path: Path to ARES knowledge base (for RAG)
+            enable_rag: Whether to enable RAG retrieval (default: True)
         """
         self.task_analyzer = TaskAnalyzer()
         self.capability_matcher = CapabilityMatcher()
-        self.prompt_generator = PromptGenerator()
+        self.prompt_generator = PromptGenerator(
+            knowledge_base_path=knowledge_base_path,
+            enable_rag=enable_rag
+        )
         self.registry = SubagentRegistry(registry_path)
         self.enable_validation = enable_validation
         self.auto_execute_threshold = auto_execute_threshold
+        self.enable_rag = enable_rag
 
         self.execution_log = []
 
@@ -358,12 +366,27 @@ class AresOrchestrator:
 # Convenience function
 def create_orchestrator(
     registry_path: Optional[Path] = None,
-    enable_validation: bool = True
+    enable_validation: bool = True,
+    knowledge_base_path: Optional[Path] = None,
+    enable_rag: bool = True
 ) -> AresOrchestrator:
-    """Create an ARES orchestrator instance"""
+    """
+    Create an ARES orchestrator instance
+
+    Args:
+        registry_path: Path to subagent registry
+        enable_validation: Whether to apply ARES validation protocols
+        knowledge_base_path: Path to ARES knowledge base
+        enable_rag: Whether to enable RAG retrieval (2025 enhancement)
+
+    Returns:
+        AresOrchestrator instance
+    """
     return AresOrchestrator(
         registry_path=registry_path,
-        enable_validation=enable_validation
+        enable_validation=enable_validation,
+        knowledge_base_path=knowledge_base_path,
+        enable_rag=enable_rag
     )
 
 
