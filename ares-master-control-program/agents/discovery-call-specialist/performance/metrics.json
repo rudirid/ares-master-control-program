@@ -1,24 +1,27 @@
 {
   "agent_id": "discovery-call-specialist",
   "version": "1.0.0",
-  "last_updated": "2025-10-24T07:20:05.864225",
+  "last_updated": "2025-10-24T07:40:52.768810",
   "metrics": {
     "core_performance": {
-      "total_invocations": 0,
-      "successful": 0,
+      "total_invocations": 1,
+      "successful": 1,
       "failed": 0,
-      "success_rate": 0.0
+      "success_rate": 100.0
     },
     "time_performance": {
-      "avg_time_seconds": 0.0,
-      "target_time_seconds": 300
+      "avg_time_seconds": 0.005985,
+      "target_time_seconds": 300,
+      "min_time_seconds": 0.005985,
+      "max_time_seconds": 0.005985
     },
     "reflection_quality": {
       "correction_rate": 0.0,
       "reflection_depth": {
-        "shallow": 0,
+        "shallow": 1,
         "deep": 0
-      }
+      },
+      "self_corrections": 0
     },
     "pattern_effectiveness": {},
     "user_satisfaction": {

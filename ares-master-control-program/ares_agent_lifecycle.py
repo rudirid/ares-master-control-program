@@ -68,15 +68,19 @@ class AresAgentLifecycle:
         print()
         print(f"Version:     {VERSION}")
         print(f"Component:   Agent Lifecycle Layer")
-        print(f"Status:      Phase 0 Complete - Foundation Ready")
+        print(f"Status:      Phase 2 Complete - Executor + Memory Ready")
         print()
         print("Capabilities:")
         print("  ✓ Configuration system")
         print("  ✓ Agent templates")
         print("  ✓ Memory schemas (episodic, semantic, procedural)")
         print("  ✓ Performance tracking schemas")
+        print("  ✓ Agent evaluator (ROI + frequency + capability gap)")
+        print("  ✓ Agent creator (pattern extraction + memory init)")
+        print("  ✓ Memory manager (episodic + semantic + procedural)")
+        print("  ✓ Agent executor (execution + reflection + metrics)")
         print()
-        print("Next Phase: Agent Evaluator + Creator")
+        print("Next Phase: Performance Analytics + Stats")
         print("=" * 70)
 
     def list_agents(self, status: Optional[str] = None):
@@ -226,7 +230,7 @@ class AresAgentLifecycle:
         print("=" * 70)
 
     # ========================================================================
-    # PHASE 2: Agent Executor + Memory (TODO)
+    # PHASE 2: Agent Executor + Memory (COMPLETE)
     # ========================================================================
 
     def execute(self, agent_id: str, task: str):
@@ -237,20 +241,58 @@ class AresAgentLifecycle:
             agent_id: Agent to execute
             task: Task description
         """
+        from core.agent_executor import AgentExecutor
+
         print("=" * 70)
         print("AGENT EXECUTION")
         print("=" * 70)
         print()
-        print(f"Agent: {agent_id}")
-        print(f"Task: {task}")
+
+        # Check agent exists
+        agent_dir = self.agents_dir / agent_id
+        if not agent_dir.exists():
+            print(f"❌ Error: Agent '{agent_id}' not found")
+            print()
+            print("Available agents:")
+            for d in self.agents_dir.iterdir():
+                if d.is_dir():
+                    print(f"  - {d.name}")
+            print("=" * 70)
+            return
+
+        # Execute
+        executor = AgentExecutor(agent_id)
+        result = executor.execute(task)
+
+        # Display result
+        print("=" * 70)
+        print("EXECUTION RESULT")
+        print("=" * 70)
         print()
-        print("Status: NOT IMPLEMENTED YET")
+        print(f"Task ID: {result.task_id}")
+        print(f"Success: {result.success}")
+        print(f"Time: {result.execution_time_seconds:.1f}s")
+        print(f"Patterns Used: {', '.join(result.patterns_used)}")
         print()
-        print("Phase 2 will implement:")
-        print("  - Memory loading (episodic, semantic, procedural)")
-        print("  - Agent prompt loading")
-        print("  - Execution via Task tool")
-        print("  - Memory persistence")
+        print("Output:")
+        print("-" * 70)
+        print(result.output)
+        print("-" * 70)
+        print()
+
+        if result.reflection:
+            print("Reflection:")
+            print("-" * 70)
+            print(result.reflection)
+            print("-" * 70)
+            print()
+
+        if result.error_message:
+            print(f"Error: {result.error_message}")
+            print()
+
+        print("✓ Execution stored to episodic memory")
+        print("✓ Performance metrics updated")
         print("=" * 70)
 
     # ========================================================================
@@ -365,9 +407,9 @@ Examples:
 
 Current Status:
   Phase 0: ✓ Complete (Foundation)
-  Phase 1: ⏳ Next (Evaluator + Creator)
-  Phase 2: ⏳ Pending (Executor + Memory)
-  Phase 3: ⏳ Pending (Reflection + Tracking)
+  Phase 1: ✓ Complete (Evaluator + Creator)
+  Phase 2: ✓ Complete (Executor + Memory)
+  Phase 3: ⏳ Next (Performance Analytics)
   Phase 4: ⏳ Pending (Evolution)
   Phase 5: ⏳ Pending (Curation)
         """
