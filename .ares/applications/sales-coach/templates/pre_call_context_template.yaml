@@ -1,0 +1,106 @@
+# Pre-Call Context Template
+# Fill this out before each sales call (5 minutes)
+# The AI will use this to generate context-aware suggestions
+
+call_metadata:
+  call_date: ""
+  call_type: ""  # discovery, demo, negotiation, close
+  expected_duration: ""  # minutes
+
+prospect:
+  name: ""
+  company: ""
+  role: ""
+  industry: ""
+  company_size: ""  # employees
+  linkedin_url: ""
+  recent_activity: ""  # What they posted/shared recently
+
+interaction_history:
+  previous_calls: []
+    # - date: "2025-10-15"
+    #   type: "discovery"
+    #   outcome: "interested in automation features"
+  emails_exchanged: []
+    # - date: "2025-10-18"
+    #   topic: "Asked about ROI timeline"
+  demo_given: false
+  materials_sent: []
+
+# MEDDIC Framework (Intelligence Gathering)
+meddic:
+  metrics:
+    current_problem_cost: ""  # "5 hours/week per rep wasted on manual analysis"
+    desired_outcome: ""  # "Reduce to 30 minutes/week"
+    success_metrics: []  # How they'll measure success
+
+  economic_buyer:
+    name: ""  # Person with budget authority
+    role: ""
+    involvement: ""  # Are they on this call?
+
+  decision_criteria:
+    must_haves: []
+      # - "Real-time coaching"
+      # - "CRM integration"
+    nice_to_haves: []
+    deal_breakers: []
+
+  decision_process:
+    steps: []
+      # - "Demo for sales team"
+      # - "CFO budget approval"
+      # - "IT security review"
+    timeline: ""  # "Q1 implementation target"
+    who_involved: []
+
+  pain:
+    identified_pains: []
+      # - "Manual call analysis taking too long"
+      # - "Inconsistent coaching across team"
+    pain_severity: ""  # high, medium, low
+    urgency: ""  # Why now? What changed?
+
+  champion:
+    name: ""  # Internal advocate
+    role: ""
+    strength: ""  # strong, weak, none
+
+# Competitive Context
+competition:
+  current_solution: ""  # What they use now
+  competitor_name: ""
+  contract_end_date: ""
+  satisfaction_level: ""  # What's working? What's not?
+  switching_barriers: []
+
+# Anticipated Challenges
+anticipated_objections:
+  []
+  # - type: "price"
+  #   objection: "Too expensive vs current solution"
+  #   reframe: "ROI calculation: 50 hours saved/month = $X value"
+  # - type: "timing"
+  #   objection: "Not ready to switch right now"
+  #   reframe: "Q1 deadline means decision needed this month for implementation"
+
+# Your Product Context
+your_solution:
+  key_differentiators: []
+    # - "Real-time coaching (competitor only does post-call)"
+    # - "Pre-call context integration"
+  relevant_features: []
+  pricing_range: ""
+  implementation_time: ""
+  case_studies_to_mention: []
+
+# Call Strategy
+strategy:
+  primary_goal: ""  # "Get Q1 pilot commitment"
+  secondary_goals: []
+  opening_approach: ""  # How to start the call
+  discovery_focus: []  # What questions to prioritize
+  close_plan: ""  # How to ask for commitment
+
+# Notes
+notes: ""

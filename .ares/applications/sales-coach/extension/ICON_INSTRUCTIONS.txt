@@ -1,0 +1,61 @@
+# Icon Instructions for Sales Coach Extension
+
+The extension requires 3 icon sizes:
+- icon16.png (16x16 pixels)
+- icon48.png (48x48 pixels)
+- icon128.png (128x128 pixels)
+
+## Quick Option: Use Placeholder Icons
+
+For testing, you can use any PNG images (even solid colors).
+
+### Create Placeholder Icons (Windows):
+
+1. Open Paint
+2. Create new image
+3. Resize to:
+   - 16x16 for icon16.png
+   - 48x48 for icon48.png
+   - 128x128 for icon128.png
+4. Fill with green color (#4CAF50)
+5. Add text "SC" (Sales Coach initials)
+6. Save as PNG in the icons/ folder
+
+### Create Placeholder Icons (Mac/Linux):
+
+```bash
+# Using ImageMagick (install if needed: brew install imagemagick)
+cd ~/.ares/applications/sales-coach/extension/icons
+
+# Create simple green icons with text
+convert -size 16x16 xc:'#4CAF50' icon16.png
+convert -size 48x48 xc:'#4CAF50' icon48.png
+convert -size 128x128 xc:'#4CAF50' icon128.png
+```
+
+### Or Use Online Tool:
+
+1. Go to: https://redketchup.io/icon-editor
+2. Upload any image (or use text/shapes)
+3. Resize to 16x16, 48x48, 128x128
+4. Download and save in icons/ folder
+
+## Professional Icons (Later):
+
+For a polished extension, create professional icons with:
+- Figma (free): https://figma.com
+- Canva (free): https://canva.com
+- Adobe Illustrator (paid)
+
+Design suggestions:
+- Microphone icon (represents voice recognition)
+- Speech bubble with AI brain
+- "SC" initials in modern font
+- Green color scheme (#4CAF50)
+
+Save as:
+- icons/icon16.png
+- icons/icon48.png
+- icons/icon128.png
+
+The extension will work with any PNG files - icons are just for visual polish.

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Coach - Live</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            color: #4CAF50;
+            font-size: 24px;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #888;
+        }
+
+        .status-indicator.active {
+            background: #4CAF50;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 20px;
+        }
+
+        .suggestions-panel {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            height: calc(100vh - 140px);
+            overflow-y: auto;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .panel {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .panel h3 {
+            margin-bottom: 15px;
+            color: #4CAF50;
+            font-size: 16px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        .suggestion {
+            background: #333;
+            border-left: 4px solid #888;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .suggestion.high {
+            border-left-color: #f44336;
+            background: #3a2222;
+        }
+
+        .suggestion.medium {
+            border-left-color: #ff9800;
+            background: #3a3122;
+        }
+
+        .suggestion.low {
+            border-left-color: #4CAF50;
+            background: #223a22;
+        }
+
+        .suggestion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .suggestion-meta {
+            display: flex;
+            gap: 10px;
+            font-size: 12px;
+        }
+
+        .badge {
+            background: #444;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .badge.high { background: #f44336; }
+        .badge.medium { background: #ff9800; }
+        .badge.low { background: #4CAF50; }
+
+        .suggestion-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .suggestion-footer {
+            margin-top: 10px;
+            font-size: 11px;
+            color: #888;
+        }
+
+        .transcript-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #333;
+            border-radius: 4px;
+        }
+
+        .transcript-speaker {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #4CAF50;
+        }
+
+        .transcript-speaker.you {
+            color: #2196F3;
+        }
+
+        .transcript-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .meddic-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .meddic-check {
+            color: #4CAF50;
+        }
+
+        .meddic-cross {
+            color: #888;
+        }
+
+        .progress-bar {
+            background: #444;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            background: #4CAF50;
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .stage-badge {
+            background: #444;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .no-suggestions {
+            text-align: center;
+            color: #666;
+            padding: 40px 20px;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #666;
+            padding: 20px;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SALES COACH - LIVE</h1>
+            <div class="status">
+                <span class="stage-badge" id="call-stage">Discovery</span>
+                <div class="status-indicator" id="status-indicator"></div>
+                <span id="status-text">Connecting...</span>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Main Suggestions Panel -->
+            <div class="suggestions-panel">
+                <h2 style="margin-bottom: 20px; color: #4CAF50;">Tactical Suggestions</h2>
+                <div id="suggestions-container">
+                    <div class="no-suggestions">
+                        <p>Waiting for call to start...</p>
+                        <p style="font-size: 12px; margin-top: 10px;">Suggestions will appear here in real-time</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- MEDDIC Progress -->
+                <div class="panel">
+                    <h3>MEDDIC Progress</h3>
+                    <div id="meddic-container">
+                        <div class="meddic-item">
+                            <span class="meddic-cross">[  ]</span>
+                            <span>Metrics</span>
+                        </div>
+                        <div class="meddic-item">
+                            <span class="meddic-cross">[  ]</span>
+                            <span>Economic Buyer</span>
+                        </div>
+                        <div class="meddic-item">
+                            <span class="meddic-cross">[  ]</span>
+                            <span>Decision Criteria</span>
+                        </div>
+                        <div class="meddic-item">
+                            <span class="meddic-cross">[  ]</span>
+                            <span>Decision Process</span>
+                        </div>
+                        <div class="meddic-item">
+                            <span class="meddic-cross">[  ]</span>
+                            <span>Pain</span>
+                        </div>
+                        <div class="meddic-item">
+                            <span class="meddic-cross">[  ]</span>
+                            <span>Champion</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="meddic-progress" style="width: 0%"></div>
+                        </div>
+                        <p style="text-align: center; margin-top: 10px; font-size: 12px; color: #888;">
+                            <span id="meddic-percentage">0%</span> Complete
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Live Transcript -->
+                <div class="panel" style="flex: 1; overflow-y: auto;">
+                    <h3>Live Transcript</h3>
+                    <div id="transcript-container">
+                        <div class="empty-state">No transcript yet</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const socket = io();
+        let suggestionsContainer = document.getElementById('suggestions-container');
+        let transcriptContainer = document.getElementById('transcript-container');
+        let statusIndicator = document.getElementById('status-indicator');
+        let statusText = document.getElementById('status-text');
+        let callStage = document.getElementById('call-stage');
+
+        // Socket connection
+        socket.on('connect', function() {
+            console.log('Connected to server');
+            statusIndicator.classList.add('active');
+            statusText.textContent = 'Connected';
+        });
+
+        socket.on('disconnect', function() {
+            console.log('Disconnected from server');
+            statusIndicator.classList.remove('active');
+            statusText.textContent = 'Disconnected';
+        });
+
+        // Call started
+        socket.on('call_started', function(data) {
+            console.log('Call started', data);
+            suggestionsContainer.innerHTML = '';
+            transcriptContainer.innerHTML = '';
+        });
+
+        // New transcript
+        socket.on('transcript', function(data) {
+            if (!data.is_final) return; // Only show final transcripts
+
+            let item = document.createElement('div');
+            item.className = 'transcript-item';
+
+            let speaker = document.createElement('div');
+            speaker.className = 'transcript-speaker';
+            if (data.speaker.toLowerCase() === 'you') {
+                speaker.classList.add('you');
+            }
+            speaker.textContent = data.speaker;
+
+            let text = document.createElement('div');
+            text.className = 'transcript-text';
+            text.textContent = data.text;
+
+            item.appendChild(speaker);
+            item.appendChild(text);
+
+            // Remove empty state
+            let emptyState = transcriptContainer.querySelector('.empty-state');
+            if (emptyState) {
+                transcriptContainer.removeChild(emptyState);
+            }
+
+            transcriptContainer.appendChild(item);
+            transcriptContainer.scrollTop = transcriptContainer.scrollHeight;
+        });
+
+        // New suggestion
+        socket.on('suggestion', function(data) {
+            console.log('New suggestion', data);
+
+            let suggestion = document.createElement('div');
+            suggestion.className = `suggestion ${data.urgency}`;
+
+            let header = document.createElement('div');
+            header.className = 'suggestion-header';
+
+            let meta = document.createElement('div');
+            meta.className = 'suggestion-meta';
+            meta.innerHTML = `
+                <span class="badge ${data.urgency}">${data.urgency.toUpperCase()}</span>
+                <span class="badge">${data.category}</span>
+                <span>${Math.round(data.confidence * 100)}%</span>
+            `;
+
+            header.appendChild(meta);
+
+            let text = document.createElement('div');
+            text.className = 'suggestion-text';
+            text.textContent = data.text;
+
+            let footer = document.createElement('div');
+            footer.className = 'suggestion-footer';
+            footer.textContent = `${data.framework} | Triggered by: "${data.trigger_text}"`;
+
+            suggestion.appendChild(header);
+            suggestion.appendChild(text);
+            suggestion.appendChild(footer);
+
+            // Remove "no suggestions" message
+            let noSuggestions = suggestionsContainer.querySelector('.no-suggestions');
+            if (noSuggestions) {
+                suggestionsContainer.removeChild(noSuggestions);
+            }
+
+            // Add to top (most recent first)
+            suggestionsContainer.insertBefore(suggestion, suggestionsContainer.firstChild);
+        });
+
+        // MEDDIC update
+        socket.on('meddic_update', function(data) {
+            console.log('MEDDIC update', data);
+
+            let percentage = data.percentage || 0;
+            document.getElementById('meddic-progress').style.width = `${percentage}%`;
+            document.getElementById('meddic-percentage').textContent = `${percentage}%`;
+
+            // Update checkboxes
+            let components = ['Metrics', 'Economic Buyer', 'Decision Criteria', 'Decision Process', 'Pain', 'Champion'];
+            let items = document.querySelectorAll('.meddic-item');
+
+            items.forEach((item, index) => {
+                let checkbox = item.querySelector('span:first-child');
+                let componentName = components[index];
+                let isComplete = data.components && data.components[componentName];
+
+                if (isComplete) {
+                    checkbox.className = 'meddic-check';
+                    checkbox.textContent = '[ X ]';
+                } else {
+                    checkbox.className = 'meddic-cross';
+                    checkbox.textContent = '[  ]';
+                }
+            });
+        });
+
+        // Stage change
+        socket.on('stage_change', function(data) {
+            console.log('Stage changed', data);
+            callStage.textContent = data.stage.charAt(0).toUpperCase() + data.stage.slice(1);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+# Sample Pre-Call Context - Discovery Call with TechCorp
+
+call_metadata:
+  call_date: "2025-10-24"
+  call_type: "discovery"
+  expected_duration: "30"
+
+prospect:
+  name: "Sarah Johnson"
+  company: "TechCorp Inc"
+  role: "VP of Sales"
+  industry: "B2B SaaS"
+  company_size: "250"
+  linkedin_url: "linkedin.com/in/sarahjohnson"
+  recent_activity: "Posted about sales team scaling challenges - 'Hiring 5 new reps in Q1 but coaching bandwidth is maxed out'"
+
+interaction_history:
+  previous_calls:
+    - date: "2025-10-10"
+      type: "intro"
+      outcome: "Interested in real-time coaching, mentioned Gong pain points"
+  emails_exchanged:
+    - date: "2025-10-15"
+      topic: "Asked about ROI timeline and pricing ballpark"
+    - date: "2025-10-20"
+      topic: "Requested demo for this week"
+  demo_given: false
+  materials_sent:
+    - "One-pager on real-time coaching"
+    - "Case study: SaaS company 40% win rate improvement"
+
+# MEDDIC Framework
+meddic:
+  metrics:
+    current_problem_cost: "15 sales reps × 5 hours/week manual call review = 75 hours/week wasted (~$75k/year in productivity)"
+    desired_outcome: "Reduce manual review to <30 min/week per rep, increase win rate from 25% to 35%+"
+    success_metrics:
+      - "Win rate improvement (currently 25%)"
+      - "Ramp time for new hires (currently 6 months)"
+      - "Manager time spent on coaching (currently 20 hours/week)"
+
+  economic_buyer:
+    name: "Michael Chen (CFO)"
+    role: "CFO - final budget approval"
+    involvement: "Not on this call - Sarah needs to present business case to him"
+
+  decision_criteria:
+    must_haves:
+      - "Real-time coaching (not post-call)"
+      - "Google Meet integration"
+      - "CRM integration (HubSpot)"
+      - "Team analytics dashboard"
+      - "ROI visible within 3 months"
+    nice_to_haves:
+      - "Mobile app"
+      - "Custom playbooks"
+      - "AI-powered objection handling"
+    deal_breakers:
+      - "Can't disrupt current workflow"
+      - "Must be secure (SOC 2)"
+
+  decision_process:
+    steps:
+      - "Demo for Sarah (this call)"
+      - "Demo for sales team (5 managers)"
+      - "CFO budget approval"
+      - "IT security review"
+      - "Legal contract review"
+    timeline: "Need to implement by Jan 1 for new hire cohort"
+    who_involved:
+      - "Sarah (champion)"
+      - "5 sales managers (users)"
+      - "Michael Chen (CFO - budget)"
+      - "IT security (compliance)"
+      - "Legal (contract)"
+
+  pain:
+    identified_pains:
+      - "Manual call analysis taking 5 hours/week per rep (75 hours/week total)"
+      - "Inconsistent coaching across 15-person team - different advice from different managers"
+      - "New hires taking 6 months to ramp (want to reduce to 3 months)"
+      - "Low win rate (25%) - competitors have 35-40%"
+      - "Manager bandwidth maxed - can't scale coaching with hiring"
+    pain_severity: "high"
+    urgency: "Q1 hiring 5 new reps - if they don't ramp fast, will miss Q1 revenue targets ($500k at risk)"
+
+  champion:
+    name: "Sarah Johnson"
+    role: "VP Sales - direct budget owner for sales tools"
+    strength: "strong - she reached out to us, actively looking to solve this"
+
+# Competitive Context
+competition:
+  current_solution: "Gong"
+  competitor_name: "Gong.io"
+  contract_end_date: "March 31, 2026"
+  satisfaction_level: "Mixed - good for post-call insights, but doesn't help IN the call. Managers still spend hours reviewing calls."
+  switching_barriers:
+    - "Team familiar with Gong"
+    - "Would need to migrate historical data"
+    - "Contract still has 1.5 years remaining"
+
+# Anticipated Challenges
+anticipated_objections:
+  - type: "competitive"
+    objection: "We already have Gong - why switch?"
+    reframe: "You don't need to switch - we complement Gong. Gong shows you what happened after the call. We coach you DURING the call. Many customers use both."
+
+  - type: "timing"
+    objection: "Gong contract doesn't end until 2026"
+    reframe: "That's actually ideal - you can run them in parallel. The Q1 new hires can start with our tool while existing team stays on Gong. Pilot with zero disruption."
+
+  - type: "price"
+    objection: "How does pricing compare to Gong?"
+    reframe: "Great question. Gong is $X/user/month for post-call insights. We're $99/user/month for real-time coaching. The ROI is different - we're preventing lost deals, not just analyzing them. Let's look at the math: if we improve your 25% win rate to even 30%, that's X more deals per month..."
+
+  - type: "implementation"
+    objection: "Will this disrupt our current workflow?"
+    reframe: "Zero disruption - it's an overlay on Google Meet. Reps see suggestions on a second screen. 5-minute setup per rep. First call is live."
+
+# Your Solution
+your_solution:
+  key_differentiators:
+    - "Real-time coaching during calls (Gong only does post-call)"
+    - "Pre-call context integration (knows prospect before call starts)"
+    - "Framework tracking (MEDDIC/BANT progress live)"
+    - "Faster ramp for new hires (learn on every call)"
+  relevant_features:
+    - "Google Meet integration (their platform)"
+    - "HubSpot CRM integration (their CRM)"
+    - "Custom playbooks (can load their objection handling)"
+    - "Team analytics (manager dashboard)"
+  pricing_range: "$99/user/month (15 users = $1,485/month = ~$18k/year)"
+  implementation_time: "2 weeks to full rollout"
+  case_studies_to_mention:
+    - "SaaS company (similar size) - 40% win rate improvement in 90 days"
+    - "New hire ramp time reduced from 6 months to 3 months"
+
+# Call Strategy
+strategy:
+  primary_goal: "Get commitment to pilot with 3 reps (including 1 new hire) for 30 days"
+  secondary_goals:
+    - "Confirm MEDDIC metrics (quantify ROI)"
+    - "Identify path to CFO approval (what data does Michael need?)"
+    - "Get sales manager demo scheduled (move process forward)"
+  opening_approach: "Reference her LinkedIn post about coaching bandwidth: 'I saw your post about scaling coaching with new hires. That's exactly what we built this for...'"
+  discovery_focus:
+    - "Quantify new hire ramp cost (6 months vs 3 months = how much revenue?)"
+    - "Quantify win rate gap (25% vs 35% = how many deals lost per month?)"
+    - "Understand CFO approval process (what metrics does he care about?)"
+  close_plan: "Trial close: 'If we could get 3 reps live by next week, including one new hire, and show measurable improvement in 30 days, would that give you the data to take to Michael?'"
+
+notes: |
+  Strong opportunity - she's actively looking and has budget authority.
+  Key challenge: CFO Michael needs ROI proof (focus on metrics).
+  Gong isn't a blocker - position as complementary.
+  Timeline is tight (Q1 = 2 months) - create urgency around pilot start date.

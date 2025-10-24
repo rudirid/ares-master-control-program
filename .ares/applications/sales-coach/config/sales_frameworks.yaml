@@ -1,0 +1,265 @@
+# Sales Frameworks Configuration
+
+frameworks:
+  chris_voss:
+    name: "Chris Voss Tactical Empathy"
+    description: "FBI hostage negotiator techniques applied to sales"
+    tier: 1
+
+    techniques:
+      mirroring:
+        description: "Repeat last 3 words prospect said"
+        example: "Prospect: 'We're concerned about implementation time' → You: 'Implementation time?'"
+        when_to_use: "Show you're listening, encourage elaboration"
+
+      labeling:
+        description: "Name the emotion you detect"
+        examples:
+          - "It sounds like you're concerned about..."
+          - "It seems like timing is important here..."
+          - "It feels like you've been burned before..."
+        when_to_use: "Defuse tension, build empathy"
+
+      calibrated_questions:
+        description: "Open-ended questions starting with How/What"
+        examples:
+          - "How would this work with your current process?"
+          - "What would make this a home run for you?"
+          - "How am I supposed to do that?"
+        avoid:
+          - "Why questions (sound accusatory)"
+          - "Closed yes/no questions"
+        when_to_use: "Discovery, handling objections, closing"
+
+      thats_right:
+        description: "Get prospect to say 'That's right' (not 'You're right')"
+        technique: "Summarize their position until they confirm you understand"
+        example: "So it sounds like your main concern is ROI timeline, and you need to see results within Q1 to justify the investment. Is that right?"
+        when_to_use: "Build trust, confirm understanding before presenting solution"
+
+      accusation_audit:
+        description: "List all objections before they raise them"
+        example: "You're probably thinking this is expensive, implementation will be disruptive, and ROI is uncertain..."
+        when_to_use: "Preemptively defuse objections"
+
+      no_oriented_questions:
+        description: "Ask questions designed to get 'no' (less threatening)"
+        examples:
+          - "Is now a bad time to talk?"
+          - "Have you given up on solving this problem?"
+          - "Is it ridiculous to think we could implement by Q1?"
+        when_to_use: "Lower resistance, engage skeptical prospects"
+
+  meddic:
+    name: "MEDDIC Qualification"
+    description: "Enterprise sales qualification framework"
+    tier: 1
+
+    components:
+      M_metrics:
+        full_name: "Metrics"
+        questions:
+          - "What metrics are you using to measure success today?"
+          - "How much is this problem costing you?"
+          - "What would success look like in numbers?"
+        goal: "Quantify value, establish ROI"
+
+      E_economic_buyer:
+        full_name: "Economic Buyer"
+        questions:
+          - "Who has final budget authority for this?"
+          - "Who signs the contract?"
+          - "What's their involvement in this process?"
+        goal: "Identify who can actually buy"
+
+      D_decision_criteria:
+        full_name: "Decision Criteria"
+        questions:
+          - "What criteria will you use to evaluate solutions?"
+          - "What are your must-haves vs nice-to-haves?"
+          - "What would make you choose one solution over another?"
+        goal: "Understand how they'll decide"
+
+      D_decision_process:
+        full_name: "Decision Process"
+        questions:
+          - "Walk me through how decisions like this typically get made here"
+          - "Who needs to be involved?"
+          - "What steps need to happen before you can move forward?"
+        goal: "Map the buying process"
+
+      I_identify_pain:
+        full_name: "Identify Pain"
+        questions:
+          - "What's driving this initiative right now?"
+          - "What happens if you don't solve this?"
+          - "Why is this urgent?"
+        goal: "Confirm real pain exists"
+
+      C_champion:
+        full_name: "Champion"
+        questions:
+          - "Who internally is excited about this solution?"
+          - "Who will advocate for this when I'm not in the room?"
+          - "What's their influence level?"
+        goal: "Identify internal advocate"
+
+  bant:
+    name: "BANT Qualification"
+    description: "Simple qualification framework (faster than MEDDIC)"
+    tier: 1
+
+    components:
+      budget:
+        questions:
+          - "What budget range are you working with?"
+          - "Have funds been allocated for this?"
+        goal: "Confirm they can afford it"
+
+      authority:
+        questions:
+          - "Are you the decision maker?"
+          - "Who else needs to approve this?"
+        goal: "Confirm you're talking to the right person"
+
+      need:
+        questions:
+          - "What problem are you trying to solve?"
+          - "What happens if you don't solve it?"
+        goal: "Confirm real need exists"
+
+      timeline:
+        questions:
+          - "When do you need this implemented?"
+          - "What's driving that timeline?"
+        goal: "Confirm urgency and fit"
+
+# Objection Handling Patterns
+objection_patterns:
+  price:
+    common_forms:
+      - "That's too expensive"
+      - "How much does this cost?"
+      - "We can't afford that"
+
+    chris_voss_approach:
+      label: "It sounds like price is a concern..."
+      calibrated_question: "How would you like me to make this more affordable?"
+      reframe: "What would make the ROI worth the investment?"
+
+    value_reframe:
+      - "Let's break down the cost vs value: you're spending $X/month on manual work..."
+      - "Compared to the $X you're losing to inefficiency, this is actually saving money"
+
+    tier: 1
+
+  timing:
+    common_forms:
+      - "We're not ready right now"
+      - "Let's revisit this next quarter"
+      - "I need to think about it"
+
+    chris_voss_approach:
+      label: "It seems like timing is the issue..."
+      calibrated_question: "What would need to happen for the timing to be right?"
+      no_oriented: "Is it ridiculous to think we could start a pilot this quarter?"
+
+    urgency_builder:
+      - "What's the cost of waiting another quarter?"
+      - "If we started today, you'd have results by [date]. Does that timeline matter?"
+
+    tier: 1
+
+  competitive:
+    common_forms:
+      - "We're already using [competitor]"
+      - "We're happy with our current solution"
+      - "Why should we switch?"
+
+    chris_voss_approach:
+      mirror: "Already using [competitor]..."
+      calibrated_question: "What's working well with them? What's not?"
+      label: "It sounds like switching would be disruptive..."
+
+    differentiation:
+      - "The key difference is [unique value]"
+      - "Most of our customers came from [competitor] because..."
+
+    tier: 1
+
+  authority:
+    common_forms:
+      - "I need to check with my boss"
+      - "The team needs to discuss this"
+      - "I can't make this decision alone"
+
+    chris_voss_approach:
+      calibrated_question: "How would your boss evaluate this?"
+      thats_right: "So you're saying [boss name] needs to see [specific criteria] before approving. Is that right?"
+
+    next_step:
+      - "What information would help you bring this to [decision maker]?"
+      - "Would it be helpful if I presented to them directly?"
+
+    tier: 1
+
+# Buying Signals (when to close)
+buying_signals:
+  - pattern: "How long does implementation take?"
+    confidence: high
+    meaning: "Considering logistics of moving forward"
+    suggested_response: "Great question - most teams are live in 2 weeks. For your Q1 timeline, that means we'd need to start by [date]. Does that work?"
+
+  - pattern: "What does the contract look like?"
+    confidence: high
+    meaning: "Thinking about commitment"
+    suggested_response: "I can send that over. Before I do, let me confirm this solves your [pain point] problem..."
+
+  - pattern: "Can we do a pilot?"
+    confidence: very_high
+    meaning: "Ready to move forward (low commitment)"
+    suggested_response: "Absolutely - a 30-day pilot makes sense. Let's define success criteria..."
+
+  - pattern: "That sounds interesting"
+    confidence: medium
+    meaning: "Engaged but not committed"
+    suggested_response: "What specifically interests you? (qualify the interest)"
+
+  - pattern: "How much does it cost?"
+    confidence: medium
+    meaning: "Evaluating feasibility"
+    suggested_response: "Great question - to give you accurate pricing, help me understand [qualification question]"
+
+# Sales Stages
+stages:
+  discovery:
+    goal: "Understand pain, qualify fit"
+    key_questions: "MEDDIC or BANT framework"
+    success_criteria:
+      - "Pain confirmed"
+      - "Budget confirmed"
+      - "Timeline confirmed"
+
+  demo:
+    goal: "Show solution, prove value"
+    key_focus: "Tie features to their specific pain"
+    success_criteria:
+      - "Prospect sees themselves using it"
+      - "Objections surfaced and addressed"
+      - "Next steps agreed"
+
+  negotiation:
+    goal: "Finalize terms"
+    key_focus: "Handle price objections, confirm value"
+    success_criteria:
+      - "Price agreed"
+      - "Terms clear"
+      - "Timeline set"
+
+  close:
+    goal: "Get commitment"
+    key_focus: "Trial close, handle last objections"
+    success_criteria:
+      - "Contract signed"
+      - "Payment processed"
+      - "Kickoff scheduled"

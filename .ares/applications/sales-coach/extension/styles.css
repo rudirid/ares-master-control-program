@@ -1,0 +1,443 @@
+/* styles.css - Sales Coach Extension Overlay Styles */
+
+#sales-coach-overlay {
+    all: initial;
+    position: fixed !important;
+    top: 80px !important;
+    right: 20px !important;
+    width: 380px !important;
+    max-height: 700px !important;
+    background: #1a1a1a !important;
+    border: 2px solid #4CAF50 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 14px !important;
+    color: #e0e0e0 !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* Header */
+.sc-header {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%) !important;
+    padding: 12px 16px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    cursor: move !important;
+    border-bottom: 1px solid #4CAF50 !important;
+    user-select: none !important;
+}
+
+.sc-title {
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    color: #4CAF50 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.sc-header-controls {
+    display: flex !important;
+    gap: 8px !important;
+}
+
+.sc-btn {
+    all: unset !important;
+    background: none !important;
+    border: none !important;
+    color: #888 !important;
+    font-size: 20px !important;
+    cursor: pointer !important;
+    padding: 0 6px !important;
+    line-height: 1 !important;
+    transition: color 0.2s !important;
+}
+
+.sc-btn:hover {
+    color: #e0e0e0 !important;
+}
+
+/* Content Area */
+.sc-content {
+    padding: 16px !important;
+    overflow-y: auto !important;
+    flex: 1 !important;
+    max-height: 620px !important;
+}
+
+/* Status */
+.sc-status {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 16px !important;
+    padding: 12px !important;
+    background: #2a2a2a !important;
+    border-radius: 8px !important;
+    border-left: 3px solid #888 !important;
+}
+
+.sc-status-indicator {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    background: #888 !important;
+    flex-shrink: 0 !important;
+}
+
+.sc-status-indicator.sc-status-active {
+    background: #4CAF50 !important;
+    animation: sc-pulse 2s infinite !important;
+}
+
+.sc-status-indicator.sc-status-connected {
+    background: #2196F3 !important;
+}
+
+.sc-status-indicator.sc-status-error {
+    background: #f44336 !important;
+}
+
+@keyframes sc-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.sc-status-info {
+    flex: 1 !important;
+}
+
+.sc-status-text {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #e0e0e0 !important;
+    margin-bottom: 2px !important;
+}
+
+.sc-status-detail {
+    font-size: 11px !important;
+    color: #888 !important;
+}
+
+/* Sections */
+.sc-section {
+    margin-bottom: 16px !important;
+}
+
+.sc-section-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+.sc-section-header.sc-clickable {
+    cursor: pointer !important;
+    user-select: none !important;
+}
+
+.sc-section-header.sc-clickable:hover .sc-section-title {
+    color: #5db85f !important;
+}
+
+.sc-section-title {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #4CAF50 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+}
+
+.sc-suggestion-count,
+.sc-meddic-percentage {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #888 !important;
+    background: #2a2a2a !important;
+    padding: 2px 8px !important;
+    border-radius: 10px !important;
+}
+
+.sc-toggle-icon {
+    font-size: 10px !important;
+    color: #888 !important;
+    transition: transform 0.2s !important;
+}
+
+.sc-collapsible.sc-collapsed .sc-toggle-icon {
+    transform: rotate(-90deg) !important;
+}
+
+.sc-collapsible.sc-collapsed .sc-transcript,
+.sc-collapsible.sc-collapsed .sc-meddic {
+    display: none !important;
+}
+
+/* Suggestions */
+.sc-suggestions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+}
+
+.sc-empty {
+    text-align: center !important;
+    color: #666 !important;
+    font-size: 12px !important;
+    padding: 24px 16px !important;
+    background: #2a2a2a !important;
+    border-radius: 8px !important;
+    font-style: italic !important;
+}
+
+.sc-suggestion {
+    background: #2a2a2a !important;
+    border-left: 4px solid #888 !important;
+    padding: 14px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s !important;
+}
+
+.sc-suggestion:hover {
+    background: #2f2f2f !important;
+    transform: translateX(-2px) !important;
+}
+
+.sc-suggestion.sc-urgency-high {
+    border-left-color: #f44336 !important;
+    background: #3a2222 !important;
+}
+
+.sc-suggestion.sc-urgency-high:hover {
+    background: #442626 !important;
+}
+
+.sc-suggestion.sc-urgency-medium {
+    border-left-color: #ff9800 !important;
+    background: #3a3122 !important;
+}
+
+.sc-suggestion.sc-urgency-medium:hover {
+    background: #443826 !important;
+}
+
+.sc-suggestion.sc-urgency-low {
+    border-left-color: #4CAF50 !important;
+    background: #223a22 !important;
+}
+
+.sc-suggestion.sc-urgency-low:hover {
+    background: #264426 !important;
+}
+
+.sc-suggestion-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 10px !important;
+}
+
+.sc-suggestion-badges {
+    display: flex !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+}
+
+.sc-badge {
+    background: #444 !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.sc-badge-high {
+    background: #f44336 !important;
+    color: white !important;
+}
+
+.sc-badge-medium {
+    background: #ff9800 !important;
+    color: white !important;
+}
+
+.sc-badge-low {
+    background: #4CAF50 !important;
+    color: white !important;
+}
+
+.sc-confidence {
+    font-size: 11px !important;
+    color: #888 !important;
+    font-weight: 600 !important;
+}
+
+.sc-suggestion-text {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    color: #e0e0e0 !important;
+    margin-bottom: 10px !important;
+}
+
+.sc-suggestion-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 10px !important;
+    color: #666 !important;
+}
+
+.sc-framework {
+    font-weight: 600 !important;
+}
+
+.sc-source {
+    background: #333 !important;
+    padding: 2px 6px !important;
+    border-radius: 3px !important;
+}
+
+.sc-flash {
+    animation: sc-flash 0.5s !important;
+}
+
+@keyframes sc-flash {
+    0%, 100% { background-color: inherit !important; }
+    50% { background-color: #3a3a3a !important; }
+}
+
+/* Transcript */
+.sc-transcript {
+    background: #222 !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    max-height: 150px !important;
+    overflow-y: auto !important;
+}
+
+.sc-transcript-content {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+}
+
+.sc-transcript-line {
+    margin-bottom: 6px !important;
+    color: #e0e0e0 !important;
+}
+
+.sc-transcript-interim {
+    color: #888 !important;
+    font-style: italic !important;
+    margin-top: 6px !important;
+}
+
+/* MEDDIC */
+.sc-meddic {
+    background: #222 !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+}
+
+.sc-meddic-items {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+}
+
+.sc-meddic-item {
+    font-size: 12px !important;
+    color: #e0e0e0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.sc-check {
+    font-family: monospace !important;
+    color: #888 !important;
+    font-weight: 700 !important;
+}
+
+.sc-check.sc-checked {
+    color: #4CAF50 !important;
+}
+
+.sc-progress-bar {
+    background: #333 !important;
+    height: 8px !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+}
+
+.sc-progress-fill {
+    background: linear-gradient(90deg, #4CAF50 0%, #45a049 100%) !important;
+    height: 100% !important;
+    transition: width 0.5s ease-out !important;
+}
+
+/* Minimized State */
+.sc-minimized .sc-content {
+    display: none !important;
+}
+
+.sc-minimized {
+    height: auto !important;
+}
+
+/* Notification */
+.sc-notification {
+    position: absolute !important;
+    bottom: 16px !important;
+    left: 16px !important;
+    right: 16px !important;
+    background: #2a2a2a !important;
+    border: 1px solid #4CAF50 !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    font-size: 12px !important;
+    color: #e0e0e0 !important;
+    transform: translateY(100px) !important;
+    opacity: 0 !important;
+    transition: all 0.3s !important;
+}
+
+.sc-notification-show {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+/* Scrollbar Styling */
+.sc-content::-webkit-scrollbar,
+.sc-transcript::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+.sc-content::-webkit-scrollbar-track,
+.sc-transcript::-webkit-scrollbar-track {
+    background: #1a1a1a !important;
+}
+
+.sc-content::-webkit-scrollbar-thumb,
+.sc-transcript::-webkit-scrollbar-thumb {
+    background: #444 !important;
+    border-radius: 3px !important;
+}
+
+.sc-content::-webkit-scrollbar-thumb:hover,
+.sc-transcript::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+
+/* Prevent conflicts with Google Meet styles */
+#sales-coach-overlay * {
+    box-sizing: border-box !important;
+}
