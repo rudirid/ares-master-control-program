@@ -68,7 +68,7 @@ class AresAgentLifecycle:
         print()
         print(f"Version:     {VERSION}")
         print(f"Component:   Agent Lifecycle Layer")
-        print(f"Status:      Phase 2 Complete - Executor + Memory Ready")
+        print(f"Status:      Phase 3 Complete - Analytics + Stats Ready")
         print()
         print("Capabilities:")
         print("  ✓ Configuration system")
@@ -79,8 +79,9 @@ class AresAgentLifecycle:
         print("  ✓ Agent creator (pattern extraction + memory init)")
         print("  ✓ Memory manager (episodic + semantic + procedural)")
         print("  ✓ Agent executor (execution + reflection + metrics)")
+        print("  ✓ Performance analytics (stats, trends, health)")
         print()
-        print("Next Phase: Performance Analytics + Stats")
+        print("Next Phase: Agent Evolution + Hypothesis Testing")
         print("=" * 70)
 
     def list_agents(self, status: Optional[str] = None):
@@ -296,28 +297,57 @@ class AresAgentLifecycle:
         print("=" * 70)
 
     # ========================================================================
-    # PHASE 3: Reflection + Performance Tracking (TODO)
+    # PHASE 3: Performance Analytics (COMPLETE)
     # ========================================================================
 
-    def stats(self, agent_id: str):
+    def stats(self, agent_id: str, detailed: bool = False):
         """
         Show agent performance statistics
 
         Args:
             agent_id: Agent to show stats for
+            detailed: Show detailed pattern analysis
         """
-        print("=" * 70)
-        print(f"AGENT STATS: {agent_id}")
-        print("=" * 70)
-        print()
-        print("Status: NOT IMPLEMENTED YET")
-        print()
-        print("Phase 3 will implement:")
-        print("  - Performance metrics display")
-        print("  - Pattern effectiveness analysis")
-        print("  - Reflection quality metrics")
-        print("  - Learning rate visualization")
-        print("=" * 70)
+        from core.performance_analytics import PerformanceAnalytics
+
+        # Check agent exists
+        agent_dir = self.agents_dir / agent_id
+        if not agent_dir.exists():
+            print("=" * 70)
+            print(f"AGENT STATS: {agent_id}")
+            print("=" * 70)
+            print()
+            print(f"❌ Error: Agent '{agent_id}' not found")
+            print()
+            print("Available agents:")
+            for d in self.agents_dir.iterdir():
+                if d.is_dir():
+                    print(f"  - {d.name}")
+            print("=" * 70)
+            return
+
+        # Generate and display report
+        try:
+            analytics = PerformanceAnalytics(agent_id)
+            report = analytics.generate_report(detailed=detailed)
+            print(report)
+        except FileNotFoundError:
+            print("=" * 70)
+            print(f"AGENT STATS: {agent_id}")
+            print("=" * 70)
+            print()
+            print(f"❌ Error: No performance data found for {agent_id}")
+            print()
+            print("Agent has not been executed yet. Run:")
+            print(f"  python {Path(__file__).name} execute {agent_id} --task \"Your task\"")
+            print("=" * 70)
+        except Exception as e:
+            print("=" * 70)
+            print(f"AGENT STATS: {agent_id}")
+            print("=" * 70)
+            print()
+            print(f"❌ Error: {e}")
+            print("=" * 70)
 
     # ========================================================================
     # PHASE 4: Agent Evolver (TODO)
@@ -409,8 +439,8 @@ Current Status:
   Phase 0: ✓ Complete (Foundation)
   Phase 1: ✓ Complete (Evaluator + Creator)
   Phase 2: ✓ Complete (Executor + Memory)
-  Phase 3: ⏳ Next (Performance Analytics)
-  Phase 4: ⏳ Pending (Evolution)
+  Phase 3: ✓ Complete (Performance Analytics)
+  Phase 4: ⏳ Next (Evolution)
   Phase 5: ⏳ Pending (Curation)
         """
     )
@@ -462,6 +492,11 @@ Current Status:
     # Stats command (Phase 3)
     stats_parser = subparsers.add_parser('stats', help='Show agent statistics')
     stats_parser.add_argument('agent_id', help='Agent ID')
+    stats_parser.add_argument(
+        '--detailed',
+        action='store_true',
+        help='Show detailed pattern analysis'
+    )
 
     # Evolve command (Phase 4)
     evolve_parser = subparsers.add_parser('evolve', help='Evolve agent')
@@ -498,7 +533,7 @@ Current Status:
     elif args.command == 'execute':
         system.execute(args.agent_id, args.task)
     elif args.command == 'stats':
-        system.stats(args.agent_id)
+        system.stats(args.agent_id, detailed=args.detailed if hasattr(args, 'detailed') else False)
     elif args.command == 'evolve':
         system.evolve(args.agent_id)
     elif args.command == 'curate':
